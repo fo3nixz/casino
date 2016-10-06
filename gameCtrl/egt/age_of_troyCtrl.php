@@ -126,6 +126,7 @@ class age_of_troyCtrl extends egtCtrl {
         $betPerLine = $request->bet->bet / 100;
         $stake = $pick * $betPerLine;
 
+		$this->checkLastWin();
 
         $balance = $this->getBalance();
         if($stake > $balance) {
@@ -190,12 +191,6 @@ class age_of_troyCtrl extends egtCtrl {
             $totalWin = $spinData['totalWin'];
             $respin = $spinData['respin'];
         }
-
-        $this->fsPays[] = array(
-            'win' => $spinData['report']['totalWin'],
-            'report' => $spinData['report'],
-        );
-        $this->startPay();
 
         $this->showPlayFreeSpinReport($spinData['report'], $spinData['totalWin']);
 
@@ -358,7 +353,7 @@ class age_of_troyCtrl extends egtCtrl {
         $_SESSION['reels'] = $display;
 
         $this->spinPays[] = array(
-            'win' => $report['totalWin'],
+			'win' => 0,
             'report' => $report,
         );
         $this->startPay();
@@ -381,10 +376,33 @@ class age_of_troyCtrl extends egtCtrl {
             $state = 'idle';
             $balance = '"balance": '.($this->getBalance() * 100).',';
         }
+		else {
+			$this->fsPays[] = array(
+				'win' => 0,
+				'report' => $report,
+			);
+			$this->startPay();
+		}
+
         $bonusSpins = 0;
         if($report['scattersReport']['count'] > 2) {
             $bonusSpins = 12;
         }
+
+		if($_SESSION['fsTotalWin'] > 0 && $_SESSION['fsTotalWin'] < $report['bet'] * 35 && $_SESSION['fsLeft'] <= 0) {
+			$state = 'gamble';
+			$_SESSION['gambles'] = 5;
+			$_SESSION['state'] = 'GAMBLE';
+			$_SESSION['lastWin'] = $_SESSION['fsTotalWin'];
+		}
+		if($_SESSION['fsTotalWin'] >= $report['bet'] * 35 && $_SESSION['fsLeft'] <= 0) {
+			$this->fsPays[] = array(
+				'win' => $_SESSION['fsTotalWin'],
+				'report' => $report,
+			);
+			$this->startPay();
+			$balance = '"balance": '.($this->getBalance() * 100).',';
+		}
 
         $json = '{
     "complex": {
@@ -408,14 +426,16 @@ class age_of_troyCtrl extends egtCtrl {
     "eventTimestamp": '.$this->getTimeStamp().'
 }';
 
-        if($_SESSION['fsLeft'] <= 0) {
-            $_SESSION['state'] = 'SPIN';
-            unset($_SESSION['fsLeft']);
-            unset($_SESSION['fsTotalWin']);
-            unset($_SESSION['fsPlayed']);
-            unset($_SESSION['report']);
-            unset($_SESSION['reels']);
-        }
+		if($_SESSION['fsLeft'] <= 0) {
+			unset($_SESSION['fsLeft']);
+			unset($_SESSION['fsTotalWin']);
+			unset($_SESSION['fsPlayed']);
+			if($state == 'idle') {
+				$_SESSION['state'] = 'SPIN';
+				unset($_SESSION['report']);
+				unset($_SESSION['reels']);
+			}
+		}
 
         $this->out($json);
     }

@@ -126,6 +126,7 @@ class dragon_reelsCtrl extends egtCtrl {
         $betPerLine = $request->bet->bet / 100;
         $stake = $pick * $betPerLine;
 
+		$this->checkLastWin();
 
         $balance = $this->getBalance();
         if($stake > $balance) {
@@ -191,12 +192,6 @@ class dragon_reelsCtrl extends egtCtrl {
             $respin = $spinData['respin'];
         }
 
-        $this->fsPays[] = array(
-            'win' => $spinData['report']['totalWin'],
-            'report' => $spinData['report'],
-        );
-        $this->startPay();
-
         $this->showPlayFreeSpinReport($spinData['report'], $spinData['totalWin']);
 
         $_SESSION['lastBet'] = $stake;
@@ -212,16 +207,6 @@ class dragon_reelsCtrl extends egtCtrl {
         $respin = false;
 
         $bonus = array();
-
-        if($_SESSION['state'] == 'SPIN') {
-            /*
-            $bonus = array(
-                'type' => 'setReelsOffsets',
-                'offsets' => array(4,5,7,5,8),
-            );
-            */
-
-        }
 
         if($_SESSION['state'] == 'FREE') {
             $bonus = array(
@@ -255,6 +240,9 @@ class dragon_reelsCtrl extends egtCtrl {
             $report['scattersReport'] = array();
             $report['scattersReport']['count'] = $a['count'] + $b['count'];
             $report['scattersReport']['offsets'] = array_merge($a['offsets'], $b['offsets']);
+			if($b['count'] == 0) {
+				$report['scattersReport']['count'] = 0;
+			}
 
             if($report['scattersReport']['count'] > 1) {
                 $report['scattersReport']['totalWin'] = $report['bet'] * $this->gameParams->scatterMultiple[$report['scattersReport']['count']] * 2;
@@ -389,7 +377,7 @@ class dragon_reelsCtrl extends egtCtrl {
         $_SESSION['reels'] = $display;
 
         $this->spinPays[] = array(
-            'win' => $report['totalWin'],
+			'win' => 0,
             'report' => $report,
         );
         $this->startPay();
@@ -412,10 +400,33 @@ class dragon_reelsCtrl extends egtCtrl {
             $state = 'idle';
             $balance = '"balance": '.($this->getBalance() * 100).',';
         }
+		else {
+			$this->fsPays[] = array(
+				'win' => 0,
+				'report' => $report,
+			);
+			$this->startPay();
+		}
+
         $bonusSpins = 0;
         if($report['scattersReport']['count'] > 2) {
             $bonusSpins = 5;
         }
+
+		if($_SESSION['fsTotalWin'] > 0 && $_SESSION['fsTotalWin'] < $report['bet'] * 35 && $_SESSION['fsLeft'] <= 0) {
+			$state = 'gamble';
+			$_SESSION['gambles'] = 5;
+			$_SESSION['state'] = 'GAMBLE';
+			$_SESSION['lastWin'] = $_SESSION['fsTotalWin'];
+		}
+		if($_SESSION['fsTotalWin'] >= $report['bet'] * 35 && $_SESSION['fsLeft'] <= 0) {
+			$this->fsPays[] = array(
+				'win' => $_SESSION['fsTotalWin'],
+				'report' => $report,
+			);
+			$this->startPay();
+			$balance = '"balance": '.($this->getBalance() * 100).',';
+		}
 
         $json = '{
     "complex": {
@@ -439,14 +450,16 @@ class dragon_reelsCtrl extends egtCtrl {
     "eventTimestamp": '.$this->getTimeStamp().'
 }';
 
-        if($_SESSION['fsLeft'] <= 0) {
-            $_SESSION['state'] = 'SPIN';
-            unset($_SESSION['fsLeft']);
-            unset($_SESSION['fsTotalWin']);
-            unset($_SESSION['fsPlayed']);
-            unset($_SESSION['report']);
-            unset($_SESSION['reels']);
-        }
+		if($_SESSION['fsLeft'] <= 0) {
+			unset($_SESSION['fsLeft']);
+			unset($_SESSION['fsTotalWin']);
+			unset($_SESSION['fsPlayed']);
+			if($state == 'idle') {
+				$_SESSION['state'] = 'SPIN';
+				unset($_SESSION['report']);
+				unset($_SESSION['reels']);
+			}
+		}
 
         $this->out($json);
     }

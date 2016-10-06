@@ -142,6 +142,7 @@ class supreme_hotCtrl extends egtCtrl {
         $betPerLine = $request->bet->bet / 100;
         $stake = $pick * $betPerLine;
 
+		$this->checkLastWin();
 
         $balance = $this->getBalance();
         if($stake > $balance) {

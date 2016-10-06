@@ -315,15 +315,20 @@ class egtCtrl extends Ctrl {
         }
     }
 
+    public function getDenominations() {
+		return implode(',', $this->gameParams->denominations);
+	}
+
     public function startSettings($request) {
         $paytable = $this->getPaytable();
         $reels = $this->getMainReels();
+		$denominations = $this->getDenominations();
 
         $json = '{
     "complex": {
         '.$paytable.'
         "rtp": "96.44",
-        "bets": ['.implode(',', $this->gameParams->denominations).'],
+        "bets": ['.$denominations.'],
         "jackpotMinBet": 1,
         "jackpot": false,
         '.$reels.'
@@ -356,6 +361,15 @@ class egtCtrl extends Ctrl {
 
         $this->out($json);
     }
+
+    public function checkLastWin() {
+    	if(isset($_SESSION['lastWin']) && isset($_SESSION['report'])) {
+    		if($_SESSION['lastWin'] > 0) {
+				$this->startCollect(false);
+			}
+
+		}
+	}
 
     public function startCollect($request) {
         if($_SESSION['lastWin'] <= 0) {
