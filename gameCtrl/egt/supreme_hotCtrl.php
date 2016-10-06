@@ -232,10 +232,9 @@ class supreme_hotCtrl extends egtCtrl {
         $balance = $this->getBalance() * 100;
 
         $state = 'idle';
-        $_SESSION['gambles'] = 0;
+		$_SESSION['gambles'] = $this->getGambleStepsCount($report['totalWin'], $report['bet']);
         if($report['totalWin'] > 0 && $report['totalWin'] < $report['bet'] * 35) {
             $state = 'gamble';
-            $_SESSION['gambles'] = 5;
             $_SESSION['report'] = base64_encode(gzcompress(serialize(array(
                 'winLines' => $report['winLines'],
                 'reels' => $report['reels'],

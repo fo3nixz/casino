@@ -278,10 +278,9 @@ class rise_of_raCtrl extends egtCtrl {
         $scatters = $this->getScatters($report, $this->gameParams->scatter[0]);
 
         $state = 'idle';
-        $_SESSION['gambles'] = 0;
+		$_SESSION['gambles'] = $this->getGambleStepsCount($report['totalWin'], $report['bet']);
         if($report['totalWin'] > 0 && $report['totalWin'] < $report['bet'] * 35) {
             $state = 'gamble';
-            $_SESSION['gambles'] = 5;
             $_SESSION['report'] = base64_encode(gzcompress(serialize(array(
                 'winLines' => $report['winLines'],
                 'reels' => $report['reels'],
@@ -402,9 +401,10 @@ class rise_of_raCtrl extends egtCtrl {
             $bonusSpins = 15;
         }
 
+		$_SESSION['gambles'] = 0;
 		if($_SESSION['fsTotalWin'] > 0 && $_SESSION['fsTotalWin'] < $report['bet'] * 35 && $_SESSION['fsLeft'] <= 0) {
 			$state = 'gamble';
-			$_SESSION['gambles'] = 5;
+			$_SESSION['gambles'] = $this->getGambleStepsCount($_SESSION['fsTotalWin'], $report['bet']);
 			$_SESSION['state'] = 'GAMBLE';
 			$_SESSION['lastWin'] = $_SESSION['fsTotalWin'];
 		}
@@ -421,7 +421,7 @@ class rise_of_raCtrl extends egtCtrl {
     "complex": {
         '.$display.$winLines.$scatters.'
         "expand": [],
-        "gambles": 0,
+        "gambles": '.$_SESSION['gambles'].',
         "freespins": '.$bonusSpins.',
         "jackpot": false,
         "gameCommand": "bet"

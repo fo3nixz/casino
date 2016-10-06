@@ -490,4 +490,19 @@ class egtCtrl extends Ctrl {
         }
     }
 
+    protected function getGambleStepsCount($win, $bet) {
+    	if($win == 0) {
+    		return 0;
+		}
+		$max = $bet * 35;
+		$steps = 0;
+		for($i = 1; $i <= 5; $i++) {
+			$curr = $win * pow(2, $i-1);
+			if($curr < $max) {
+				$steps = $i;
+			}
+		}
+		return $steps;
+	}
+
 }
