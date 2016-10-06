@@ -10,10 +10,6 @@ class dragon_reelsCtrl extends egtCtrl {
 
         $balance = $this->getBalance() * 100;
 
-        if($_SESSION['state'] == 'FREE') {
-            $balance -= $_SESSION['fsTotalWin'] * 100;
-        }
-
         $json = '{
     "playerName": "igambler1515",
     "balance": '.$balance.',
@@ -240,9 +236,6 @@ class dragon_reelsCtrl extends egtCtrl {
             $report['scattersReport'] = array();
             $report['scattersReport']['count'] = $a['count'] + $b['count'];
             $report['scattersReport']['offsets'] = array_merge($a['offsets'], $b['offsets']);
-			if($b['count'] == 0) {
-				$report['scattersReport']['count'] = 0;
-			}
 
             if($report['scattersReport']['count'] > 1) {
                 $report['scattersReport']['totalWin'] = $report['bet'] * $this->gameParams->scatterMultiple[$report['scattersReport']['count']] * 2;

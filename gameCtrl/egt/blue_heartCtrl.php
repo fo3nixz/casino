@@ -10,10 +10,6 @@ class blue_heartCtrl extends egtCtrl {
 
         $balance = $this->getBalance() * 100;
 
-        if($_SESSION['state'] == 'FREE') {
-            $balance -= $_SESSION['fsTotalWin'] * 100;
-        }
-
         $json = '{
     "playerName": "igambler1515",
     "balance": '.$balance.',
