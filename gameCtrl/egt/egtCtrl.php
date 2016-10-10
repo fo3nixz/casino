@@ -199,7 +199,7 @@ class egtCtrl extends Ctrl {
     }
 
     protected function getScatters($report, $name) {
-        if($report['scattersReport']['totalWin'] <= 0) {
+        if($report['scattersReport']['totalWin'] <= 0 && empty($report['scattersReport']['show'])) {
             $data = '"scatters": [],';
         }
         else {
@@ -365,25 +365,36 @@ class egtCtrl extends Ctrl {
     public function checkLastWin() {
     	if(isset($_SESSION['lastWin']) && isset($_SESSION['report'])) {
     		if($_SESSION['lastWin'] > 0) {
-				$this->startCollect(false);
+				$this->startCollect(false, true);
 			}
 
 		}
 	}
 
-    public function startCollect($request) {
+    public function startCollect($request, $withoutResponce = false) {
         if($_SESSION['lastWin'] <= 0) {
             die('error');
         }
 
         $report = unserialize(gzuncompress(base64_decode($_SESSION['report'])));
 
-        $report['type'] = 'collect';
-        $this->bonusPays[] = array(
-            'win' => $_SESSION['lastWin'],
-            'report' => $report,
-        );
-        $this->startPay();
+		$type = $report['type'];
+		if(!isset($_SESSION['firstWin'])) {
+			$spinWin = $_SESSION['lastWin'];
+		}
+		else {
+			$spinWin = $_SESSION['firstWin'];
+		}
+
+		$this->startPaySpin(array(
+			'win' => $_SESSION['lastWin'],
+			'report' => $report,
+		), $spinWin);
+
+        if($spinWin !== $_SESSION['lastWin']) {
+        	$gambleWin = $_SESSION['lastWin'] - $_SESSION['firstWin'];
+			$this->startGamblePay($gambleWin);
+		}
 
         $balance = $this->getBalance() * 100;
 
@@ -408,9 +419,14 @@ class egtCtrl extends Ctrl {
         $_SESSION['lastWin'] = 0;
         $_SESSION['state'] = 'SPIN';
 
-        $this->out($json);
-
-        $_SESSION['report'] = base64_encode(gzcompress(serialize($report), 9));
+		if(!$withoutResponce) {
+			$this->out($json);
+		}
+		
+		unset($_SESSION['firstWin']);
+		unset($_SESSION['report']);
+		unset($_SESSION['reels']);
+		unset($_SESSION['lastWin']);
     }
 
     protected function startGamble($request) {
@@ -420,10 +436,10 @@ class egtCtrl extends Ctrl {
         if($_SESSION['lastWin'] > $_SESSION['lastBet'] * 35) {
             die('error');
         }
+        $this->setSessionIfEmpty('firstWin', $_SESSION['lastWin']);
 
         $color = $request->bet->color;
         $rndCard = rnd(0,3);
-        //$rndCard = 0;
 
         $unset = false;
 

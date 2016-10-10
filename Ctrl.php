@@ -204,6 +204,34 @@ action: ".$type);
         }
     }
 
+    protected function startPaySpin($data, $win) {
+		$reels = $data['report']['reels'];
+		$reelsStr = '';
+		foreach($reels as $r) {
+			$reelsStr .= implode(' ', $r)."\n";
+		}
+		$reelsStr .= 'Collect Win:'.$win*100;
+		$this->api->setResponse($reelsStr);
+
+		$type = (!empty($f['report']['type'])) ? strtolower($f['report']['type']) : '';
+
+		$this->api->setRequest('bet: '.$data['report']['bet']."
+betOnLine: ".$data['report']['betOnLine']."
+linesCount: ".$data['report']['linesCount']."
+action: ".$type);
+
+		$payType = 'standart';
+		if($data['report']['type'] == 'FREE') {
+			$payType = 'free';
+		}
+
+		game_ctrl(0, $win * 100, 0, $payType);
+	}
+
+	protected function startGamblePay($gambleWin) {
+		game_ctrl(0, $gambleWin * 100, 0, 'double');
+	}
+
     /**
      * Обработка запроса
      *

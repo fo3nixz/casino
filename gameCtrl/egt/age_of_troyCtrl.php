@@ -211,18 +211,21 @@ class age_of_troyCtrl extends egtCtrl {
         if($_SESSION['state'] == 'SPIN') {
             $report['scattersReport'] = $this->slot->getScattersCount();
             if($report['scattersReport']['count'] > 2) {
-                $report['scattersReport']['totalWin'] = 1;
+                $report['scattersReport']['totalWin'] = 0;
+				$report['scattersReport']['show'] = true;
                 $report['type'] = 'FREE';
                 $_SESSION['state'] = 'FREE';
             }
             else {
+				$respin = true;
                 $report['scattersReport']['totalWin'] = 0;
             }
         }
         else {
             $report['scattersReport'] = $this->slot->getScattersCount();
             if($report['scattersReport']['count'] > 2) {
-                $report['scattersReport']['totalWin'] = 1;
+                $report['scattersReport']['totalWin'] = 0;
+				$report['scattersReport']['show'] = true;
                 $_SESSION['fsLeft'] += 12;
             }
             else {

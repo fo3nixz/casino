@@ -185,7 +185,7 @@ class blue_heartParams extends Params {
 	public $defaultCoinsCount = 100;
 
     // СТРОГО 5 ЗНАЧЕНИЙ!!!
-    public $denominations = array(1, 2, 5, 10, 20);
+    public $denominations = array(0.01, 0.02, 0.05, 0.1, 0.2);
     public $lang = 'en';
     public $flash_scale_exactfit = 1;
 
