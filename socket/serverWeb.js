@@ -5,7 +5,7 @@ var net = require('net'),
     server;
 
 function cnsl(message) {
-    process.stdout.write(JSON.stringify(message) + '\n');
+    process.stdout.write(message + '\n');
 }
 
 server = net.createServer(function(socket) {
