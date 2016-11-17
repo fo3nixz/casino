@@ -106,12 +106,12 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">0</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="../reports/markers.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
@@ -136,20 +136,23 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-438723439"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1152589074"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-438723439" class="accordion-body collapse in">
+            <div id="namespace-1152589074" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
                     <ul>
                                                                             <li class="trait"><a href="../classes/BonusWorker.html">BonusWorker</a></li>
                                                     <li class="trait"><a href="../classes/SymbolsWorker.html">SymbolsWorker</a></li>
-                                                                            <li class="class"><a href="../classes/Ctrl.html">Ctrl</a></li>
+                                                                            <li class="class"><a href="../classes/Api.html">Api</a></li>
+                                                    <li class="class"><a href="../classes/Ctrl.html">Ctrl</a></li>
                                                     <li class="class"><a href="../classes/Params.html">Params</a></li>
                                                     <li class="class"><a href="../classes/Reel.html">Reel</a></li>
+                                                    <li class="class"><a href="../classes/ReelWithReel.html">ReelWithReel</a></li>
                                                     <li class="class"><a href="../classes/Slot.html">Slot</a></li>
+                                                    <li class="class"><a href="../classes/SlotReel.html">SlotReel</a></li>
                                                     <li class="class"><a href="../classes/Ways.html">Ways</a></li>
                                                     <li class="class"><a href="../classes/WebEngine.html">WebEngine</a></li>
                                             </ul>
@@ -203,15 +206,20 @@
                                                                     <a href="../classes/Params.html#method_getDisplay" class="">getDisplay()</a><br />
                                                             </section>
                             <section class="span4">
+                                                                    <a href="../classes/Params.html#property_reelConfig" class="">$reelConfig</a><br />
                                                                     <a href="../classes/Params.html#property_doubleIfWild" class="">$doubleIfWild</a><br />
                                                                     <a href="../classes/Params.html#property_minWinCount" class="">$minWinCount</a><br />
                                                                     <a href="../classes/Params.html#property_testBonusEnable" class="">$testBonusEnable</a><br />
                                                                     <a href="../classes/Params.html#property_winLineType" class="">$winLineType</a><br />
                                                                     <a href="../classes/Params.html#property_collectingPay" class="">$collectingPay</a><br />
+                                                                    <a href="../classes/Params.html#property_extraLine" class="">$extraLine</a><br />
+                                                                    <a href="../classes/Params.html#property_doubleCount" class="">$doubleCount</a><br />
+                                                                    <a href="../classes/Params.html#property_useTwoPayLines" class="">$useTwoPayLines</a><br />
                                                                     <a href="../classes/Params.html#property_allCanDouble" class="">$allCanDouble</a><br />
                                                                     <a href="../classes/Params.html#property_banSymbols" class="">$banSymbols</a><br />
                                                                     <a href="../classes/Params.html#property_blockWildsOnReel" class="">$blockWildsOnReel</a><br />
                                                                     <a href="../classes/Params.html#property_symbolWithoutWild" class="">$symbolWithoutWild</a><br />
+                                                                    <a href="../classes/Params.html#property_respinMaxCount" class="">$respinMaxCount</a><br />
                                                             </section>
                             <section class="span4">
                                                                     <em>No constants found</em>
@@ -274,6 +282,30 @@
                 </div>
                 <aside class="span4 detailsbar"></aside>
             </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_reelConfig" name="property_reelConfig" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$reelConfig</h3>
+                <pre class="signature">$reelConfig : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; Стандартное количество барабанов                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
@@ -397,6 +429,78 @@
 
                                     <div class="row-fluid">
         <div class="span8 content class">
+            <a id="property_extraLine" name="property_extraLine" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$extraLine</h3>
+                <pre class="signature">$extraLine : boolean</pre>
+                <p><em>Высчитывать дополнительные линии</em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_doubleCount" name="property_doubleCount" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$doubleCount</h3>
+                <pre class="signature">$doubleCount : boolean</pre>
+                <p><em>Удваивать количество для определенно входящего символа в выигрышную линию</em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_useTwoPayLines" name="property_useTwoPayLines" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$useTwoPayLines</h3>
+                <pre class="signature">$useTwoPayLines : boolean</pre>
+                <p><em>Использовать одновременно таблицу выплат для Lines и Ways</em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
             <a id="property_allCanDouble" name="property_allCanDouble" class="anchor"></a>
             <article class="property">
                 <h3 class="public ">$allCanDouble</h3>
@@ -491,6 +595,30 @@
         </aside>
     </div>
 
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_respinMaxCount" name="property_respinMaxCount" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$respinMaxCount</h3>
+                <pre class="signature">$respinMaxCount : integer</pre>
+                <p><em>Максимальное количество респинов, в которое слот пытается уложится в баланс банка игры.</em></p>
+                <p>Если количество &gt; указанного, то слот выплачивает любую сумму.</p>
+
+                                <h4>Type</h4>
+                integer
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
                                                             
                                     <a id="methods" name="methods"></a>
             <div class="row-fluid">
@@ -538,10 +666,18 @@
             <article class="method">
                 <h3 class="public ">getReels()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">getReels() : string</pre>
+                <pre class="signature" style="margin-right: 54px;">getReels(boolean  <span class="argument">$rsName = false</span>) : string</pre>
                 <p><em>Создание XML по барабанам</em></p>
                 
 
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$rsName </td>
+                                <td><p>добавлять в XML rsName параметр</p></td>
+                            </tr>
+                                            </table>
                 
                 
                                     <h4>Returns</h4>
@@ -776,7 +912,7 @@
             <article class="method">
                 <h3 class="public ">checkSymbolCount()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">checkSymbolCount(array  <span class="argument">$symbol</span>, integer  <span class="argument">$count</span>) : boolean</pre>
+                <pre class="signature" style="margin-right: 54px;">checkSymbolCount(array  <span class="argument">$symbol</span>, integer  <span class="argument">$count</span>, string  <span class="argument">$type</span>) : boolean</pre>
                 <p><em>Проверка на то, что указанный символ в указанном количестве есть в таблице выплат.</em></p>
                 <p>То есть идет проверка на то, что комбинация символов на какой-то линии является выигрышной.</p>
 
@@ -791,6 +927,11 @@
                                 <td>integer</td>
                                 <td>$count </td>
                                 <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$type </td>
+                                <td><p>Тип линии (или Lines или Ways)</p></td>
                             </tr>
                                             </table>
                 
@@ -817,7 +958,7 @@
             <article class="method">
                 <h3 class="public ">getWinMultiplier()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">getWinMultiplier(array  <span class="argument">$symbol</span>, integer  <span class="argument">$count</span>) : integer|boolean</pre>
+                <pre class="signature" style="margin-right: 54px;">getWinMultiplier(array  <span class="argument">$symbol</span>, integer  <span class="argument">$count</span>, string  <span class="argument">$type</span>) : integer|boolean</pre>
                 <p><em>Получение множителя ставки на линию для указанного символа в указанном количестве</em></p>
                 
 
@@ -832,6 +973,11 @@
                                 <td>integer</td>
                                 <td>$count </td>
                                 <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$type </td>
+                                <td><p>Тип линии (или Lines или Ways)</p></td>
                             </tr>
                                             </table>
                 
@@ -937,7 +1083,7 @@
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on June 24th, 2015 at 20:49.
+                    on November 17th, 2016 at 08:40.
                 </section>
             </section>
         </section>

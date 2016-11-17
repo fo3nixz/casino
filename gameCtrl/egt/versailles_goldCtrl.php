@@ -357,7 +357,7 @@ class versailles_goldCtrl extends egtCtrl {
     "eventTimestamp": '.$this->getTimeStamp().'
 }';
 
-        $_SESSION['fsLeft'] = 10;
+        $_SESSION['fsLeft'] = 12;
         $_SESSION['fsPlayed'] = 0;
         $_SESSION['fsTotalWin'] = $report['totalWin'];
         $_SESSION['report'] = base64_encode(gzcompress(serialize(array(
@@ -394,6 +394,8 @@ class versailles_goldCtrl extends egtCtrl {
 
         $state = 'freespin';
         $balance = '';
+        $getBalance = '"balance": '.($this->getBalance() * 100 + $_SESSION['fsTotalWin']*100).',';
+
         if($_SESSION['fsLeft'] <= 0) {
             $state = 'idle';
             $balance = '"balance": '.($this->getBalance() * 100).',';
@@ -424,7 +426,7 @@ class versailles_goldCtrl extends egtCtrl {
 				'report' => $report,
 			);
 			$this->startPay();
-			$balance = '"balance": '.($this->getBalance() * 100).',';
+			$balance = $getBalance;
 		}
 
         $json = '{
@@ -433,6 +435,7 @@ class versailles_goldCtrl extends egtCtrl {
         "expand": [],
         "gambles": '.$_SESSION['gambles'].',
         "freespins": '.$bonusSpins.',
+        "freespinScatters":['.$this->gameParams->scatter[0].'],
         "jackpot": false,
         "freeSpinsExpandSymbol": '.$_SESSION['fsExpandSymbol'].',
         '.$expandLines.'

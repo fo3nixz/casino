@@ -152,6 +152,11 @@ class Reel {
         return $this->visibleSymbols;
     }
 
+    /**
+     * Устанавливает видимые символы барабана
+     *
+     * @param array $symbols
+     */
     public function setVisibleSymbols($symbols) {
         $this->visibleSymbols = $symbols;
     }
@@ -217,7 +222,6 @@ class Reel {
      * @param int $wildSymbol Числовой идентификатор вайлда
      */
     public function setAsFullWild($wildSymbol) {
-        // TODO
         for($i = 0; $i < count($this->newSymbols); $i++) {
             $this->newSymbols[$i] = $wildSymbol;
         }
@@ -308,15 +312,30 @@ class Reel {
         return $this->visibleCount;
     }
 
+    /**
+     * Получение массива новых символов барабана
+     *
+     * @return array
+     */
     public function getNewSymbols() {
         return $this->newSymbols;
     }
 
+    /**
+     * Установка новых символов барабана
+     *
+     * @param array $symbols
+     */
     public function setNewSymbols($symbols) {
         $this->symbols = $symbols;
         $this->newSymbols = $this->symbols;
     }
 
+    /**
+     * Установка смещения барабана
+     *
+     * @param int $offset
+     */
     public function setRealOffset($offset) {
         $this->offset = $offset;
     }

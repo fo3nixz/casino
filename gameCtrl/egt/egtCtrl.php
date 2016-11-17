@@ -346,6 +346,7 @@ class egtCtrl extends Ctrl {
     "command": "settings",
     "eventTimestamp": '.$this->getTimeStamp().'
 }';
+
         $this->out($json);
     }
 
@@ -426,7 +427,6 @@ class egtCtrl extends Ctrl {
 		unset($_SESSION['firstWin']);
 		unset($_SESSION['report']);
 		unset($_SESSION['reels']);
-		unset($_SESSION['lastWin']);
     }
 
     protected function startGamble($request) {
@@ -463,6 +463,7 @@ class egtCtrl extends Ctrl {
                 $unset = true;
                 unset($_SESSION['report']);
                 unset($_SESSION['reels']);
+                unset($_SESSION['firstWin']);
 
             }
         }
@@ -473,6 +474,7 @@ class egtCtrl extends Ctrl {
             $_SESSION['state'] = 'SPIN';
             unset($_SESSION['report']);
             unset($_SESSION['reels']);
+            unset($_SESSION['firstWin']);
         }
 
         $balance = $this->getBalance() * 100;

@@ -115,7 +115,6 @@ class fortune_spellsCtrl extends egtCtrl {
     "eventTimestamp": '.$this->getTimeStamp().'
 }';
 
-
         $this->out($json);
     }
 
@@ -394,6 +393,8 @@ class fortune_spellsCtrl extends egtCtrl {
 
         $state = 'freespin';
         $balance = '';
+        $getBalance = '"balance": '.($this->getBalance() * 100 + $_SESSION['fsTotalWin']*100).',';
+
         if($_SESSION['fsLeft'] <= 0) {
             $state = 'idle';
             $balance = '"balance": '.($this->getBalance() * 100).',';
@@ -424,7 +425,7 @@ class fortune_spellsCtrl extends egtCtrl {
 				'report' => $report,
 			);
 			$this->startPay();
-			$balance = '"balance": '.($this->getBalance() * 100).',';
+			$balance = $getBalance;
 		}
 
         $json = '{
@@ -433,6 +434,7 @@ class fortune_spellsCtrl extends egtCtrl {
         "expand": [],
         "gambles": '.$_SESSION['gambles'].',
         "freespins": '.$bonusSpins.',
+        "freespinScatters":['.$this->gameParams->scatter[0].'],
         "jackpot": false,
         "freeSpinsExpandSymbol": '.$_SESSION['fsExpandSymbol'].',
         '.$expandLines.'

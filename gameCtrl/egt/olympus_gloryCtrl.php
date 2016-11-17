@@ -394,6 +394,8 @@ class olympus_gloryCtrl extends egtCtrl {
 
         $state = 'freespin';
         $balance = '';
+        $getBalance = '"balance": '.($this->getBalance() * 100 + $_SESSION['fsTotalWin']*100).',';
+
         if($_SESSION['fsLeft'] <= 0) {
             $state = 'idle';
             $balance = '"balance": '.($this->getBalance() * 100).',';
@@ -424,7 +426,7 @@ class olympus_gloryCtrl extends egtCtrl {
 				'report' => $report,
 			);
 			$this->startPay();
-			$balance = '"balance": '.($this->getBalance() * 100).',';
+			$balance = $getBalance;
 		}
 
         $json = '{
@@ -433,6 +435,7 @@ class olympus_gloryCtrl extends egtCtrl {
         "expand": [],
         "gambles": '.$_SESSION['gambles'].',
         "freespins": '.$bonusSpins.',
+        "freespinScatters":['.$this->gameParams->scatter[0].'],
         "jackpot": false,
         "freeSpinsExpandSymbol": '.$_SESSION['fsExpandSymbol'].',
         '.$expandLines.'

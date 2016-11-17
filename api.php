@@ -1,8 +1,30 @@
-<?
+<?php
+/**
+ * Casino logic
+ *
+ * Основные файлы логики
+ *
+ * @category Casino Slots
+ * @author Kirill Speransky
+ */
 
+
+
+/**
+ * Class Api
+ *
+ * Сохранение\получение данных игрока, сессии
+ */
 class Api {
+    /**
+     * @var stdClass @gameSession объект сессии игры
+     */
     public $gameSession;
-    
+
+    /**
+     * Api constructor.
+     * Создание сессии, установка параметров по умолчанию и переданных
+     */
     public function __construct() {
         $this->gameSession = new stdClass();
         $this->gameSession->game = new stdClass();
@@ -30,40 +52,85 @@ class Api {
         
         $this->playerBalance = $_SESSION['balance'];
     }
-    
+
+    /**
+     * Установка нового значения баланса
+     *
+     * @param int $value
+     */
     public function setBalance($value) {
         $this->playerBalance = $value;
         $_SESSION['balance'] = $value;
     }
-    
+
+    /**
+     * Получает REQUEST BODY запроса
+     *
+     * @return string
+     */
     public function getRequestBody() {
         return file_get_contents('php://input');
     }
 
+    /**
+     * Получение конфигов игры
+     *
+     * @return array
+     */
     public function getConfigVars() {
         return array();
     }
 
+    /**
+     * Получение параметров запуска игры
+     *
+     * @return array
+     */
     public function getLaunchParams() {
         return array();
     }
 
+    /**
+     * Получение ID игры
+     *
+     * @return mixed
+     */
     public function getGameStringId() {
         return $this->gameSession->game->string_id;
     }
 
+    /**
+     * Получение секции игры
+     *
+     * @return mixed
+     */
     public function getGameSectionStringId() {
         return $this->sectionId;
     }
 
+    /**
+     * Устанавливает кастомный ответ в лог спина
+     *
+     * @param $string
+     */
     public function setResponse($string) {
 
     }
 
+    /**
+     * Устанавливает кастомный запрос в лог спина
+     *
+     * @param $string
+     */
     public function setRequest($string) {
 
     }
 
+    /**
+     * Получение баланса игрока
+     *
+     * @return int
+     */
     public function getPlayerBalance() {
         return $this->playerBalance;
     }

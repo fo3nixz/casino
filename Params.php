@@ -116,6 +116,7 @@ class Params {
     /**
      * Создание XML по барабанам
      *
+     * @param bool $rsName добавлять в XML rsName параметр
      * @return string
      */
     public function getReels($rsName = false) {

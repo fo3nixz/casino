@@ -56,9 +56,13 @@ class WebEngine {
     public static function api() {
         return self::$api;
     }
+
     /**
+     * WebEngine constructor.
      * Инициализация обработчика. Проверяем, есть ли настройки игры.
      * Если есть - запускает обработку запроса флешки.
+     *
+     * @param object $api
      */
     public function __construct($api) {
         self::$api = &$api;

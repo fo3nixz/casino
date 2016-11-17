@@ -275,6 +275,11 @@ class Slot {
         }
     }
 
+    /**
+     * Получает массив, в котором содержатся данные для восстановление состояния барабанов
+     *
+     * @return array
+     */
     public function getReelsCreateArray() {
         $config = array();
         foreach($this->reels as $r) {
@@ -287,6 +292,13 @@ class Slot {
 
         return $config;
     }
+
+    /**
+     *
+     * Восстанавливает состояние барабанов при обвалах и т.д
+     *
+     * @param array $config Массив данных(состояние барабанов) из метода getReelsCreateArray
+     */
 
     public function setReelsCreate($config) {
         $n = 0;
@@ -568,7 +580,12 @@ class Slot {
         return $this->report;
     }
 
-
+    /**
+     * Получение дополнительных линий по конфигу
+     *
+     * @param $config Конфиг
+     * @return array Список выигрышных линий в такой же формате, как и в report
+     */
     public function getExtraLine($config) {
         $winLines = array();
 
@@ -952,6 +969,12 @@ class Slot {
         return $winLines;
     }
 
+    /**
+     * Получение Left to Right и Right to Left линий
+     *
+     * @param array $symbol
+     * @return array
+     */
     private function getLeftRight($symbol) {
         $left = $this->getLeft($symbol);
         $right = $this->getRight($symbol);
@@ -1240,6 +1263,12 @@ class Slot {
         return $ways->getWinLines();
     }
 
+    /**
+     * Получение выигрышных путей слота по средним барабанам(Например, 2,3,4 из 1-5 барабана)
+     *
+     * @param array $symbol
+     * @return array
+     */
     private function getWaysMiddle($symbol) {
         $reelConfig = $this->params->reelConfig;
         $alias = $this->params->getSymbolByID($symbol);
@@ -1316,6 +1345,12 @@ class Slot {
         return array_merge($left, $right);
     }
 
+    /**
+     * Получение центральных путей слева направо
+     *
+     * @param array $symbol
+     * @return array
+     */
     private function getWaysLeftRightMiddle($symbol) {
         $left = $this->getWays($symbol);
         $right = $this->getWaysRight($symbol);
@@ -1343,7 +1378,13 @@ class Slot {
 
     }
 
-
+    /**
+     * Получение линий Left to Right + путей Left to Right
+     * Используется в играх, где за дополнительную ставку на линию включается поиск пути
+     *
+     * @param array $symbol
+     * @return array
+     */
     private function getLineWays($symbol) {
         $line = $this->getLeft($symbol);
         $ways = $this->getWays($symbol);
@@ -1374,6 +1415,8 @@ class Slot {
     }
 
     /**
+     * Получение выигрышных линий слота независимо от того, находятся рядом барабаны или нет
+     *
      * @param int $symbol
      * @return array
      */

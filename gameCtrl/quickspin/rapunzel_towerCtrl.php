@@ -510,27 +510,31 @@ class rapunzel_towerCtrl extends Ctrl {
     protected function checkLadderLevel($stickyCount) {
         $this->bonus['ladder']['ladderLevel'] += $stickyCount;
         $this->bonus['ladder']['bonusSpins'] = 0;
+
+        if($this->bonus['ladder']['ladderLevel'] > 9 && !$this->bonus['ladder']['l1PD']) {
+            $this->bonus['ladder']['level'] = 1;
+            $this->bonus['ladder']['bonusSpins'] += 2;
+            $this->bonus['ladder']['l1PD'] = true;
+        }
+        if($this->bonus['ladder']['ladderLevel'] > 14 && !$this->bonus['ladder']['l2PD']) {
+            $this->bonus['ladder']['level'] = 2;
+            $this->bonus['ladder']['bonusSpins'] += 1;
+            $this->bonus['ladder']['l2PD'] = true;
+        }
+        if($this->bonus['ladder']['ladderLevel'] > 19 && !$this->bonus['ladder']['l3PD']) {
+            $this->bonus['ladder']['level'] = 3;
+            $this->bonus['ladder']['bonusSpins'] += 2;
+            $this->bonus['ladder']['l3PD'] = true;
+        }
         if($this->bonus['ladder']['ladderLevel'] > 24 && !$this->bonus['ladder']['l4PD']) {
             $this->bonus['ladder']['level'] = 4;
             $this->bonus['ladder']['bonusSpins'] += 2;
             $this->bonus['ladder']['multiple'] = 2;
             $this->bonus['ladder']['l4PD'] = true;
         }
-        elseif($this->bonus['ladder']['ladderLevel'] > 19 && !$this->bonus['ladder']['l3PD']) {
-            $this->bonus['ladder']['level'] = 3;
-            $this->bonus['ladder']['bonusSpins'] += 2;
-            $this->bonus['ladder']['l3PD'] = true;
-        }
-        elseif($this->bonus['ladder']['ladderLevel'] > 14 && !$this->bonus['ladder']['l2PD']) {
-            $this->bonus['ladder']['level'] = 2;
-            $this->bonus['ladder']['bonusSpins'] += 1;
-            $this->bonus['ladder']['l2PD'] = true;
-        }
-        elseif($this->bonus['ladder']['ladderLevel'] > 9 && !$this->bonus['ladder']['l1PD']) {
-            $this->bonus['ladder']['level'] = 1;
-            $this->bonus['ladder']['bonusSpins'] += 2;
-            $this->bonus['ladder']['l1PD'] = true;
-        }
+
+
+
     }
 
 }

@@ -119,6 +119,18 @@ class Ctrl {
         }
     }
 
+    /**
+     * Проверка возможности выплата + установка максимального количества респинов для слота
+     * Если максимальное количество респинов превышено - выплачивается последний выигрыш
+     * Даже если в банке игры не хватает для этого денег
+     *
+     * @param int $bet
+     * @param int $win
+     * @param int $bonus_win
+     * @param string $type
+     * @param int $jackpot
+     * @return bool
+     */
     public function checkBankPayments($bet,$win,$bonus_win=0,$type='',$jackpot=0) {
         $this->respinCount++;
         if($this->respinCount < $this->respinMaxCount) {
@@ -204,6 +216,12 @@ action: ".$type);
         }
     }
 
+    /**
+     * Старт выплаты денег по спину
+     *
+     * @param array $data
+     * @param $win
+     */
     protected function startPaySpin($data, $win) {
 		$reels = $data['report']['reels'];
 		$reelsStr = '';
@@ -228,6 +246,11 @@ action: ".$type);
 		game_ctrl(0, $win * 100, 0, $payType);
 	}
 
+    /**
+     * Старт выплаты денег по удвоению
+     *
+     * @param int $gambleWin
+     */
 	protected function startGamblePay($gambleWin) {
 		game_ctrl(0, $gambleWin * 100, 0, 'double');
 	}
@@ -602,6 +625,13 @@ action: ".$type);
         return $xml;
     }
 
+    /**
+     * Округляет значения заданных параметров XMLa
+     *
+     * @param string $xml
+     * @param string $name
+     * @return string
+     */
     protected function roundXmlParam($xml, $name) {
         $item = '<'.$name.'>';
         $itemClose = '</'.$name.'>';
@@ -764,6 +794,12 @@ action: ".$type);
 
     }
 
+    /**
+     * Начинает логировать переданных объект в файл
+     *
+     * @param mixed $target То, что будет логировано
+     * @param string $filename Название файла
+     */
     public function startLog($target, $filename = 'log') {
         ob_start();
         print_r($target);

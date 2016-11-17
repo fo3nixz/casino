@@ -1,0 +1,11 @@
+.game_controls_items{font-style:italic; font-weight:bold;}
+.jc_item{font-weight:bold;}
+.jc_titles{font-weight:bold; font-size:17px;}
+#ButtonsTable td, .buttonsTable
+{ 
+	border: 1px solid black;
+	border-collapse: collapse;
+	padding: 5px;
+}
+
+#ButtonsTable .descriptionCell { width: 400px; }

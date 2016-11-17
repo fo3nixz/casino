@@ -147,6 +147,12 @@ trait SymbolsWorker {
         );
     }
 
+    /**
+     * Получение колонки\строки исходя из оффсета символа
+     *
+     * @param $offset
+     * @return array
+     */
     public function getCeilRowByOffset($offset) {
         $reelsCount = $this->getReelsCount();
 
@@ -159,6 +165,13 @@ trait SymbolsWorker {
         );
     }
 
+    /**
+     * Получение оффсета исходя из положения символа(колонка, строка)
+     *
+     * @param int $ceil
+     * @param int $row
+     * @return mixed
+     */
     public function getOffsetByCeilRow($ceil, $row) {
         $reelsCount = $this->getReelsCount();
 
@@ -167,6 +180,12 @@ trait SymbolsWorker {
         return $offset;
     }
 
+    /**
+     * Получение символа слота(нужный барабан, нужная строка барабана), исходя из оффсета символа
+     *
+     * @param $offset
+     * @return mixed
+     */
     public function getSymbolByOffset($offset) {
         $reelsCount = count($this->params->reelConfig);
 
@@ -178,6 +197,12 @@ trait SymbolsWorker {
         return $symbol;
     }
 
+    /**
+     * Получение всех смещений барабана
+     *
+     * @param $reel
+     * @return array
+     */
     public function getReelOffsets($reel) {
         $rowsCount = $this->params->reelConfig[$reel];
         $reelsCount = count($this->params->reelConfig);
@@ -190,6 +215,13 @@ trait SymbolsWorker {
         return $offsets;
     }
 
+    /**
+     * Получение разницы смещений
+     *
+     * @param array $offsets
+     * @param array $reel
+     * @return array
+     */
     public function getOtherOffsetsByReel($offsets, $reel) {
         $fullOffsets = $this->getReelOffsets($reel);
         return array_diff($fullOffsets, $offsets);

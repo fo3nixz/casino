@@ -16,6 +16,11 @@
  */
 class Params {
     /**
+     * @var array Стандартное количество барабанов
+     */
+    public $reelConfig = array(3,3,3,3,3);
+
+    /**
      * @var bool $doubleIfWild Удваивать, если в выиграшной линии есть вайлд
      */
     public $doubleIfWild = false;
@@ -39,6 +44,27 @@ class Params {
      * @var bool
      */
     public $collectingPay = false;
+
+    /**
+     * Высчитывать дополнительные линии
+     *
+     * @var bool
+     */
+    public $extraLine = false;
+
+    /**
+     * Удваивать количество для определенно входящего символа в выигрышную линию
+     *
+     * @var bool
+     */
+    public $doubleCount = false;
+
+    /**
+     * Использовать одновременно таблицу выплат для Lines и Ways
+     *
+     * @var bool
+     */
+    public $useTwoPayLines = false;
 
     /**
      * Умножать ли каждый символ, когда идет общий множитель
@@ -70,6 +96,15 @@ class Params {
     public $symbolWithoutWild = array();
 
     /**
+     *
+     * Максимальное количество респинов, в которое слот пытается уложится в баланс банка игры.
+     * Если количество > указанного, то слот выплачивает любую сумму.
+     *
+     * @var int
+     */
+    public $respinMaxCount = 100;
+
+    /**
      * Создание параметров игры и установка текущего ID игры
      *
      * @param int $gameID Номер игры
@@ -81,20 +116,29 @@ class Params {
     /**
      * Создание XML по барабанам
      *
+     * @param bool $rsName добавлять в XML rsName параметр
      * @return string
      */
-    public function getReels() {
+    public function getReels($rsName = false) {
         $reelsStr = '';
 
+        $z = 0;
         foreach($this->reels as $i=>$reel) {
             $reelsStr .= '<EEGLoadReelsResponse gameId="'.$this->gameID.'">';
             $c = count($reel);
-            $reelsStr .= '<Reels reelset="'.$i.'" numReels="'.$c.'">';
+            if($rsName !== false) {
+                $rsCurrent = ' rsName="'.$rsName[$z].'"';
+            }
+            else {
+                $rsCurrent = '';
+            }
+            $reelsStr .= '<Reels reelset="'.$i.'" numReels="'.$c.'"'.$rsCurrent.'>';
             foreach($reel as $k=>$row) {
                 $reelsStr .= '<Reel id="'.$k.'" numStops="'.count($row).'" stops="'.implode(',', $row).'" />';
             }
             $reelsStr .= '</Reels>';
             $reelsStr .= '</EEGLoadReelsResponse>';
+            $z++;
         }
 
         return $reelsStr;
@@ -109,6 +153,11 @@ class Params {
         if(!is_array($this->denominations)) {
             $this->denominations = explode(',', $this->denominations);
         }
+
+		$this->curiso = $this->currency;
+		$this->currency = getCurrencyChar($this->curiso);
+		$this->default_coinvalue = $this->denominations[0];
+
         $this->betConfig['minBet'] = $this->denominations[0];
         $this->betConfig['maxBet'] = end($this->denominations) * $winLinesCount;
         $this->betConfig['defaultBet'] = $this->default_coinvalue;
@@ -194,6 +243,13 @@ class Params {
      * @return array
      */
     public function getSymbolID($symbol) {
+        //echo $symbol.PHP_EOL;
+        if(empty($this->symbols[$symbol])) {
+            //$debug = debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 5);
+            //print_r($debug);
+            //die();
+            return array(0);
+        }
         return $this->symbols[$symbol];
     }
 
@@ -220,14 +276,30 @@ class Params {
      *
      * @param array $symbol
      * @param int $count
+     * @param string $type Тип линии (или Lines или Ways)
      * @return bool
      */
-    public function checkSymbolCount($symbol, $count) {
+    public function checkSymbolCount($symbol, $count, $type) {
 
         $s = $this->getSymbolByID($symbol);
-        foreach($this->winPay as $w) {
-            if($s == $w['symbol'] && $w['count'] == $count) return true;
+        if($this->useTwoPayLines) {
+            if($type == 'line') {
+                foreach($this->winPay as $w) {
+                    if($s == $w['symbol'] && $w['count'] == $count) return true;
+                }
+            }
+            else {
+                foreach($this->winPayWays as $w) {
+                    if($s == $w['symbol'] && $w['count'] == $count) return true;
+                }
+            }
         }
+        else {
+            foreach($this->winPay as $w) {
+                if($s == $w['symbol'] && $w['count'] == $count) return true;
+            }
+        }
+
         return false;
     }
 
@@ -236,14 +308,31 @@ class Params {
      *
      * @param array $symbol
      * @param int $count
+     * @param string $type Тип линии (или Lines или Ways)
      * @return int|bool
      */
-    public function getWinMultiplier($symbol, $count) {
+    public function getWinMultiplier($symbol, $count, $type) {
 
         $s = $this->getSymbolByID($symbol);
-        foreach($this->winPay as $w) {
-            if($s == $w['symbol'] && $w['count'] == $count) return $w['multiplier'];
+
+        if($this->useTwoPayLines) {
+            if($type == 'line') {
+                foreach($this->winPay as $w) {
+                    if($s == $w['symbol'] && $w['count'] == $count) return $w['multiplier'];
+                }
+            }
+            else {
+                foreach($this->winPayWays as $w) {
+                    if($s == $w['symbol'] && $w['count'] == $count) return $w['multiplier'];
+                }
+            }
         }
+        else {
+            foreach($this->winPay as $w) {
+                if($s == $w['symbol'] && $w['count'] == $count) return $w['multiplier'];
+            }
+        }
+
         return false;
     }
 

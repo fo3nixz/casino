@@ -63,18 +63,82 @@ class Ctrl {
     public $bonusPays = array();
 
     /**
+     * @var bool Текущий статус для эмуляции спинов + бонусов + ФСов
+     */
+    public $emulation = false;
+
+    /**
+     *
+     * Максимальное количество респинов, в которое слот пытается уложится в баланс банка игры.
+     * Если количество > указанного, то слот выплачивает любую сумму.
+     *
+     * @var int
+     */
+    public $respinMaxCount = 100;
+
+    /**
+     *
+     * Текущее количество респинов в слоте(респины проверки возможности выплаты банком игры)
+     *
+     * @var int
+     */
+    protected $respinCount = 0;
+
+    /**
      * Обработка запроса и запуск нужного метода
      *
      * @param object $params Параметры игры
      */
     public function __construct($params) {
         $this->api = WebEngine::api();
-        $this->game = $this->api->gameSession->game->string_id;
-        $this->gameID = $this->api->gameSession->create_time;
+        $this->game = $this->api->getGameStringId();
+        $this->gameID = crc32($this->api->sessionStringId);
+
+        $this->updateSessionParamsType();
+
         $this->request = $this->getRequest();
         $this->gameParams = $params;
 
+        //$this->respinMaxCount = $this->gameParams->respinMaxCount;
+
         $this->processRequest($this->request);
+    }
+
+    /**
+     * Устанавливаем некоторым переменным сессии типы
+     */
+    private function updateSessionParamsType() {
+        $reg = '/^-?(?:\d+|\d*\.\d+)$/';
+        foreach($_SESSION as $k=>$v) {
+            if(!is_array($v)) {
+                if(preg_match($reg, $v)) {
+                    $_SESSION[$k] = floatval($v);
+                }
+            }
+
+        }
+    }
+
+    /**
+     * Проверка возможности выплата + установка максимального количества респинов для слота
+     * Если максимальное количество респинов превышено - выплачивается последний выигрыш
+     * Даже если в банке игры не хватает для этого денег
+     *
+     * @param int $bet
+     * @param int $win
+     * @param int $bonus_win
+     * @param string $type
+     * @param int $jackpot
+     * @return bool
+     */
+    public function checkBankPayments($bet,$win,$bonus_win=0,$type='',$jackpot=0) {
+        $this->respinCount++;
+        if($this->respinCount < $this->respinMaxCount) {
+            return !game_ctrl($bet, $win, $bonus_win, $type, $jackpot);
+        }
+        else {
+            return false;
+        }
 
     }
 
@@ -90,15 +154,17 @@ class Ctrl {
                 $reelsStr .= implode(' ', $r)."\n";
             }
 
-            $this->api->response = $reelsStr;
+            $this->api->setResponse($reelsStr);
 
-            $this->api->request = 'bet: '.$s['report']['bet']."
+            $type = (!empty($s['report']['type'])) ? strtolower($s['report']['type']) : '';
+
+            $this->api->setRequest('bet: '.$s['report']['bet']."
 betOnLine: ".$s['report']['betOnLine']."
 linesCount: ".$s['report']['linesCount']."
-action: ".strtolower($s['report']['type']);
+action: ".$type);
 
 
-            game_ctrl($this->slot->bet * 100, $s['win'] * 100, 0, 'standart');
+            game_ctrl(round($this->slot->bet * 100), round($s['win'] * 100), 0, 'standart');
         }
 
         foreach($this->fsPays as $f) {
@@ -109,21 +175,23 @@ action: ".strtolower($s['report']['type']);
                 $reelsStr .= implode(' ', $r)."\n";
             }
 
-            $this->api->response = $reelsStr;
+            $this->api->setResponse($reelsStr);
 
-            $this->api->request = 'bet: '.$f['report']['bet']."
+            $type = (!empty($f['report']['type'])) ? strtolower($f['report']['type']) : '';
+
+            $this->api->setRequest('bet: '.$f['report']['bet']."
 betOnLine: ".$f['report']['betOnLine']."
 linesCount: ".$f['report']['linesCount']."
-action: ".strtolower($f['report']['type']);
+action: ".$type);
 
 
-            game_ctrl(0, $f['win'] * 100, 0, 'free');
+            game_ctrl(0, round($f['win'] * 100), 0, 'free');
         }
 
         foreach($this->bonusPays as $b) {
 
-            $this->api->response = '';
-            $this->api->request = '';
+            $this->api->setResponse('');
+            $this->api->setRequest('');
 
             if(!empty($b['report'])) {
                 $reels = $b['report']['reels'];
@@ -132,19 +200,60 @@ action: ".strtolower($f['report']['type']);
                     $reelsStr .= implode(' ', $r)."\n";
                 }
 
-                $this->api->response = $reelsStr;
+                $this->api->setResponse($reelsStr);
 
-                $this->api->request = 'bet: '.$b['report']['bet']."
+                $type = (!empty($b['report']['type'])) ? strtolower($b['report']['type']) : '';
+
+                $this->api->setRequest('bet: '.$b['report']['bet']."
 betOnLine: ".$b['report']['betOnLine']."
 linesCount: ".$b['report']['linesCount']."
-action: ".strtolower($b['report']['type']);
+action: ".$type);
             }
 
 
 
-            game_ctrl(0, 0, $b['win'] * 100, 'bonus');
+            game_ctrl(0, 0, round($b['win'] * 100), 'bonus');
         }
     }
+
+    /**
+     * Старт выплаты денег по спину
+     *
+     * @param array $data
+     * @param $win
+     */
+    protected function startPaySpin($data, $win) {
+		$reels = $data['report']['reels'];
+		$reelsStr = '';
+		foreach($reels as $r) {
+			$reelsStr .= implode(' ', $r)."\n";
+		}
+		$reelsStr .= 'Collect Win:'.$win*100;
+		$this->api->setResponse($reelsStr);
+
+		$type = (!empty($f['report']['type'])) ? strtolower($f['report']['type']) : '';
+
+		$this->api->setRequest('bet: '.$data['report']['bet']."
+betOnLine: ".$data['report']['betOnLine']."
+linesCount: ".$data['report']['linesCount']."
+action: ".$type);
+
+		$payType = 'standart';
+		if($data['report']['type'] == 'FREE') {
+			$payType = 'free';
+		}
+
+		game_ctrl(0, $win * 100, 0, $payType);
+	}
+
+    /**
+     * Старт выплаты денег по удвоению
+     *
+     * @param int $gambleWin
+     */
+	protected function startGamblePay($gambleWin) {
+		game_ctrl(0, $gambleWin * 100, 0, 'double');
+	}
 
     /**
      * Обработка запроса
@@ -226,10 +335,13 @@ action: ".strtolower($b['report']['type']);
      * @return array
      */
     protected  function getRequest() {
+        if(isset($_POST['emulation'])) {
+            $this->emulation = true;
+        }
+
         if(isset($_POST['xml'])) return (array) simplexml_load_string($_POST['xml']);
         else return (array) simplexml_load_string($this->api->getRequestBody());
-        //echo '<pre>';
-        //return (array) simplexml_load_string('<CompositeRequest><EEGPlaceBetsRequest gameTitle="PT-Avengers" gameId="172704504"><Bet type="line" pick="L20" stake="1" autoPlay="false"/></EEGPlaceBetsRequest><EEGLoadResultsRequest gameId="172704504" gameTitle="PT-Avengers"/></CompositeRequest>');
+
     }
 
     /**
@@ -250,7 +362,22 @@ action: ".strtolower($b['report']['type']);
         $xml = str_replace(PHP_EOL, '', $xml);
         $xml = str_replace("\n", '', $xml);
         $xml = preg_replace('/> +</', '><', $xml);
+
+        $xml = $this->roundXmlParamValue($xml, 'payout');
+        $xml = $this->roundXmlParamValue($xml, 'drawWin');
+        $xml = $this->roundXmlParamValue($xml, 'runningTotal');
+        $xml = $this->roundXmlParamValue($xml, 'newBalance');
+
         echo $xml;
+    }
+
+    /**
+     * Отдаем отформатированный JSON.
+     *
+     * @param string $json
+     */
+    protected function outJSON($json) {
+        echo $json;
     }
 
     /**
@@ -259,9 +386,9 @@ action: ".strtolower($b['report']['type']);
      * @return float
      */
     protected function getBalance() {
-        $balance = $this->api->playerBalance / 100;
+        $balance = $this->api->getPlayerBalance() / 100;
         if(!empty($_SESSION['bonusWIN'])) $balance -= $_SESSION['bonusWIN'];
-        return $balance;
+        return round($balance, 2);
     }
 
     /**
@@ -279,7 +406,7 @@ action: ".strtolower($b['report']['type']);
             }
         }
 
-        $xml = '<EEGConfigResponse minStake="'.$stake['minBet'].'" maxStake="'.$stake['maxBet'].'" maxWin="75000.00" defaultStake="'.$defaultBet.'" roundLimit="'.$stake['maxBet'].'">
+        $xml = '<EEGConfigResponse minStake="'.$stake['minBet'].'" maxStake="'.$stake['maxBet'].'" maxWin="'.($stake['maxBet']*1000).'" defaultStake="'.$defaultBet.'" roundLimit="'.$stake['maxBet'].'">
         '.$this->gameParams->getIncreaseData().'</EEGConfigResponse>';
 
         return $xml;
@@ -476,6 +603,95 @@ action: ".strtolower($b['report']['type']);
         }
     }
 
+
+    /**
+     * Округляет заданные параметры в готовом XML
+     *
+     * @param $xml
+     * @param $name
+     * @return string
+     *
+     */
+    protected function roundXmlParamValue($xml, $name) {
+        $item = ' '.$name.'="';
+        $inc = 0;
+        while(strpos($xml, $item, $inc)) {
+            $start = strpos($xml, $item, $inc) + strlen($item);
+            $end = strpos($xml, '"', $start);
+            $value = round(substr($xml, $start, $end-$start), 2);
+            $xml = substr($xml, 0, $start) . $value . substr($xml, $end);
+            $inc = $end;
+        }
+        return $xml;
+    }
+
+    /**
+     * Округляет значения заданных параметров XMLa
+     *
+     * @param string $xml
+     * @param string $name
+     * @return string
+     */
+    protected function roundXmlParam($xml, $name) {
+        $item = '<'.$name.'>';
+        $itemClose = '</'.$name.'>';
+        $inc = 0;
+        while(strpos($xml, $item, $inc)) {
+            $start = strpos($xml, $item, $inc) + strlen($item);
+            $end = strpos($xml, $itemClose, $start);
+            $value = round(substr($xml, $start, $end-$start), 2);
+            $xml = substr($xml, 0, $start) . $value . substr($xml, $end);
+            $inc = $end;
+        }
+        return $xml;
+    }
+
+    /**
+     *
+     * Умножает выбранные параметры на $multiple
+     *
+     * @param $xml
+     * @param $name
+     * @param $multiple
+     * @return string
+     *
+     */
+    protected function multipleXmlParamValue($xml, $name, $multiple) {
+        $item = ' '.$name.'="';
+        $inc = 0;
+        while(strpos($xml, $item, $inc)) {
+            $start = strpos($xml, $item, $inc) + strlen($item);
+            $end = strpos($xml, '"', $start);
+            $value = substr($xml, $start, $end-$start) * $multiple;
+            $xml = substr($xml, 0, $start) . $value . substr($xml, $end);
+            $inc = $end;
+        }
+        return $xml;
+    }
+
+    /**
+     *
+     * Умножает параметр на $multiple
+     *
+     * @param $xml
+     * @param $name
+     * @param $multiple
+     * @return string
+     */
+    protected function multipleXmlParam($xml, $name, $multiple) {
+        $item = '<'.$name.'>';
+        $itemClose = '</'.$name.'>';
+        $inc = 0;
+        while(strpos($xml, $item, $inc)) {
+            $start = strpos($xml, $item, $inc) + strlen($item);
+            $end = strpos($xml, $itemClose, $start);
+            $value = substr($xml, $start, $end-$start) * $multiple;
+            $xml = substr($xml, 0, $start) . $value . substr($xml, $end);
+            $inc = $end;
+        }
+        return $xml;
+    }
+
     /**
      * Дополняет\перезаписывает массив $c всем из массива $p
      *
@@ -549,6 +765,49 @@ action: ".strtolower($b['report']['type']);
             $c[] = $i - 1;
         }
         return $c;
+    }
+
+    /**
+     * Сжатие массива данных для уменьшения веса сессии
+     *
+     * @param $array
+     * @return string
+     */
+    public function compressArray($array) {
+        return base64_encode(gzcompress(json_encode($array), 9));
+    }
+
+    /**
+     *
+     * Распакова массива из строки.
+     *
+     * @param $string
+     * @return mixed
+     */
+    public function decompressArray($string) {
+        if(!empty($string)) {
+            return json_decode(gzuncompress(base64_decode($string)), true);
+        }
+        else {
+            return array();
+        }
+
+    }
+
+    /**
+     * Начинает логировать переданных объект в файл
+     *
+     * @param mixed $target То, что будет логировано
+     * @param string $filename Название файла
+     */
+    public function startLog($target, $filename = 'log') {
+        ob_start();
+        print_r($target);
+        $c = ob_get_contents();
+        ob_end_clean();
+        $f = fopen($filename, 'w+');
+        fwrite($f, $c);
+        fclose($f);
     }
 }
 

@@ -6,6 +6,7 @@
 			"Start":"Start", 
 			"Stop All":"Stop All",
 			"Collect":"Collect",
+			"Select":"Select",
 			"GAMBLE":"GAMBLE",
 			"WIN":"WIN",
 			"LAST WIN":"LAST WIN",
@@ -32,13 +33,16 @@
 			"PRESS COLLECT TO END THIS FEATURE":"PRESS COLLECT TO END THIS FEATURE",
 			"LARGEST WINNER":"Largest winner:",
 			"NUMBER OF WINNERS":"Number\nof winners:",
-			"LAST WINNER":"Last winner:"
+			"LAST WINNER":"Last winner:",
+			"totalBetLabel":"TOTAL BET:",
+			"totalWinLabel":"TOTAL WIN:"
 		}, 
 		"bg": 
 		{ 
 			"Start":"Старт", 
 			"Stop All":"Стоп",
 			"Collect":"Съберете",
+			"Select":"Изберете",
 			"GAMBLE":"УДВОЕТЕ",
 			"WIN":"ПЕЧАЛБА",
 			"LAST WIN":"ПОСЛЕДНА ПЕЧАЛБА",
@@ -65,13 +69,16 @@
 			"PRESS COLLECT TO END THIS FEATURE":"НАТИСНЕТЕ СЪБЕРЕТЕ ЗА КРАЙ НА ТОЗИ КРЪГ",
 			"LARGEST WINNER":"Топ печалба:",
 			"NUMBER OF WINNERS":"Брой\nпечалби:",
-			"LAST WINNER":"Последна:"
+			"LAST WINNER":"Последна:",
+			"totalBetLabel":"ОБЩ ЗАЛОГ:",
+			"totalWinLabel":"ОБЩА ПЕЧАЛБА:"
 		},
 		"ru": 
 		{ 
 			"Start":"Старт", 
 			"Stop All":"Стоп все",
 			"Collect":"Брать",
+			"Select":"Выбрать",
 			"GAMBLE":"УДВОИТЬ",
 			"WIN":"ВЫИГРЫШ",
 			"LAST WIN":"ПОСЛЕДНИЙ ВЫИГРЫШ",
@@ -98,13 +105,16 @@
 			"PRESS COLLECT TO END THIS FEATURE":"НАЖМИТЕ БРАТЬ ДЛЯ ОКОНЧАНИЯ  ЭТОГО РАУНДА",
 			"LARGEST WINNER":"Самый\nбольшой победитель:",
 			"NUMBER OF WINNERS":"Количество\nпобедителей:",
-			"LAST WINNER":"Последний\nпобедитель:"
+			"LAST WINNER":"Последний\nпобедитель:",
+			"totalBetLabel":"ОБЩАЯ СТАВКА:",
+			"totalWinLabel":"ОБЩИЙ ВЫИГРЫШ:"
 		},
 		"nl": 
 		{ 
 			"Start":"Start", 
 			"Stop All":"Alles Stoppen",
 			"Collect":"Innen",
+			"Select":"Selecteren",
 			"GAMBLE":"GOKKEN",
 			"WIN":"WINST",
 			"LAST WIN":"LAATSTE WINST",
@@ -131,13 +141,16 @@
 			"PRESS COLLECT TO END THIS FEATURE":"DRUK OP INNEN OM DEZE FUNCTIE TE BEEINDIGEN",
 			"LARGEST WINNER":"Grootste\nwinnaar:",
 			"NUMBER OF WINNERS":"Aantal\nwinnaars:",
-			"LAST WINNER":"Laatste winnaar:"
+			"LAST WINNER":"Laatste winnaar:",
+			"totalBetLabel":"TOTALE INZET:",
+			"totalWinLabel":"TOTALE WINST:"
 		},
 		"mk": 
 		{ 
 			"Start":"Почеток", 
-			"Stop All":"Запирање на се",
+			"Stop All":"Запри Сé",
 			"Collect":"Собирање",
+			"Select":"Бирање",
 			"GAMBLE":"Обложување",
 			"WIN":"Добивка",
 			"LAST WIN":"Последна Добивка",
@@ -156,21 +169,24 @@
 			"BET":"ОБЛОГ",
 			"CREDIT":"КРЕДИТ",
 			"BALANCE":"БИЛАНС",
-			"GAMBLE AMOUNT":"ОБЛОЖУВАЧКИ ИЗНОС",
-			"GAMBLE TO WIN":"ОБЛОЖЕТЕ СЕ ЗА ДОБИВКА",
+			"GAMBLE AMOUNT":"ИЗНОС НА ВЛОГ",
+			"GAMBLE TO WIN":"ИГРАЈ ЗА ДОБИВКА",
 			"GAMBLE ATTEMPTS LEFT":"ОСТАНАТИ ОБИДИ ЗА ОБЛОЖУВАЊЕ",
 			"HISTORY":"ИСТОРИЈА",
 			"CHOOSE CARD":"ОДБЕРЕТЕ КАРТА",
 			"PRESS COLLECT TO END THIS FEATURE":"ПРИТИСНЕТЕ СОБИРАЊЕ ЗА ДА ЈА ЗАВРШИТЕ ОВАА КАРАКТЕРИСТИКА",
 			"LARGEST WINNER":"Најголем\nдобитник:",
-			"NUMBER OF WINNERS":"Број на\nдобитници:",
-			"LAST WINNER":"Последен\nдобитник:"
+			"NUMBER OF WINNERS":"Број\nна добитници:",
+			"LAST WINNER":"Последен\nдобитник:",
+			"totalBetLabel":"ВКУПЕН ОБЛОГ:",
+			"totalWinLabel":"ВКУПНА ДОБИВКА:"
 		},
 		"fr": 
 		{ 
 			"Start":"Start", 
 			"Stop All":"Arrêtez tous",
 			"Collect":"Encaisser",
+			"Select":"Sélectionner",
 			"GAMBLE":"OSER",
 			"WIN":"GAIN",
 			"LAST WIN":"DERNIER GAIN",
@@ -197,7 +213,81 @@
 			"PRESS COLLECT TO END THIS FEATURE":"APPUYEZ SUR ENCAISSER POUR FINIR CETTE PARTIE",
 			"LARGEST WINNER":"Grand gagnant:",
 			"NUMBER OF WINNERS":"Nombre de gagnants:",
-			"LAST WINNER":"Dernier gagnant:"
+			"LAST WINNER":"Dernier gagnant:",
+			"totalBetLabel":"MISE TOTALE:",
+			"totalWinLabel":"GAIN TOTAL:"
+		},
+		"es": 
+		{
+			"Start":"Inicio", 
+			"Stop All":"Parar Todo",
+			"Collect":"Recoger",
+			"Select":"Seleccionar",
+			"GAMBLE":"DOBLAR",
+			"WIN":"GANANCIA",
+			"LAST WIN":"ÚLTIMA GANANCIA",
+			"Exit":"Salida",
+			"Help":"Ayuda",
+			"Line":"Línea",
+			"RED":"ROJO",
+			"BLACK":"NEGRO",
+			"FREE SPIN":"JUEGO GRATIS",
+			"OF":"DE",
+			"YOU WIN":"USTED GANA",
+			"NO CONNECTION":"SIN CONEXIÓN",
+			"INSUFFICIENT BALANCE":"SALDO INSUFICIENTE",
+			"PLEASE PLACE YOUR BET":"POR FAVOR, HAGA SU APUESTA",
+			"GOOD LUCK!":"¡BUENA SUERTE!",
+			"BET":"APUESTA",
+			"CREDIT":"CRÉDITO",
+			"BALANCE":"SALDO",
+			"GAMBLE AMOUNT":"APOSTAR IMPORTE",
+			"GAMBLE TO WIN":"APUESTE PARA GANAR",
+			"GAMBLE ATTEMPTS LEFT":"INTENTOS DE APUESTA DISPONIBLES",
+			"HISTORY":"HISTORIAL",
+			"CHOOSE CARD":"ELIJA UNA CARTA",
+			"PRESS COLLECT TO END THIS FEATURE":"PULSE RECOGER PARA FINALIZAR ESTA CARACTERÍSTICA",
+			"LARGEST WINNER":"Mayor Ganador:",
+			"NUMBER OF WINNERS":"Número\nde Ganadores:",
+			"LAST WINNER":"Último Ganador:",
+			"totalBetLabel":"TOTAL APOSTADO:",
+			"totalWinLabel":"TOTAL GANADO:"
+		},
+		"ro": 
+		{
+			"Start":"Start", 
+			"Stop All":"Stop Toate",
+			"Collect":"Colecta",
+			"Select":"Alegeţi",
+			"GAMBLE":"GAMBLE",
+			"WIN":"CÂȘTIG",
+			"LAST WIN":"ULTIMUL CÂȘTIG",
+			"Exit":"Ieşire",
+			"Help":"Ajutor",
+			"Line":"Linie",
+			"RED":"ROȘU",
+			"BLACK":"NEGRU",
+			"FREE SPIN":"ROTIRE GRATUITĂ",
+			"OF":"DIN",
+			"YOU WIN":"AȚI CÂȘTIGAT",
+			"NO CONNECTION":"FĂRĂ CONEXIUNE",
+			"INSUFFICIENT BALANCE":"FONDURI INSUFICIENTE",
+			"PLEASE PLACE YOUR BET":"VĂ RUGĂM PLASAȚI PARIUL",
+			"GOOD LUCK!":"MULT NOROC!",
+			"BET":"PARIU",
+			"CREDIT":"CREDIT",
+			"BALANCE":"BALANȚĂ",
+			"GAMBLE AMOUNT":"SUMĂ GAMBLE",
+			"GAMBLE TO WIN":"GAMBLE PENTRU CÂȘTIG",
+			"GAMBLE ATTEMPTS LEFT":"ÎNCERCĂRI GAMBLE RĂMASE",
+			"HISTORY":"ISTORIC",
+			"CHOOSE CARD":"ALEGEȚI CARTE",
+			"PRESS COLLECT TO END THIS FEATURE":"APĂSAȚI COLECTARE ȘI FINALIZAȚI FUNCȚIA",
+			"LARGEST WINNER":"Cel mai mare\ncâștigător:",
+			"NUMBER OF WINNERS":"Număr\nde câștigători:",
+			"LAST WINNER":"Ultimul câștigător:",
+			"totalBetLabel":"TOTAL PARIU:",
+			"totalWinLabel":"TOTAL CÂŞTIG:"
 		}
 	}
 }

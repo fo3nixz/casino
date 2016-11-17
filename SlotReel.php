@@ -1,6 +1,30 @@
-<?
+<?php
+/**
+ * Casino logic
+ *
+ * Основные файлы логики
+ *
+ * @category Casino Slots
+ * @author Kirill Speransky
+ */
+
+
+
+/**
+ * Class SlotReel
+ *
+ * Основная логика барабанов, спинов, бонусов для слота, в которов барабаны содержат барабаны
+ */
 
 class SlotReel extends Slot {
+    /**
+     * Инициализация слота с барабанами в барабанах
+     *
+     * @param object $params
+     * @param int $linesCount
+     * @param float $bet
+     * @param int $betOnLineIndex
+     */
     public function __construct($params, $linesCount, $bet, $betOnLineIndex = 1) {
         $this->params = $params;
         $this->lines = $this->getWinLines($params->winLines, $linesCount);
@@ -23,6 +47,11 @@ class SlotReel extends Slot {
         $this->setReels($params->reels[0]);
     }
 
+    /**
+     * Установка всех необходимых барабанов
+     *
+     * @param array $params
+     */
     public function setReels($params) {
         $this->reels = array();
         for($i = 0; $i < $this->params->ceils; $i++) {
@@ -34,10 +63,21 @@ class SlotReel extends Slot {
         }
     }
 
+    /**
+     * Получение количества барабанов
+     *
+     * @return int
+     */
     public function getReelsCount() {
         return count($this->reels);
     }
 
+    /**
+     * Создание кастомных барабанов по заданным настройкам
+     *
+     * @param array $reels
+     * @param array $config
+     */
     public function createCustomReels($reels, $config) {
         $this->reels = array();
 

@@ -1,60 +1,64 @@
 var net = require('net'),
     fs = require('fs'),
-    http = require('http'),
+    https = require('https'),
     PORT = 1128,
     server;
 
-server = net.createServer(function (socket) {
+function cnsl(message) {
+    process.stdout.write(JSON.stringify(message) + '\n');
+}
+
+server = net.createServer(function(socket) {
     socket.setEncoding("utf8");
-    socket.on('data', function(data) {       
+    socket.on('data', function(data) {
         try {
-            if(data == '<policy-file-request/>\0') {
+            if (data == '<policy-file-request/>\0') {
                 socket.write('<?xml version="1.0"?><cross-domain-policy><allow-access-from domain="*" to-ports="*" /></cross-domain-policy>' + '\0');
-            }
-            else {
+            } else {
                 var json = JSON.parse(data.substr(0, data.length - 1)),
                     options,
-                    request;  
+                    request;
 
-                if(json.command != 'ping') {
-                    console.log('===================REQUEST===================');
-                    console.log(json); 
+                if (json.command != 'ping') {
+                    cnsl('===================REQUEST===================');
+                    cnsl(json);
                 }
-                          
+
                 options = {
-                    host: json.sessionKey,
-                    path: '/skvCore/WebEngine.php?json='+JSON.stringify(json)
+                    hostname: json.sessionKey,
+                    port: 443,
+                    path: '/skvCore/WebEngine.php?json=' + JSON.stringify(json),
+                    rejectUnauthorized: false
                 };
-               
-                request = http.request(options, function(response) {
+
+                request = https.request(options, function(response) {
                     var body = '';
                     response.on('data', function(d) {
                         body += d;
                     });
                     response.on('end', function() {
-                        if(body.indexOf('}{') > 0) {
-                            var tmp  = body.split('}{'),
+                        if (body.indexOf('}{') > 0) {
+                            var tmp = body.split('}{'),
                                 cnt = tmp.length,
                                 needed;
-                            for(var i = 0; i < cnt; i++) {
+                            for (var i = 0; i < cnt; i++) {
                                 needed = tmp[i];
-                                if(i !== 0) {
+                                if (i !== 0) {
                                     needed = '{' + needed;
                                 }
-                                if(i !== (cnt - 1)) {
+                                if (i !== (cnt - 1)) {
                                     needed = needed + '}';
                                 }
                                 socket.write(needed + '\0');
-                                if(json.command != 'ping') {
-                                    console.log('===================RESPONSE===================');
-                                    console.log(needed);
+                                if (json.command != 'ping') {
+                                    cnsl('===================RESPONSE===================');
+                                    cnsl(needed);
                                 }
                             }
-                        }
-                        else {
-                            if(json.command != 'ping') {
-                                console.log('===================RESPONSE===================');
-                                console.log(body);
+                        } else {
+                            if (json.command != 'ping') {
+                                cnsl('===================RESPONSE===================');
+                                cnsl(body);
                             }
                             socket.write(body + '\0');
                         }
@@ -63,19 +67,24 @@ server = net.createServer(function (socket) {
                 });
                 request.end();
             }
+        } catch (error) {
+        	cnsl('===================CATCH ERROR===================');
+            cnsl(error);
         }
-        catch (error) {
 
-        }
-        
-     });
- 
-     socket.on("timeout", function () {
+    });
+
+    socket.on("timeout", function() {
         socket.end();
-     });
- 
-     socket.on("close", function (had_error) {
+    });
+
+    socket.on("close", function(had_error) {
         socket.end();
-     });
+    });
+
+    socket.on("error", function(err) {
+        cnsl('===================SOCKET ERROR===================');
+        cnsl(err);
+    });
 });
 server.listen(PORT);

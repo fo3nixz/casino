@@ -140,6 +140,11 @@ trait BonusWorker {
 
     }
 
+    /**
+     * Добавляет вайлды, если выпала хоть одна выигрышная линия
+     *
+     * @param int $symbol
+     */
     public function setExpandWildIfLines($symbol) {
         $bonusData = array();
         $reelNumber = 0;
@@ -172,6 +177,12 @@ trait BonusWorker {
         }
     }
 
+    /**
+     * Получает бонус, специфический для игры Miss Red (IGT)
+     *
+     * @param array $report
+     * @return mixed
+     */
     public function getMissRedBonus($report) {
         // r - row count
         $wolfChange = false;
@@ -299,6 +310,12 @@ trait BonusWorker {
         return $report;
     }
 
+    /**
+     * Получает бонус, специфический для FreeSpin-ов игры Miss Red (IGT)
+     *
+     * @param array $report
+     * @return mixed
+     */
     public function getMissRedBonusFree($report) {
         $wilds = $this->getSymbolAnyCount('w01');
 
@@ -341,7 +358,9 @@ trait BonusWorker {
         return $report;
     }
 
-
+    /**
+     * Устанавливает вайлды, взависимости от уровня бонуса
+     */
     private function setKittyWaterBonus() {
         $r = $this->getSymbolAnyCount('w02');
         if($r['count'] > 0) {
@@ -364,6 +383,14 @@ trait BonusWorker {
         $this->setWilds($wilds);
     }
 
+    /**
+     * Устанавливает вайлды на барабаны в зависимости от входящих параметров
+     *
+     * @param array $wildsCount Массив возможного количества вайлдов
+     * @param array $wildsCountChance Массив шансов
+     * @param int $wildsExpansionChance Чистой параметр шанса 1 к *
+     * @param int $wildSymbol Числовой идентификатор символа
+     */
     private function setWildsExpansion($wildsCount, $wildsCountChance, $wildsExpansionChance, $wildSymbol) {
         $reelsCount = $this->getReelsCount() - 1;
         $rows = $this->rows - 1;
@@ -1051,7 +1078,12 @@ trait BonusWorker {
     }
 
 
-
+    /**
+     * Получение дополнительных выигрышных линий слота, не засисящих от последовательности барабанов
+     *
+     * @param int $symbol
+     * @return array
+     */
     public function getExpandLines($symbol) {
         $tmpReels = array();
 

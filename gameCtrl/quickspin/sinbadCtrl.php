@@ -483,6 +483,18 @@ class sinbadCtrl extends Ctrl {
     protected function checkLadderLevel($stickyCount) {
         $this->bonus['ladder']['ladderLevel'] += $stickyCount;
         $this->bonus['ladder']['bonusSpins'] = 0;
+
+        if($this->bonus['ladder']['ladderLevel'] > 2 && !$this->bonus['ladder']['l1PD']) {
+            $this->bonus['ladder']['level'] = 1;
+            $this->slot->setWilds(array(3,4));
+            $this->bonus['ladder']['l1PD'] = true;
+        }
+        if($this->bonus['ladder']['ladderLevel'] > 6 && !$this->bonus['ladder']['l2PD']) {
+            $this->bonus['ladder']['level'] = 2;
+            $this->bonus['ladder']['bonusSpins'] += 2;
+            $this->slot->setWilds(array(3,4,5));
+            $this->bonus['ladder']['l2PD'] = true;
+        }
         if($this->bonus['ladder']['ladderLevel'] > 10 && !$this->bonus['ladder']['l3PD']) {
             $this->bonus['ladder']['level'] = 3;
             $this->bonus['ladder']['bonusSpins'] += 2;
@@ -491,17 +503,8 @@ class sinbadCtrl extends Ctrl {
             $this->slot->setWilds(array(3,4,5,6));
             $this->bonus['ladder']['l3PD'] = true;
         }
-        elseif($this->bonus['ladder']['ladderLevel'] > 6 && !$this->bonus['ladder']['l2PD']) {
-            $this->bonus['ladder']['level'] = 2;
-            $this->bonus['ladder']['bonusSpins'] += 2;
-            $this->slot->setWilds(array(3,4,5));
-            $this->bonus['ladder']['l2PD'] = true;
-        }
-        elseif($this->bonus['ladder']['ladderLevel'] > 2 && !$this->bonus['ladder']['l1PD']) {
-            $this->bonus['ladder']['level'] = 1;
-            $this->slot->setWilds(array(3,4));
-            $this->bonus['ladder']['l1PD'] = true;
-        }
+
+
     }
 
     protected function getSnakeData($report) {

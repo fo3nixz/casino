@@ -217,7 +217,6 @@ class age_of_troyCtrl extends egtCtrl {
                 $_SESSION['state'] = 'FREE';
             }
             else {
-				$respin = true;
                 $report['scattersReport']['totalWin'] = 0;
             }
         }
@@ -370,6 +369,8 @@ class age_of_troyCtrl extends egtCtrl {
 
         $state = 'freespin';
         $balance = '';
+        $getBalance = '"balance": '.($this->getBalance() * 100 + $_SESSION['fsTotalWin']*100).',';
+
         if($_SESSION['fsLeft'] <= 0) {
             $state = 'idle';
             $balance = '"balance": '.($this->getBalance() * 100).',';
@@ -400,7 +401,7 @@ class age_of_troyCtrl extends egtCtrl {
 				'report' => $report,
 			);
 			$this->startPay();
-			$balance = '"balance": '.($this->getBalance() * 100).',';
+			$balance = $getBalance;
 		}
 
         $json = '{
@@ -409,6 +410,7 @@ class age_of_troyCtrl extends egtCtrl {
         "expand": [],
         "gambles": '.$_SESSION['gambles'].',
         "freespins": '.$bonusSpins.',
+        "freespinScatters":['.$this->gameParams->scatter[0].'],
         "jackpot": false,
         "gameCommand": "bet"
     },

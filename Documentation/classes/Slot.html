@@ -106,12 +106,12 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">0</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="../reports/markers.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
@@ -136,20 +136,23 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-798794369"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1007315027"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-798794369" class="accordion-body collapse in">
+            <div id="namespace-1007315027" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                     
                     <ul>
                                                                             <li class="trait"><a href="../classes/BonusWorker.html">BonusWorker</a></li>
                                                     <li class="trait"><a href="../classes/SymbolsWorker.html">SymbolsWorker</a></li>
-                                                                            <li class="class"><a href="../classes/Ctrl.html">Ctrl</a></li>
+                                                                            <li class="class"><a href="../classes/Api.html">Api</a></li>
+                                                    <li class="class"><a href="../classes/Ctrl.html">Ctrl</a></li>
                                                     <li class="class"><a href="../classes/Params.html">Params</a></li>
                                                     <li class="class"><a href="../classes/Reel.html">Reel</a></li>
+                                                    <li class="class"><a href="../classes/ReelWithReel.html">ReelWithReel</a></li>
                                                     <li class="class"><a href="../classes/Slot.html">Slot</a></li>
+                                                    <li class="class"><a href="../classes/SlotReel.html">SlotReel</a></li>
                                                     <li class="class"><a href="../classes/Ways.html">Ways</a></li>
                                                     <li class="class"><a href="../classes/WebEngine.html">WebEngine</a></li>
                                             </ul>
@@ -196,8 +199,17 @@
                                                                     <a href="../classes/SymbolsWorker.html#method_getReelSymbols" class="">getReelSymbols()</a><br />
                                                                     <a href="../classes/SymbolsWorker.html#method_getScattersCount" class="">getScattersCount()</a><br />
                                                                     <a href="../classes/SymbolsWorker.html#method_getSymbolAnyCount" class="">getSymbolAnyCount()</a><br />
+                                                                    <a href="../classes/SymbolsWorker.html#method_getCeilRowByOffset" class="">getCeilRowByOffset()</a><br />
+                                                                    <a href="../classes/SymbolsWorker.html#method_getOffsetByCeilRow" class="">getOffsetByCeilRow()</a><br />
+                                                                    <a href="../classes/SymbolsWorker.html#method_getSymbolByOffset" class="">getSymbolByOffset()</a><br />
+                                                                    <a href="../classes/SymbolsWorker.html#method_getReelOffsets" class="">getReelOffsets()</a><br />
+                                                                    <a href="../classes/SymbolsWorker.html#method_getOtherOffsetsByReel" class="">getOtherOffsetsByReel()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setExpandWildIfLines" class="">setExpandWildIfLines()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_getMissRedBonus" class="">getMissRedBonus()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_getMissRedBonusFree" class="">getMissRedBonusFree()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_setWildsOnPos" class="">setWildsOnPos()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_setReelsOffsets" class="">setReelsOffsets()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_getExpandLines" class="">getExpandLines()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_getFullLineBonus" class="">getFullLineBonus()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_startAvalanche" class="">startAvalanche()</a><br />
                                                                     <a href="../classes/Slot.html#method___construct" class="">__construct()</a><br />
@@ -206,27 +218,43 @@
                                                                     <a href="../classes/Slot.html#method_getWinLines" class="">getWinLines()</a><br />
                                                                     <a href="../classes/Slot.html#method_getWinSymbols" class="">getWinSymbols()</a><br />
                                                                     <a href="../classes/Slot.html#method_setReels" class="">setReels()</a><br />
+                                                                    <a href="../classes/Slot.html#method_getReelsCount" class="">getReelsCount()</a><br />
                                                                     <a href="../classes/Slot.html#method_createCustomReels" class="">createCustomReels()</a><br />
+                                                                    <a href="../classes/Slot.html#method_getReelsCreateArray" class="">getReelsCreateArray()</a><br />
+                                                                    <a href="../classes/Slot.html#method_setReelsCreate" class="">setReelsCreate()</a><br />
                                                                     <a href="../classes/Slot.html#method_setWilds" class="">setWilds()</a><br />
                                                                     <a href="../classes/Slot.html#method_setScatter" class="">setScatter()</a><br />
                                                                     <a href="../classes/Slot.html#method_spin" class="">spin()</a><br />
                                                                     <a href="../classes/Slot.html#method_getReport" class="">getReport()</a><br />
                                                                     <a href="../classes/Slot.html#method_resetSlotData" class="">resetSlotData()</a><br />
+                                                                    <a href="../classes/Slot.html#method_setDefaultReels" class="">setDefaultReels()</a><br />
                                                                     <a href="../classes/Slot.html#method_setBonus" class="">setBonus()</a><br />
                                                                     <a href="../classes/Slot.html#method_makeReport" class="">makeReport()</a><br />
+                                                                    <a href="../classes/Slot.html#method_getExtraLine" class="">getExtraLine()</a><br />
+                                                                    <a href="../classes/Slot.html#method_getAnyPosWinLines" class="">getAnyPosWinLines()</a><br />
                                                                     <a href="../classes/Slot.html#method_checkWinLinesPresent" class="">checkWinLinesPresent()</a><br />
                                                                     <a href="../classes/Slot.html#method_getOffsetsByLine" class="">getOffsetsByLine()</a><br />
                                                                     <a href="../classes/Slot.html#method_getReelOffset" class="">getReelOffset()</a><br />
                                                                     <a href="../classes/Slot.html#method_getOffsets" class="">getOffsets()</a><br />
                                                                     <a href="../classes/Slot.html#method_getReels" class="">getReels()</a><br />
+                                                                    <a href="../classes/Slot.html#method_getRows" class="">getRows()</a><br />
                                                             </section>
                             <section class="span4">
+                                                                    <a href="../classes/Slot.html#property_symbols" class="">$symbols</a><br />
+                                                                    <a href="../classes/Slot.html#property_reels" class="">$reels</a><br />
+                                                                    <a href="../classes/Slot.html#property_lines" class="">$lines</a><br />
+                                                                    <a href="../classes/Slot.html#property_wins" class="">$wins</a><br />
+                                                                    <a href="../classes/Slot.html#property_wild" class="">$wild</a><br />
+                                                                    <a href="../classes/Slot.html#property_scatter" class="">$scatter</a><br />
+                                                                    <a href="../classes/Slot.html#property_winLines" class="">$winLines</a><br />
                                                                     <a href="../classes/Slot.html#property_drawID" class="">$drawID</a><br />
                                                                     <a href="../classes/Slot.html#property_rows" class="">$rows</a><br />
                                                                     <a href="../classes/Slot.html#property_bonusWildsMultiple" class="">$bonusWildsMultiple</a><br />
                                                                     <a href="../classes/Slot.html#property_bonusIterateCount" class="">$bonusIterateCount</a><br />
                                                                     <a href="../classes/Slot.html#property_double" class="">$double</a><br />
                                                                     <a href="../classes/Slot.html#property_betOnLine" class="">$betOnLine</a><br />
+                                                                    <a href="../classes/Slot.html#property_startRows" class="">$startRows</a><br />
+                                                                    <a href="../classes/Slot.html#property_startFullRows" class="">$startFullRows</a><br />
                                                             </section>
                             <section class="span4">
                                                                     <em>No constants found</em>
@@ -234,7 +262,7 @@
                         </section>
                         <section class="row-fluid protected">
                             <section class="span4">
-                                                                    <em>No protected methods found</em>
+                                                                    <a href="../classes/Slot.html#method_getRandParam" class="">getRandParam()</a><br />
                                                             </section>
                             <section class="span4">
                                                                     <em>No protected properties found</em>
@@ -247,6 +275,8 @@
                             <section class="span4">
                                                                     <a href="../classes/BonusWorker.html#method_checkBonus" class="">checkBonus()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_executeBonus" class="">executeBonus()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setKittyWaterBonus" class="">setKittyWaterBonus()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setWildsExpansion" class="">setWildsExpansion()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_setMultipleByLevel" class="">setMultipleByLevel()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_setWildsByLevel" class="">setWildsByLevel()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_setMultipleBySymbolCount" class="">setMultipleBySymbolCount()</a><br />
@@ -262,31 +292,31 @@
                                                                     <a href="../classes/BonusWorker.html#method_setWildReelsOfSymbol" class="">setWildReelsOfSymbol()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_setWildsIf" class="">setWildsIf()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_setWildReel" class="">setWildReel()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setFullWildReel" class="">setFullWildReel()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_setRandomWild" class="">setRandomWild()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_setMultipleWithWild" class="">setMultipleWithWild()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_setWildReels" class="">setWildReels()</a><br />
+                                                                    <a href="../classes/BonusWorker.html#method_setFullWildReels" class="">setFullWildReels()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_checkExpandWild" class="">checkExpandWild()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_setScatters" class="">setScatters()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_setWildOnReels" class="">setWildOnReels()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_setStepWild" class="">setStepWild()</a><br />
                                                                     <a href="../classes/BonusWorker.html#method_odinRavens" class="">odinRavens()</a><br />
                                                                     <a href="../classes/Slot.html#method_getLeft" class="">getLeft()</a><br />
+                                                                    <a href="../classes/Slot.html#method_getRight" class="">getRight()</a><br />
+                                                                    <a href="../classes/Slot.html#method_getLeftRight" class="">getLeftRight()</a><br />
                                                                     <a href="../classes/Slot.html#method_get243" class="">get243()</a><br />
                                                                     <a href="../classes/Slot.html#method_getWays" class="">getWays()</a><br />
                                                                     <a href="../classes/Slot.html#method_getWaysRight" class="">getWaysRight()</a><br />
+                                                                    <a href="../classes/Slot.html#method_getWaysMiddle" class="">getWaysMiddle()</a><br />
                                                                     <a href="../classes/Slot.html#method_getWaysLeftRight" class="">getWaysLeftRight()</a><br />
+                                                                    <a href="../classes/Slot.html#method_getWaysLeftRightMiddle" class="">getWaysLeftRightMiddle()</a><br />
+                                                                    <a href="../classes/Slot.html#method_getLineWays" class="">getLineWays()</a><br />
                                                                     <a href="../classes/Slot.html#method_getLineSymbols" class="">getLineSymbols()</a><br />
-                                                                    <a href="../classes/Slot.html#method_getRows" class="">getRows()</a><br />
                                                                     <a href="../classes/Slot.html#method_getFullRows" class="">getFullRows()</a><br />
                                                             </section>
                             <section class="span4">
-                                                                    <a href="../classes/Slot.html#property_symbols" class="">$symbols</a><br />
-                                                                    <a href="../classes/Slot.html#property_reels" class="">$reels</a><br />
-                                                                    <a href="../classes/Slot.html#property_lines" class="">$lines</a><br />
-                                                                    <a href="../classes/Slot.html#property_wins" class="">$wins</a><br />
                                                                     <a href="../classes/Slot.html#property_totalMultiple" class="">$totalMultiple</a><br />
-                                                                    <a href="../classes/Slot.html#property_wild" class="">$wild</a><br />
-                                                                    <a href="../classes/Slot.html#property_scatter" class="">$scatter</a><br />
                                                                     <a href="../classes/Slot.html#property_report" class="">$report</a><br />
                                                                     <a href="../classes/Slot.html#property_bonusData" class="">$bonusData</a><br />
                                                                     <a href="../classes/Slot.html#property_step" class="">$step</a><br />
@@ -339,6 +369,178 @@
                 </div>
                 <aside class="span4 detailsbar"></aside>
             </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_symbols" name="property_symbols" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$symbols</h3>
+                <pre class="signature">$symbols : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; Ассотиативный массив буквенного и числового значения символа                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_reels" name="property_reels" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$reels</h3>
+                <pre class="signature">$reels : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; Содержит массив барабанов слота. Каждый элемент - экземпляр Reel                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_lines" name="property_lines" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$lines</h3>
+                <pre class="signature">$lines : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; Массив выигрышных линий.
+Количество линий в массиве зависит от того, сколько линий выбрано в игре.                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_wins" name="property_wins" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$wins</h3>
+                <pre class="signature">$wins : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; Массив выплат.
+symbol - буквенной идентификатор символа
+count - количество символов
+multiplier - множитель ставки на линию                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_wild" name="property_wild" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$wild</h3>
+                <pre class="signature">$wild : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; Массив вайлдов слота. Может быть как 1 элемент(чаще всего), так и несколько                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_scatter" name="property_scatter" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$scatter</h3>
+                <pre class="signature">$scatter : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; Массив скаттеров слота. Может быть как 1 элемент(чаще всего), так и несколько                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_winLines" name="property_winLines" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$winLines</h3>
+                <pre class="signature">$winLines : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; Список выигрышных линий слота за спин                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
@@ -484,107 +686,55 @@
         </aside>
     </div>
 
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_startRows" name="property_startRows" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$startRows</h3>
+                <pre class="signature">$startRows : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; Стартовые строки слота до применения бонусов                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_startFullRows" name="property_startFullRows" class="anchor"></a>
+            <article class="property">
+                <h3 class="public ">$startFullRows</h3>
+                <pre class="signature">$startFullRows : array</pre>
+                <p><em></em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                &mdash; Стартовые строки слота до применения бонусов в расширенном виде(+1 строка снизу и сверху)                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
                                                                     <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="property_symbols" name="property_symbols" class="anchor"></a>
-            <article class="property">
-                <h3 class="private ">$symbols</h3>
-                <pre class="signature">$symbols : array</pre>
-                <p><em></em></p>
-                
-
-                                <h4>Type</h4>
-                array
-                &mdash; Ассотиативный массив буквенного и числового значения символа                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="property_reels" name="property_reels" class="anchor"></a>
-            <article class="property">
-                <h3 class="private ">$reels</h3>
-                <pre class="signature">$reels : array</pre>
-                <p><em></em></p>
-                
-
-                                <h4>Type</h4>
-                array
-                &mdash; Содержит массив барабанов слота. Каждый элемент - экземпляр Reel                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="property_lines" name="property_lines" class="anchor"></a>
-            <article class="property">
-                <h3 class="private ">$lines</h3>
-                <pre class="signature">$lines : array</pre>
-                <p><em></em></p>
-                
-
-                                <h4>Type</h4>
-                array
-                &mdash; Массив выигрышных линий.
-Количество линий в массиве зависит от того, сколько линий выбрано в игре.                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="property_wins" name="property_wins" class="anchor"></a>
-            <article class="property">
-                <h3 class="private ">$wins</h3>
-                <pre class="signature">$wins : array</pre>
-                <p><em></em></p>
-                
-
-                                <h4>Type</h4>
-                array
-                &mdash; Массив выплат.
-symbol - буквенной идентификатор символа
-count - количество символов
-multiplier - множитель ставки на линию                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
         <div class="span8 content class">
             <a id="property_totalMultiple" name="property_totalMultiple" class="anchor"></a>
             <article class="property">
@@ -596,54 +746,6 @@ multiplier - множитель ставки на линию                    
                                 <h4>Type</h4>
                 integer
                 &mdash; Суммарный множитель после спина (учитывая бонусы спина)                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="property_wild" name="property_wild" class="anchor"></a>
-            <article class="property">
-                <h3 class="private ">$wild</h3>
-                <pre class="signature">$wild : array</pre>
-                <p><em></em></p>
-                
-
-                                <h4>Type</h4>
-                array
-                &mdash; Массив вайлдов слота. Может быть как 1 элемент(чаще всего), так и несколько                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="property_scatter" name="property_scatter" class="anchor"></a>
-            <article class="property">
-                <h3 class="private ">$scatter</h3>
-                <pre class="signature">$scatter : array</pre>
-                <p><em></em></p>
-                
-
-                                <h4>Type</h4>
-                array
-                &mdash; Массив скаттеров слота. Может быть как 1 элемент(чаще всего), так и несколько                            </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
@@ -1093,6 +1195,318 @@ offsets - Позиции символа на барабанах</p>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
+            <a id="method_getCeilRowByOffset" name="method_getCeilRowByOffset" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getCeilRowByOffset()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getCeilRowByOffset(  <span class="argument">$offset</span>) : array</pre>
+                <p><em>Получение колонки\строки исходя из оффсета символа</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$offset </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/SymbolsWorker.html"><div class="path-wrapper">\SymbolsWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getOffsetByCeilRow" name="method_getOffsetByCeilRow" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getOffsetByCeilRow()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getOffsetByCeilRow(integer  <span class="argument">$ceil</span>, integer  <span class="argument">$row</span>) : mixed</pre>
+                <p><em>Получение оффсета исходя из положения символа(колонка, строка)</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$ceil </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$row </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/SymbolsWorker.html"><div class="path-wrapper">\SymbolsWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getSymbolByOffset" name="method_getSymbolByOffset" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getSymbolByOffset()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getSymbolByOffset(  <span class="argument">$offset</span>) : mixed</pre>
+                <p><em>Получение символа слота(нужный барабан, нужная строка барабана), исходя из оффсета символа</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$offset </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/SymbolsWorker.html"><div class="path-wrapper">\SymbolsWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getReelOffsets" name="method_getReelOffsets" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getReelOffsets()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getReelOffsets(  <span class="argument">$reel</span>) : array</pre>
+                <p><em>Получение всех смещений барабана</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$reel </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/SymbolsWorker.html"><div class="path-wrapper">\SymbolsWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getOtherOffsetsByReel" name="method_getOtherOffsetsByReel" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getOtherOffsetsByReel()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getOtherOffsetsByReel(array  <span class="argument">$offsets</span>, array  <span class="argument">$reel</span>) : array</pre>
+                <p><em>Получение разницы смещений</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$offsets </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$reel </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/SymbolsWorker.html"><div class="path-wrapper">\SymbolsWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setExpandWildIfLines" name="method_setExpandWildIfLines" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setExpandWildIfLines()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setExpandWildIfLines(integer  <span class="argument">$symbol</span>) </pre>
+                <p><em>Добавляет вайлды, если выпала хоть одна выигрышная линия</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$symbol </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getMissRedBonus" name="method_getMissRedBonus" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getMissRedBonus()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getMissRedBonus(array  <span class="argument">$report</span>) : mixed</pre>
+                <p><em>Получает бонус, специфический для игры Miss Red (IGT)</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$report </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getMissRedBonusFree" name="method_getMissRedBonusFree" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getMissRedBonusFree()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getMissRedBonusFree(array  <span class="argument">$report</span>) : mixed</pre>
+                <p><em>Получает бонус, специфический для FreeSpin-ов игры Miss Red (IGT)</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$report </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
             <a id="method_setWildsOnPos" name="method_setWildsOnPos" class="anchor"></a>
             <article class="method">
                 <h3 class="public ">setWildsOnPos()</h3>
@@ -1153,6 +1567,44 @@ offsets - Позиции символа на барабанах</p>
                 
                 
                 				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getExpandLines" name="method_getExpandLines" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getExpandLines()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getExpandLines(integer  <span class="argument">$symbol</span>) : array</pre>
+                <p><em>Получение дополнительных выигрышных линий слота, не засисящих от последовательности барабанов</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$symbol </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
                             </article>
         </div>
         <aside class="span4 detailsbar">
@@ -1496,6 +1948,34 @@ primaryLine - ID последней выигрышной линии.</p>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
+            <a id="method_getReelsCount" name="method_getReelsCount" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getReelsCount()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getReelsCount() : integer</pre>
+                <p><em>Получение количество барабанов слота</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    integer
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
             <a id="method_createCustomReels" name="method_createCustomReels" class="anchor"></a>
             <article class="method">
                 <h3 class="public ">createCustomReels()</h3>
@@ -1515,6 +1995,68 @@ primaryLine - ID последней выигрышной линии.</p>
                                 <td>array</td>
                                 <td>$config </td>
                                 <td><p>Массив, содержащий количество видимых символов для каждого барабана</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getReelsCreateArray" name="method_getReelsCreateArray" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getReelsCreateArray()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getReelsCreateArray() : array</pre>
+                <p><em>Получает массив, в котором содержатся данные для восстановление состояния барабанов</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setReelsCreate" name="method_setReelsCreate" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setReelsCreate()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setReelsCreate(array  <span class="argument">$config</span>) </pre>
+                <p><em>Восстанавливает состояние барабанов при обвалах и т.д</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$config </td>
+                                <td><p>Массив данных(состояние барабанов) из метода getReelsCreateArray</p></td>
                             </tr>
                                             </table>
                 
@@ -1698,6 +2240,32 @@ primaryLine - ID последней выигрышной линии.</p>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
+            <a id="method_setDefaultReels" name="method_setDefaultReels" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setDefaultReels()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setDefaultReels() </pre>
+                <p><em>Установка дефолтных (нулевых) раскладок барабанов для слота. Нужно при респине.</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
             <a id="method_setBonus" name="method_setBonus" class="anchor"></a>
             <article class="method">
                 <h3 class="public ">setBonus()</h3>
@@ -1740,6 +2308,79 @@ primaryLine - ID последней выигрышной линии.</p>
                 <p><em>Создание репорта спина</em></p>
                 
 
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getExtraLine" name="method_getExtraLine" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getExtraLine()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getExtraLine(  <span class="argument">$config</span>) : array</pre>
+                <p><em>Получение дополнительных линий по конфигу</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$config </td>
+                                <td><p>Конфиг</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                            &mdash; <p>Список выигрышных линий в такой же формате, как и в report</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getAnyPosWinLines" name="method_getAnyPosWinLines" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getAnyPosWinLines()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getAnyPosWinLines(integer  <span class="argument">$symbol</span>) : array</pre>
+                <p><em>Получение выигрышных линий слота независимо от того, находятся рядом барабаны или нет</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$symbol </td>
+                                <td></td>
+                            </tr>
+                                            </table>
                 
                 
                                     <h4>Returns</h4>
@@ -1919,7 +2560,71 @@ primaryLine - ID последней выигрышной линии.</p>
         </aside>
     </div>
 
-                                                                    <div class="row-fluid">
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getRows" name="method_getRows" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getRows()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getRows() : array</pre>
+                <p><em>Получение видимых символов барабанов</em></p>
+                <p>Массив формируется как для строк слота, а не барабанов</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getRandParam" name="method_getRandParam" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">getRandParam()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getRandParam(array  <span class="argument">$param</span>) : mixed</pre>
+                <p><em>Получение рандомного элемента массива</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$param </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    mixed
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
         <div class="span8 content class">
             <a id="method_checkBonus" name="method_checkBonus" class="anchor"></a>
             <article class="method">
@@ -1964,6 +2669,85 @@ primaryLine - ID последней выигрышной линии.</p>
                                 <td>array</td>
                                 <td>$bonus </td>
                                 <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setKittyWaterBonus" name="method_setKittyWaterBonus" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setKittyWaterBonus()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setKittyWaterBonus() </pre>
+                <p><em>Устанавливает вайлды, взависимости от уровня бонуса</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setWildsExpansion" name="method_setWildsExpansion" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setWildsExpansion()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setWildsExpansion(array  <span class="argument">$wildsCount</span>, array  <span class="argument">$wildsCountChance</span>, integer  <span class="argument">$wildsExpansionChance</span>, integer  <span class="argument">$wildSymbol</span>) </pre>
+                <p><em>Устанавливает вайлды на барабаны в зависимости от входящих параметров</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$wildsCount </td>
+                                <td><p>Массив возможного количества вайлдов</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$wildsCountChance </td>
+                                <td><p>Массив шансов</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$wildsExpansionChance </td>
+                                <td><p>Чистой параметр шанса 1 к *</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$wildSymbol </td>
+                                <td><p>Числовой идентификатор символа</p></td>
                             </tr>
                                             </table>
                 
@@ -2613,6 +3397,47 @@ primaryLine - ID последней выигрышной линии.</p>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
+            <a id="method_setFullWildReel" name="method_setFullWildReel" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setFullWildReel()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setFullWildReel(integer  <span class="argument">$reelNumber</span>, integer  <span class="argument">$wild</span>) </pre>
+                <p><em>Устанавливает барабан(все его символы) в wild-барабан</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$reelNumber </td>
+                                <td><p>Номер барабана</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>integer</td>
+                                <td>$wild </td>
+                                <td><p>Числовой идентификатор вайлда</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
             <a id="method_setRandomWild" name="method_setRandomWild" class="anchor"></a>
             <article class="method">
                 <h3 class="private ">setRandomWild()</h3>
@@ -2696,6 +3521,48 @@ primaryLine - ID последней выигрышной линии.</p>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">setWildReels(array  <span class="argument">$reels</span>, boolean  <span class="argument">$setWild = false</span>) </pre>
                 <p><em>Установка барабанов в wild-барабаны</em></p>
+                <p>Если передан $setWild, то этот символ будет использоваться как Wild
+Стандартно используется нулевой символ массива $this-&gt;wild</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$reels </td>
+                                <td><p>Массив номеров барабанов(начинается с 0), которые нужно сделать wild-барабанами</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$setWild </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/BonusWorker.html"><div class="path-wrapper">\BonusWorker</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setFullWildReels" name="method_setFullWildReels" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">setFullWildReels()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setFullWildReels(array  <span class="argument">$reels</span>, boolean  <span class="argument">$setWild = false</span>) </pre>
+                <p><em>Установка барабанов(всех символов, не только видимых) в wild-барабаны</em></p>
                 <p>Если передан $setWild, то этот символ будет использоваться как Wild
 Стандартно используется нулевой символ массива $this-&gt;wild</p>
 
@@ -2961,6 +3828,78 @@ primaryLine - ID последней выигрышной линии.</p>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
+            <a id="method_getRight" name="method_getRight" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">getRight()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getRight(array  <span class="argument">$symbol</span>) : array</pre>
+                <p><em>Получаем список для каждого символа по каждой линии справо налево</em></p>
+                <p>Возвращает массив, содержащий описание линий, на которых символов &gt;= minWinCount</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$symbol </td>
+                                <td><p>Массив числовых идентификаторов символа</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getLeftRight" name="method_getLeftRight" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">getLeftRight()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getLeftRight(array  <span class="argument">$symbol</span>) : array</pre>
+                <p><em>Получение Left to Right и Right to Left линий</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$symbol </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
             <a id="method_get243" name="method_get243" class="anchor"></a>
             <article class="method">
                 <h3 class="private ">get243()</h3>
@@ -3069,6 +4008,42 @@ primaryLine - ID последней выигрышной линии.</p>
 
                                     <div class="row-fluid">
         <div class="span8 content class">
+            <a id="method_getWaysMiddle" name="method_getWaysMiddle" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">getWaysMiddle()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getWaysMiddle(array  <span class="argument">$symbol</span>) : array</pre>
+                <p><em>Получение выигрышных путей слота по средним барабанам(Например, 2,3,4 из 1-5 барабана)</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$symbol </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
             <a id="method_getWaysLeftRight" name="method_getWaysLeftRight" class="anchor"></a>
             <article class="method">
                 <h3 class="private ">getWaysLeftRight()</h3>
@@ -3083,6 +4058,79 @@ primaryLine - ID последней выигрышной линии.</p>
                                 <td>array</td>
                                 <td>$symbol </td>
                                 <td><p>Массив числовых идентификаторов символа</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getWaysLeftRightMiddle" name="method_getWaysLeftRightMiddle" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">getWaysLeftRightMiddle()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getWaysLeftRightMiddle(array  <span class="argument">$symbol</span>) : array</pre>
+                <p><em>Получение центральных путей слева направо</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$symbol </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getLineWays" name="method_getLineWays" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">getLineWays()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getLineWays(array  <span class="argument">$symbol</span>) : array</pre>
+                <p><em>Получение линий Left to Right + путей Left to Right
+Используется в играх, где за дополнительную ставку на линию включается поиск пути</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$symbol </td>
+                                <td></td>
                             </tr>
                                             </table>
                 
@@ -3121,34 +4169,6 @@ primaryLine - ID последней выигрышной линии.</p>
                                 <td><p>Номер выигрышной линии</p></td>
                             </tr>
                                             </table>
-                
-                
-                                    <h4>Returns</h4>
-                    array
-                                    				
-                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                                                            <dl>
-                                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="method_getRows" name="method_getRows" class="anchor"></a>
-            <article class="method">
-                <h3 class="private ">getRows()</h3>
-                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">getRows() : array</pre>
-                <p><em>Получение видимых символов барабанов</em></p>
-                <p>Массив формируется как для строк слота, а не барабанов</p>
-
                 
                 
                                     <h4>Returns</h4>
@@ -3244,7 +4264,7 @@ primaryLine - ID последней выигрышной линии.</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on June 24th, 2015 at 20:49.
+                    on November 17th, 2016 at 08:40.
                 </section>
             </section>
         </section>

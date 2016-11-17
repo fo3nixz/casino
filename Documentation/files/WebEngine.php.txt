@@ -9,11 +9,17 @@
  */
 
 /* DELETE */
-if($_SERVER['HTTP_HOST'] == 'localhost') {
-    session_start();
+if($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == '134.249.187.32') {
+    if(isset($_GET['sessionID'])) {
+        session_id($_GET['sessionID']);
+        session_start();
+    }
+    else {
+        session_start();
+    }
     require_once 'api.php';
-
 }
+
 /* DELETE */
 
 require_once 'slot_funcs.php';
@@ -26,6 +32,7 @@ require_once 'Reel.php';
 require_once 'Ctrl.php';
 require_once 'Params.php';
 require_once 'Ways.php';
+
 $_SESSION['lastRequestTime'] = time();
 
 /**
@@ -49,35 +56,42 @@ class WebEngine {
     public static function api() {
         return self::$api;
     }
+
     /**
+     * WebEngine constructor.
      * Инициализация обработчика. Проверяем, есть ли настройки игры.
      * Если есть - запускает обработку запроса флешки.
+     *
+     * @param object $api
      */
-    public function __construct() {
-        global $api;
+    public function __construct($api) {
         self::$api = &$api;
-        $game = $api->gameSession->game->string_id;
+        $game = $api->getGameStringId();
 
         $ctrlName = $game.'Ctrl';
         $paramsName = $game.'Params';
-        if(file_exists(__DIR__.'/gameParams/'.$api->sectionId.'/'.$paramsName.'.php') && file_exists(__DIR__.'/gameCtrl/'.$api->sectionId.'/'.$game.'Ctrl.php')) {
-            include_once 'gameParams/'.$api->sectionId.'/'.$paramsName.'.php';
-            include_once 'gameCtrl/'.$api->sectionId.'/'.$ctrlName.'.php';
+        if(file_exists(__DIR__.'/gameParams/'.$api->getGameSectionStringId().'/'.$paramsName.'.php') && file_exists(__DIR__.'/gameCtrl/'.$api->getGameSectionStringId().'/'.$game.'Ctrl.php')) {
+            include_once 'gameParams/'.$api->getGameSectionStringId().'/'.$paramsName.'.php';
+            include_once 'gameCtrl/'.$api->getGameSectionStringId().'/'.$ctrlName.'.php';
 
-            $params = new $paramsName($api->gameSession->create_time);
+            $params = new $paramsName(crc32($api->sessionStringId));
 
-            // Устанавливаем параметры, загруженные из базы
-            if(!empty( $api->gameParams)) {
-                foreach($api->gameParams as $key=>$value) {
-                    $params->$key = $value;
-                }
-            }
             // Устанавливаем конфиг, загруженный из базы
-            if(!empty($api->config)) {
-                foreach($api->config as $key=>$value) {
+            $config = $api->getConfigVars();
+            if(!empty($config)) {
+                foreach($config as $key=>$value) {
                     $params->$key = $value;
                 }
             }
+
+            $gameParams = $api->getLaunchParams();
+            // Устанавливаем параметры, загруженные из базы
+            if(!empty($gameParams)) {
+                foreach($gameParams as $key=>$value) {
+                    $params->$key = $value;
+                }
+            }
+
             $params->createBetConfig();
 
             $ctrl = new $ctrlName($params);
@@ -95,7 +109,14 @@ class WebEngine {
     }
 }
 
-$WE = new WebEngine();
+$WE = new WebEngine($api);
+
+/*
+$json = json_encode($_SESSION);
+$f = fopen('count', 'ab');
+fwrite($f, strlen($json).PHP_EOL);
+fclose($f);
+*/
 
 ?>
 
