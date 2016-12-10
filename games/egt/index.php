@@ -4,6 +4,7 @@
 	$c = explode('/', $_SERVER['REQUEST_URI']);
 	array_pop($c);
 	$game = end($c);
+	if($game !== 'egt') {
 ?>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
@@ -49,3 +50,15 @@
     <object type="application/x-shockwave-flash" id="GamePlatform" data="GamePlatform.swf?ts=1440967567933" width="100%" height="100%"><param name="menu" value="false"><param name="allowFullscreen" value="true"><param name="allowScriptAccess" value="always"><param name="bgcolor" value="#000000"><param name="allowFullScreenInteractive" value="true"><param name="flashvars" value="tcpHost=93.76.48.30&amp;tcpPort=1128&amp;sessionKey=<?=$game?>|||egt|||<?=session_id()?>&amp;lang=en&amp;content=assets/content.xml&amp;gameIdentificationNumber=813"></object>
 </body>
 </html>
+
+<? } 
+
+else {
+	$z = scandir(__DIR__);
+    foreach($z as $l) {
+    	if(strpos($l, '.') == false && strlen($l) > 2) {
+    		echo '<a href="http://localhost/core/games/egt/'.$l.'">'.$l.'</a><br>';
+    	}
+    }	
+} 
+?>

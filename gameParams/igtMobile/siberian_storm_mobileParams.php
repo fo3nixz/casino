@@ -1,4 +1,3 @@
-
 <?
 
 class siberian_storm_mobileParams extends Params {

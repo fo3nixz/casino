@@ -13,7 +13,7 @@ class versailles_goldCtrl extends egtCtrl {
         $json = '{
     "playerName": "igambler1515",
     "balance": '.$balance.',
-    "currency": "'.$this->gameParams->curiso.'",
+    "currency": "EUR",
     "languages": ["en","ru"],
     "groups": ["all"],
     "showRtp": false,

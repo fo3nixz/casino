@@ -576,18 +576,6 @@ class IGTCtrl extends Ctrl {
     }
 
 	protected function getBetPattern() {
-		/*
-		$config = $this->gameParams->denominations;
-
-		$xml = '<BetInfo max="'.max($config).'" min="'.min($config).'">';
-		foreach($config as $d) {
-			$xml .= '<Step>'.$d.'</Step>';
-		}
-		$xml .= '</BetInfo>';
-
-		return $xml;
-		*/
-
 		return $this->getBetInfo();
 	}
 
@@ -606,9 +594,9 @@ class IGTCtrl extends Ctrl {
 			$d *= $multiple;
 		}
 
-        $xml = '<BetInfo max="'.end($config).'" min="'.$config[0].'">';
-        foreach($config as $d) {
-            $xml .= '<Step>'.$d.'</Step>';
+        $xml = '<BetInfo max="'.$config[count($config)-1].'" min="'.$config[0].'">';
+        foreach($config as $m) {
+            $xml .= '<Step>'.$m.'</Step>';
         }
 
         $xml .= '</BetInfo>';
