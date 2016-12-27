@@ -105,6 +105,18 @@ class Params {
     public $respinMaxCount = 100;
 
     /**
+     * Шанс выпадения каждого уровня джекпота
+     *
+     * @var array
+     */
+    public $jpChances = array(
+        'level1' => 50,
+        'level2' => 40,
+        'level3' => 30,
+        'level4' => 20,
+    );
+
+    /**
      * Создание параметров игры и установка текущего ID игры
      *
      * @param int $gameID Номер игры
@@ -154,12 +166,18 @@ class Params {
             $this->denominations = explode(',', $this->denominations);
         }
 
+        $tmp = [];
+        foreach($this->denominations as $d) {
+            $tmp[] = floatval($d);
+        }
+        $this->denominations = $tmp;
+
 		$this->curiso = $this->currency;
 		$this->currency = getCurrencyChar($this->curiso);
 		$this->default_coinvalue = $this->denominations[0];
 
         $this->betConfig['minBet'] = $this->denominations[0];
-        $this->betConfig['maxBet'] = end($this->denominations) * $winLinesCount;
+        $this->betConfig['maxBet'] = end($this->denominations) * $winLinesCount * 10;
         $this->betConfig['defaultBet'] = $this->default_coinvalue;
         $this->betConfig['currency'] = $this->curiso;
         $this->betConfig['currencyPrefix'] = $this->currency;

@@ -38,7 +38,7 @@ class dragon_reelsParams extends Params {
 
     public $reelConfig = array(3,3,3,3,3);
 
-    public $jackpotEnable = false;
+    public $jackpotEnable = true;
 
     public $symbols = array(
         // Мужик
@@ -121,7 +121,7 @@ class dragon_reelsParams extends Params {
 	public $defaultCoinsCount = 25;
 
     // СТРОГО 5 ЗНАЧЕНИЙ!!!
-    public $denominations = array(0.01, 0.02, 0.05, 0.1, 0.2);
+    public $denominations = array(0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5);
     public $lang = 'en';
     public $flash_scale_exactfit = 1;
 

@@ -25,7 +25,7 @@ class dragon_reelsCtrl extends egtCtrl {
             "recovery": "norecovery",
             "gameName": "Dragon Reels",
             "featured": false,
-            "mlmJackpot": false,
+            "mlmJackpot": '.(($this->gameParams->jackpotEnable)?'true':'false').',
             "totalBet": 0,
             "groups": [{
                 "name": "all",
@@ -42,6 +42,10 @@ class dragon_reelsCtrl extends egtCtrl {
 }';
 
         $this->out($json);
+        if($this->gameParams->jackpotEnable) {
+            $this->startJackpotAmount();
+        }
+
     }
 
     public function startSubscribe($request) {
@@ -49,15 +53,16 @@ class dragon_reelsCtrl extends egtCtrl {
 
         $this->slot = new Slot($this->gameParams, 1, 1);
 
-        if($_SESSION['state'] == 'SPIN') {
-            $state = 'idle';
-            $winAmount = 0;
-            $fsUsed = 0;
-            $gamblesUsed = 0;
-            $totalFs = 0;
-            $reelsLinesScatters = $this->getRandomDisplay().'
+        $gamblesUsed = 0;
+        $winAmount = 0;
+        $fsUsed = 0;
+        $totalFs = 0;
+        $reelsLinesScatters = $this->getRandomDisplay().'
             "lines": [],
             "scatters": [],';
+        if($_SESSION['state'] == 'SPIN') {
+            $state = 'idle';
+
         }
         elseif($_SESSION['state'] == 'FREE') {
             $state = 'freespin';
@@ -80,6 +85,21 @@ class dragon_reelsCtrl extends egtCtrl {
             $reelsLinesScatters = $_SESSION['reels'].$this->getWinLinesData($report).$this->getScatters($report, $this->gameParams->scatter[0]);
         }
 
+        $jp = '';
+        $jps = '';
+        if($this->gameParams->jackpotEnable) {
+            $jp = ',
+            "jackpotState": {'.$this->getJackpotState().'}';
+
+            if($_SESSION['state'] == 'JACKPOT') {
+                $jps = ',
+            "jackpotGameState": ['.implode(',', $_SESSION['jackpotGameState']).']';
+                $state = 'jackpot';
+            }
+
+
+        }
+
         $json = '{
     "complex": {
         "currentState": {
@@ -99,8 +119,8 @@ class dragon_reelsCtrl extends egtCtrl {
             "expand": [],
             "gambles": '.$_SESSION['gambles'].',
             "freespins": '.$totalFs.',
-            "jackpot": false
-        }
+            "jackpot": false'.$jps.'
+        }'.$jp.'
     },
     "gameIdentificationNumber": '.$this->gameIdentificationNumber.',
     "gameNumber": 1272704999439,
@@ -114,6 +134,10 @@ class dragon_reelsCtrl extends egtCtrl {
 
 
         $this->out($json);
+
+        if($this->gameParams->jackpotEnable) {
+            $this->startJackpotAmount();
+        }
     }
 
     protected function startSpin($request) {

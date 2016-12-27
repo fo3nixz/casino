@@ -48,6 +48,12 @@ class IGTCtrl extends Ctrl {
         }
     }
 
+    protected function updateParams() {
+        if($this->gameParams->curiso == '' || $this->gameParams->curiso == 'NAN') {
+            $this->gameParams->curiso = 'FPY';
+        }
+    }
+
     protected function getHighlight($winLines, $name = 'BaseGame.Lines', $inc = 0, $type = '') {
         $baseType = $type;
         $reelsCount = $this->slot->getReelsCount() - 1;

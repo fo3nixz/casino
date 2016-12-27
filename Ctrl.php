@@ -99,9 +99,18 @@ class Ctrl {
         $this->request = $this->getRequest();
         $this->gameParams = $params;
 
+        $this->updateParams();
+
         //$this->respinMaxCount = $this->gameParams->respinMaxCount;
 
         $this->processRequest($this->request);
+    }
+
+    /**
+     * Устанавливаем нужные параметры для раздела исходя из начальных
+     */
+    protected function updateParams() {
+
     }
 
     /**
@@ -253,6 +262,10 @@ action: ".$type);
 	protected function startGamblePay($gambleWin) {
 		game_ctrl(0, $gambleWin * 100, 0, 'double');
 	}
+
+	protected function startPayJackpot($jackpotWin, $level) {
+        game_ctrl(0, 0, 0, 'jackpot', $level);
+    }
 
     /**
      * Обработка запроса

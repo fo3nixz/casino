@@ -42,10 +42,19 @@ class egtCtrl extends Ctrl {
                 if($request->bet->gameCommand == 'gamble') {
                     $this->startGamble($request);
                 }
+                if($request->bet->gameCommand == 'jackpot') {
+                    $this->startJackpot($request);
+                }
                 break;
             case 'unsubscribe':
                 echo 'off';
                 break;
+        }
+    }
+
+    protected function updateParams() {
+        if($this->gameParams->curiso == '' || $this->gameParams->curiso == 'NAN') {
+            $this->gameParams->curiso = ' ';
         }
     }
 
@@ -330,7 +339,7 @@ class egtCtrl extends Ctrl {
         "rtp": "96.44",
         "bets": ['.$denominations.'],
         "jackpotMinBet": 1,
-        "jackpot": false,
+        "jackpot": '.(($this->gameParams->jackpotEnable)?'true':'false').',
         '.$reels.'
         "jackpotMaxBet": 100000,
         "denominations": [
@@ -360,6 +369,209 @@ class egtCtrl extends Ctrl {
     "eventTimestamp": '.$this->getTimeStamp().'
 }';
 
+        $this->out($json);
+
+        $this->startJackpotAmount();
+    }
+
+    public function getJackpotLevelWin($level) {
+        if($level == false) {
+            return 0;
+        }
+        else {
+            $jp = WebEngine::$api->getJackpots();
+            return $jp[$level];
+        }
+    }
+
+    public function initJackpot($request) {
+        $_SESSION['jackpotGameState'] = array();
+        for($i = 0; $i < 12; $i++) {
+            $_SESSION['jackpotGameState'][$i] = 'null';
+        }
+        $_SESSION['levelCount'] = array(
+            'level1' => 0,
+            'level2' => 0,
+            'level3' => 0,
+            'level4' => 0,
+        );
+    }
+
+    public function updateJackpotState() {
+        $tmpArray = array();
+        for($i = 0; $i < 3 - $_SESSION['levelCount']['level1']; $i++) {
+            $tmpArray[] = 11;
+        }
+        for($i = 0; $i < 3 - $_SESSION['levelCount']['level2']; $i++) {
+            $tmpArray[] = 24;
+        }
+        for($i = 0; $i < 3 - $_SESSION['levelCount']['level3']; $i++) {
+            $tmpArray[] = 37;
+        }
+        for($i = 0; $i < 3 - $_SESSION['levelCount']['level4']; $i++) {
+            $tmpArray[] = 50;
+        }
+        shuffle($tmpArray);
+
+        $z = array();
+        foreach($_SESSION['jackpotGameState'] as $s) {
+            if($s == 'null') {
+                $z[] = array_shift($tmpArray);
+            }
+            else {
+                $z[] = $s;
+            }
+        }
+
+        $_SESSION['jackpotGameState'] = $z;
+    }
+
+    public function startJackpot($request) {
+        if(empty($_SESSION['jackpotGameState'])) {
+            $this->initJackpot($request);
+        }
+
+        $pos = $request->bet->pos;
+        $level = false;
+        $card = false;
+        while($level == false) {
+            if(rnd(0, 100) <= $this->gameParams->jpChances['level1']) {
+                $level = 1;
+                $card = 11;
+            }
+            if(rnd(0, 100) <= $this->gameParams->jpChances['level2']) {
+                $level = 2;
+                $card = 24;
+            }
+            if(rnd(0, 100) <= $this->gameParams->jpChances['level3']) {
+                $level = 3;
+                $card = 37;
+            }
+            if(rnd(0, 100) <= $this->gameParams->jpChances['level4']) {
+                $level = 4;
+                $card = 50;
+            }
+        }
+
+        $finishLevel = false;
+        $_SESSION['jackpotGameState'][$pos] = $card;
+        if($level == 1) {
+            if(++$_SESSION['levelCount']['level1'] == 3) {
+                $finishLevel = 1;
+            }
+        }
+        if($level == 2) {
+            if(++$_SESSION['levelCount']['level2'] == 3) {
+                $finishLevel = 2;
+            }
+        }
+        if($level == 3) {
+            if(++$_SESSION['levelCount']['level3'] == 3) {
+                $finishLevel = 3;
+            }
+        }
+        if($level == 4) {
+            if(++$_SESSION['levelCount']['level4'] == 3) {
+                $finishLevel = 4;
+            }
+        }
+
+        $state = 'jackpot';
+        $winAmount = $this->getJackpotLevelWin($finishLevel);
+        $winLevel = '';
+        if($finishLevel) {
+            $state = 'idle';
+            $winLevel = '
+            "winLevel":'.($finishLevel-1).',';
+            $this->updateJackpotState();
+
+            $this->startPayJackpot($winAmount / 100, $level);
+        }
+
+        $balance = $this->getBalance() * 100;
+
+        $json = '{
+    "complex": {
+        "gameCommand": "jackpot",
+        "jackpot": true,
+        "jackpotGameState": ['.implode(',', $_SESSION['jackpotGameState']).'],
+        '.$winLevel.'
+         "card": '.$card.'
+        
+    },
+    "winAmount": '.$winAmount.',
+    "state": "'.$state.'",
+    "balance": '.$balance.',
+    "gameIdentificationNumber": '.$this->gameIdentificationNumber.',
+    "gameNumber": -1,
+    "msg": "success",
+    "messageId": "'.$this->messageId.'",
+    "qName": "app.services.messages.response.GameEventResponse",
+    "command": "bet",
+    "eventTimestamp": '.$this->getTimeStamp().'
+}';
+
+        $this->out($json);
+
+        if($finishLevel) {
+            $_SESSION['state'] = 'SPIN';
+            unset($_SESSION['jackpotGameState']);
+            unset($_SESSION['levelCount']);
+        }
+    }
+
+
+
+    public function checkJackpotPay() {
+        return true;
+    }
+
+    public function getJackpotState() {
+        $jp = WebEngine::$api->getJackpots();
+        $items = [];
+        for($i = 1; $i <= 4; $i++) {
+            $index = '';
+            switch($i) {
+                case "1":
+                    $index = 'I';
+                    break;
+                case "2":
+                    $index = 'II';
+                    break;
+                case "3":
+                    $index = 'III';
+                    break;
+                case "4":
+                    $index = 'IV';
+                    break;
+            }
+            if(isset($jp[$i])) {
+                $value = $jp[$i];
+            }
+            else {
+                $value = $jp[1] * $i;
+            }
+            if($value == 0) {
+                $value = 10000 * $i;
+            }
+            $items[] = '"level'.$index.'": '.$value;
+        }
+        $json = implode(',', $items);
+
+        return $json;
+    }
+
+    public function startJackpotAmount() {
+        $json = '{
+    "complex": {'.$this->getJackpotState().'},
+    "gameIdentificationNumber": 813,
+    "gameNumber": -1,
+    "msg": "success",
+    "messageId": "'.$this->messageId.'",
+    "qName": "app.services.messages.response.GameEventResponse",
+    "command": "event",
+    "eventTimestamp": '.$this->getTimeStamp().'
+}';
         $this->out($json);
     }
 
@@ -399,11 +611,20 @@ class egtCtrl extends Ctrl {
 
         $balance = $this->getBalance() * 100;
 
+        $state = 'idle';
+        if($this->gameParams->jackpotEnable) {
+            if($this->checkJackpotPay()) {
+                $state = 'jackpot';
+                $this->initJackpot(false);
+            }
+        }
+
+
         $json = '{
     "complex": {
         "gameCommand": "collect"
     },
-    "state": "idle",
+    "state": "'.$state.'",
     "winAmount": '.($_SESSION['lastWin']*100).',
     "gameIdentificationNumber": '.$this->gameIdentificationNumber.',
     "gameNumber": 1272723877896,
@@ -419,6 +640,9 @@ class egtCtrl extends Ctrl {
         $_SESSION['gambles'] = 0;
         $_SESSION['lastWin'] = 0;
         $_SESSION['state'] = 'SPIN';
+        if($state == 'jackpot') {
+            $_SESSION['state'] = 'JACKPOT';
+        }
 
 		if(!$withoutResponce) {
 			$this->out($json);
