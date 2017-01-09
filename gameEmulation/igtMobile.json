@@ -1,0 +1,13 @@
+{
+	"init": {
+		"url": "tc/initstate" 
+	},
+	"spin": {
+		"url": "tc/play",
+		"data": "{\"GameLogicRequest\":{\"ActionInput\":{\"Action\":\"play\"},\"PatternSliderInput\":{\"BetPerPattern\":\"{{betOnLine}}\",\"PatternsBet\":\"{{maxLines}}\"},\"TransactionId\":\"A4310-14594825825152\"}}"
+	},
+	"pick": {
+		"url": "tc/play",
+		"data": "<GameLogicRequest><TransactionId>R1540-14228693316850</TransactionId><ActionInput><Action>play</Action></ActionInput><PatternSliderInput><BetPerPattern>1</BetPerPattern><PatternsBet>50</PatternsBet></PatternSliderInput><PickerInput><Pick name=\"L0C{{currentPick}}R0\"/></PickerInput></GameLogicRequest>"
+	}
+}

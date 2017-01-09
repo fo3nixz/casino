@@ -59,11 +59,22 @@ class egtCtrl extends Ctrl {
     }
 
     protected  function getRequest() {
-        $json = json_decode($_GET['json']);
+        if(isset($_POST['emulation'])) {
+            $this->emulation = true;
+        }
+        if(isset($_GET['json'])) {
+            $json = json_decode($_GET['json']);
+        }
+        if($this->emulation) {
+            $json = json_decode($_POST['xml']);
+        }
         return $json;
     }
 
     protected function out($json) {
+        if($this->emulation) {
+            return;
+        }
         echo $json;
     }
 

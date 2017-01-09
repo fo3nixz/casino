@@ -9,7 +9,7 @@
  */
 
 /* DELETE */
-if($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == '134.249.187.32') {
+if($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == '93.76.48.30') {
     if(isset($_GET['sessionID'])) {
         session_id($_GET['sessionID']);
         session_start();
@@ -110,12 +110,5 @@ class WebEngine {
 }
 
 $WE = new WebEngine($api);
-
-/*
-$json = json_encode($_SESSION);
-$f = fopen('count', 'ab');
-fwrite($f, strlen($json).PHP_EOL);
-fclose($f);
-*/
 
 ?>

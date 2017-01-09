@@ -11,7 +11,19 @@ class IGTMobileCtrl extends IGTCtrl {
             die();
         }
 
-        $action = $_GET['action'];
+        $action = '';
+        if(isset($_GET['action'])) {
+            $action = $_GET['action'];
+        }
+
+
+        if($this->emulation) {
+            $uri = $_SESSION['REQUEST_URI'];
+            if(strpos($uri, 'clientconfig') > 0) $action = 'config';
+            if(strpos($uri, 'initstate') > 0) $action = 'initstate';
+            if(strpos($uri, 'paytable') > 0) $action = 'paytable';
+            if(strpos($uri, '/play') > 0) $action = 'play';
+        }
 
         switch($action) {
             case 'authenticate':
@@ -50,6 +62,10 @@ class IGTMobileCtrl extends IGTCtrl {
     }
 
     protected  function getRequest() {
+        if(isset($_POST['emulation'])) {
+            $this->emulation = true;
+            return (array) json_decode($_POST['xml'], true);
+        }
         return (array) json_decode($this->api->getRequestBody(), true);
     }
 

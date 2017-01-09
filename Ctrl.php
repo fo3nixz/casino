@@ -371,6 +371,9 @@ action: ".$type);
      * @param string $xml
      */
     protected function outXML($xml) {
+        if($this->emulation) {
+            return;
+        }
         $xml = str_replace(PHP_EOL, '', $xml);
         $xml = str_replace("\n", '', $xml);
         $xml = preg_replace('/> +</', '><', $xml);
@@ -389,6 +392,9 @@ action: ".$type);
      * @param string $json
      */
     protected function outJSON($json) {
+        if($this->emulation) {
+            return;
+        }
         echo $json;
     }
 

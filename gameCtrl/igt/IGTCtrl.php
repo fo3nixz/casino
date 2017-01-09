@@ -3,6 +3,9 @@
 class IGTCtrl extends Ctrl {
     protected function processRequest($request) {
         $uri = $_SERVER['REQUEST_URI'];
+        if(isset($_SESSION['REQUEST_URI'])) {
+            $uri = $_SESSION['REQUEST_URI'];
+        }
 
 		$action = '';
 
@@ -687,6 +690,9 @@ class IGTCtrl extends Ctrl {
     }
 
     protected function outXML($xml) {
+        if($this->emulation) {
+            return;
+        }
         $xml = str_replace(PHP_EOL, '', $xml);
         $xml = str_replace("\n", '', $xml);
         $xml = preg_replace('/> +</', '><', $xml);

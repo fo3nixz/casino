@@ -1,0 +1,11 @@
+{
+	"init": {
+		"data": "{\"command\": \"login\", \"messageId\": \"r-r_8be4bd8bf6c715c56640df6ebe97e5c23053f50d\", \"qName\": \"jServer.gameManager.login\", \"sessionKey\": \"dragon_reels|||egt|||97upau3889ir5g6jmfh0j1p4c2\"}"
+	},
+	"spin": {
+		"data": "{ \"command\": \"bet\", \"bet\": { \"denomination\": 100, \"bonus\": false, \"lines\": {{maxLines}}, \"gameCommand\": \"bet\", \"bet\": {{betOnLine100}} }, \"sessionKey\": \"dragon_reels|||egt|||97upau3889ir5g6jmfh0j1p4c2\", \"messageId\": \"r-r_5fc07749a410bbb38ea87d1c28c50445f05abad5\", \"gameNumber\": 1272704999439, \"qName\": \"jServer.DRJSlot.bet.bet\", \"gameIdentificationNumber\": \"813\" }"
+	},
+	"gamble": {
+		"data": "{ \"command\": \"bet\", \"bet\": { \"gameCommand\": \"collect\" }, \"sessionKey\": \"dragon_reels|||egt|||97upau3889ir5g6jmfh0j1p4c2\", \"messageId\": \"r-r_6a7598406478cb3dce6ec99a5fa41c08272c253c\", \"gameNumber\": 1303752974352, \"qName\": \"jServer.DRJSlot.bet.collect\", \"gameIdentificationNumber\": \"813\" }"
+	}
+}

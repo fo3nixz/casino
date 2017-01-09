@@ -1,0 +1,8 @@
+{
+	"init": {
+		"data": "<CompositeRequest><EEGLoadOddsRequest gameTitle=\"QS-Sinbad\"/></CompositeRequest>" 
+	},
+	"spin": {
+		"data": "<CompositeRequest><EEGPlaceBetsRequest gameTitle=\"1\" gameId=\"1\"><Bet type=\"line\" pick=\"L{{maxLines}}\" stake=\"{{totalBet}}\"/></EEGPlaceBetsRequest><EEGLoadResultsRequest gameId=\"1\" gameTitle=\"1\"/></CompositeRequest>"
+	}
+}

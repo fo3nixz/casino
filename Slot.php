@@ -500,13 +500,17 @@ class Slot {
                             }
                         }
                         if ($f) {
+                            $tmpID = $w['id'];
+                            if(is_numeric($w['id'])) {
+                                $tmpID = $w['id'] + 1;
+                            }
                             $addArray = array(
                                 'line' => $w['line'],
                                 'multiple' => round($multiplier * $w['double']),
                                 'symbol' => $v,
                                 'alias' => $alias,
                                 'count' => $w['count'],
-                                'id' => $w['id'] + 1,
+                                'id' => $tmpID,
                                 'double' => round($w['double']),
                                 'withWild' => $w['withWild'],
                                 'addMultiplier' => $addMultiplier,
