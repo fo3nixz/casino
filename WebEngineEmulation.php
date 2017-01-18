@@ -149,15 +149,18 @@ class WebEngine {
                         $status = 'pick';
                         $_POST['xml'] = str_replace('{{currentPick}}', $currentPick, $requests['pick']['data']);
                         $currentPick++;
+                        $i--;
                     }
                     elseif($_SESSION['state'] == 'GAMBLE') {
                         $currentPick = 0;
                         $status = 'collect';
                         $_POST['xml'] = $requests['gamble']['data'];
+                        $i--;
                     }
                     else {
                         if($_SESSION['state'] == 'FREE') {
                             $status = 'freespin';
+                            $i--;
                         }
                         else {
                             $status = 'spin';

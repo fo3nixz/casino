@@ -503,11 +503,14 @@ class egtCtrl extends Ctrl {
         $balance = $this->getBalance() * 100;
 
         $jp = '"jackpotState": {'.$this->getJackpotState().'},';
+        if($finishLevel) {
+            $jp = '';
+        }
 
         $json = '{
     "complex": {
         "gameCommand": "jackpot",
-        "jackpot": true,
+        "jackpot": false,
         '.$jp.'
         "jackpotGameState": ['.implode(',', $_SESSION['jackpotGameState']).'],
         '.$winLevel.'
@@ -526,23 +529,35 @@ class egtCtrl extends Ctrl {
     "eventTimestamp": '.$this->getTimeStamp().'
 }';
 
-        $this->startJackpotAmount();
+        if(!$finishLevel) {
+            $this->startJackpotAmount();
+        }
 
         $this->out($json);
 
-        $this->startJackpotAmount();
+        if(!$finishLevel) {
+            $this->startJackpotAmount();
+        }
 
         if($finishLevel) {
             $_SESSION['state'] = 'SPIN';
             unset($_SESSION['jackpotGameState']);
             unset($_SESSION['levelCount']);
+
+            /*
+            $obj = new StdClass();
+            $obj->bet = new StdClass();
+            $obj->bet->lines = $_SESSION['lastPick'];
+            $obj->bet->bet = $_SESSION['lastBet'] * 100 / $_SESSION['lastPick'];
+            $this->startSpin($obj);
+            */
         }
     }
 
 
 
     public function checkJackpotPay() {
-        if(rnd(0,5) == 5) {
+        if(rnd(0,1) == 1) {
             return true;
         }
         else {
@@ -667,15 +682,14 @@ class egtCtrl extends Ctrl {
         $_SESSION['gambles'] = 0;
         $_SESSION['lastWin'] = 0;
         $_SESSION['state'] = 'SPIN';
-        if($state == 'jackpot') {
-            $_SESSION['state'] = 'JACKPOT';
-        }
-
-
 
 		if(!$withoutResponce) {
 			$this->out($json);
 		}
+
+        if($state == 'jackpot') {
+            $_SESSION['state'] = 'JACKPOT';
+        }
 
         if($this->gameParams->jackpotEnable) {
             $this->startJackpotAmount();
