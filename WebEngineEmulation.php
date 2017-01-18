@@ -109,6 +109,7 @@ class WebEngine {
             else {
                 $spins = 4500;
             }
+
             $_POST['emulation'] = true;
             $_POST['xml'] = '';
 
