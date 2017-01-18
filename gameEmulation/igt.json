@@ -4,7 +4,7 @@
 	},
 	"spin": {
 		"url": "tc/play",
-		"data": "<GameLogicRequest><TransactionId>A2210-14264043298614</TransactionId><ActionInput><Action>play</Action></ActionInput><PatternSliderInput><BetPerPattern>{{betOnLine}}</BetPerPattern><PatternsBet>{{maxLines}}</PatternsBet></PatternSliderInput></GameLogicRequest>"
+		"data": "<GameLogicRequest><TransactionId>A2210-14264043298614</TransactionId><ActionInput><Action>play</Action></ActionInput><PatternSliderInput><BetPerPattern>{{betOnLine}}</BetPerPattern><PatternsBet>{{maxLines}}</PatternsBet></PatternSliderInput><PickerInput><Pick name=\"L0C0R0\"/></PickerInput></GameLogicRequest>"
 	},
 	"pick": {
 		"url": "tc/play",

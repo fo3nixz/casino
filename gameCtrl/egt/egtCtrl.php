@@ -379,10 +379,11 @@ class egtCtrl extends Ctrl {
     "command": "ping",
     "eventTimestamp": '.$this->getTimeStamp().'
 }';
+        if($this->gameParams->jackpotEnable) {
+            $this->startJackpotAmount();
+        }
 
         $this->out($json);
-
-        $this->startJackpotAmount();
     }
 
     public function getJackpotLevelWin($level) {
@@ -501,16 +502,19 @@ class egtCtrl extends Ctrl {
 
         $balance = $this->getBalance() * 100;
 
+        $jp = '"jackpotState": {'.$this->getJackpotState().'},';
+
         $json = '{
     "complex": {
         "gameCommand": "jackpot",
         "jackpot": true,
+        '.$jp.'
         "jackpotGameState": ['.implode(',', $_SESSION['jackpotGameState']).'],
         '.$winLevel.'
          "card": '.$card.'
-        
     },
     "winAmount": '.$winAmount.',
+    '.$jp.'
     "state": "'.$state.'",
     "balance": '.$balance.',
     "gameIdentificationNumber": '.$this->gameIdentificationNumber.',
@@ -522,7 +526,11 @@ class egtCtrl extends Ctrl {
     "eventTimestamp": '.$this->getTimeStamp().'
 }';
 
+        $this->startJackpotAmount();
+
         $this->out($json);
+
+        $this->startJackpotAmount();
 
         if($finishLevel) {
             $_SESSION['state'] = 'SPIN';
@@ -534,7 +542,12 @@ class egtCtrl extends Ctrl {
 
 
     public function checkJackpotPay() {
-        return true;
+        if(rnd(0,5) == 5) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     public function getJackpotState() {
@@ -556,8 +569,10 @@ class egtCtrl extends Ctrl {
                     $index = 'IV';
                     break;
             }
+            $value = $jp[$i];
+            /*
             if(isset($jp[$i])) {
-                $value = $jp[$i];
+
             }
             else {
                 $value = $jp[1] * $i;
@@ -565,6 +580,7 @@ class egtCtrl extends Ctrl {
             if($value == 0) {
                 $value = 10000 * $i;
             }
+            */
             $items[] = '"level'.$index.'": '.$value;
         }
         $json = implode(',', $items);
@@ -578,7 +594,7 @@ class egtCtrl extends Ctrl {
     "gameIdentificationNumber": 813,
     "gameNumber": -1,
     "msg": "success",
-    "messageId": "'.$this->messageId.'",
+    "messageId": "2c71ea49088d501a18d2ac22f84b78a2",
     "qName": "app.services.messages.response.GameEventResponse",
     "command": "event",
     "eventTimestamp": '.$this->getTimeStamp().'
@@ -655,9 +671,15 @@ class egtCtrl extends Ctrl {
             $_SESSION['state'] = 'JACKPOT';
         }
 
+
+
 		if(!$withoutResponce) {
 			$this->out($json);
 		}
+
+        if($this->gameParams->jackpotEnable) {
+            $this->startJackpotAmount();
+        }
 		
 		unset($_SESSION['firstWin']);
 		unset($_SESSION['report']);

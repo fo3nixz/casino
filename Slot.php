@@ -640,6 +640,36 @@ class Slot {
         foreach($this->bonusWildsMultiple as $b) {
             $bonusWildPosition[] = $b['offset'];
         }
+
+        //START FIRST CHECK
+        $firstCheck = array();
+        $reelSymbols = $this->reels[0]->getVisibleSymbols();
+        if(count(array_intersect($reelSymbols, $symbol)) > 0) {
+            $firstCheck = true;
+        }
+        elseif(count(array_intersect($reelSymbols, $this->wild)) > 0) {
+            $firstCheck = true;
+        }
+        elseif($this->params->collectingPay) {
+            if(is_array($this->params->collectingSymbols[0])) {
+                foreach($this->params->collectingSymbols as $cs) {
+                    if(count(array_intersect($symbol, $cs)) > 0) {
+                        $firstCheck = true;
+                    }
+                }
+            }
+            else {
+                if(count(array_intersect($symbol, $this->params->collectingSymbols)) > 0) {
+                    $firstCheck = true;
+                }
+            }
+        }
+        // END FIRST CHECK
+
+        if(!$firstCheck) {
+            return array();
+        }
+
         foreach($this->lines as $line) {
             $lineSymbol = $this->getLineSymbols($line);
             $cnt = 0;
@@ -755,6 +785,9 @@ class Slot {
                     $f = false;
                 }
                 $lineSymbolCount++;
+                if(!$f) {
+                    break;
+                }
             }
             if($cnt >= $this->params->minWinCount) {
                 if($this->params->allCanDouble) {
@@ -790,7 +823,6 @@ class Slot {
                         'type' => 'line',
                     );
                 }
-
             }
 
 
@@ -814,6 +846,36 @@ class Slot {
         foreach($this->bonusWildsMultiple as $b) {
             $bonusWildPosition[] = $b['offset'];
         }
+
+        //START FIRST CHECK
+        $firstCheck = false;
+        $reelSymbols = $this->reels[count($this->reels) - 1]->getVisibleSymbols();
+        if(count(array_intersect($reelSymbols, $symbol)) > 0) {
+            $firstCheck = true;
+        }
+        elseif(count(array_intersect($reelSymbols, $this->wild)) > 0 && count(array_intersect($symbol, $this->params->symbolWithoutWild)) == 0 && count(array_intersect($symbol, $this->scatter)) == 0) {
+            $firstCheck = true;
+        }
+        elseif($this->params->collectingPay) {
+            if(is_array($this->params->collectingSymbols[0])) {
+                foreach($this->params->collectingSymbols as $cs) {
+                    if(count(array_intersect($symbol, $cs)) > 0) {
+                        $firstCheck = true;
+                    }
+                }
+            }
+            else {
+                if(count(array_intersect($symbol, $this->params->collectingSymbols)) > 0) {
+                    $firstCheck = true;
+                }
+            }
+        }
+        // END FIRST CHECK
+
+        if(!$firstCheck) {
+            return array();
+        }
+
         foreach($this->lines as $line) {
             $lineSymbol = array_reverse($this->getLineSymbols($line));
             $cnt = 0;
@@ -929,6 +991,9 @@ class Slot {
                     $f = false;
                 }
                 $lineSymbolCount++;
+                if(!$f) {
+                    break;
+                }
             }
             if($cnt != count($this->reels)) {
                 if($cnt >= $this->params->minWinCount) {
@@ -1191,6 +1256,10 @@ class Slot {
                 }
             }
 
+            if(empty($matches)) {
+                break;
+            }
+
 
 
             $ways->addMatches($matches);
@@ -1261,6 +1330,11 @@ class Slot {
                     );
                 }
             }
+
+            if(empty($matches)) {
+                break;
+            }
+
             $ways->addMatches($matches);
 
         }
@@ -1328,6 +1402,11 @@ class Slot {
                     );
                 }
             }
+
+            if(empty($matches)) {
+                break;
+            }
+
             $ways->addMatches($matches);
 
         }

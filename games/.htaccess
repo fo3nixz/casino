@@ -1,0 +1,3 @@
+RewriteEngine On
+
+RewriteRule (.*)/emulation /core/WebEngineEmulation.php?game=$1

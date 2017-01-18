@@ -1,0 +1,343 @@
+{"sessionKey":"dragon_reels|||egt|||tn6im12cponqehqmtceg581k05","command":"login","messageId":"r-r_61eb6ff2ad4c376f5c45ebbdbe8210a3bd0bfd8c","qName":"jServer.gameManager.login"}.{
+    "playerName": "igambler1515",
+    "balance": 100000,
+    "currency": "USD",
+    "languages": ["en","ru"],
+    "groups": ["all"],
+    "showRtp": false,
+    "multigame": true,
+    "autoplayLimit": 0,
+    "complex": {
+        "DRJSlot": [{
+            "gameIdentificationNumber": 813,
+            "recovery": "norecovery",
+            "gameName": "Dragon Reels",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "all",
+                "order": 39
+            }]
+        }]
+    },
+    "sessionKey": "dragon_reels|||egt|||tn6im12cponqehqmtceg581k05",
+    "msg": "success",
+    "messageId": "r-r_61eb6ff2ad4c376f5c45ebbdbe8210a3bd0bfd8c",
+    "qName": "app.services.messages.response.LoginResponse",
+    "command": "login",
+    "eventTimestamp": 1484565225090
+}.{
+    "complex": {"levelI": 10000,"levelII": 20000,"levelIII": 30000,"levelIV": 40000},
+    "gameIdentificationNumber": 813,
+    "gameNumber": -1,
+    "msg": "success",
+    "messageId": "r-r_61eb6ff2ad4c376f5c45ebbdbe8210a3bd0bfd8c",
+    "qName": "app.services.messages.response.GameEventResponse",
+    "command": "event",
+    "eventTimestamp": 1484565225090
+}.{"gameIdentificationNumber":"813","gameNumber":-1,"messageId":"r-r_ea1aca859aa1a7ec4fdfec1902700406328caa3c","qName":"jServer.DRJSlot.settings","sessionKey":"dragon_reels|||egt|||tn6im12cponqehqmtceg581k05","command":"settings"}.{
+    "complex": {
+        "paytableCoef": {
+"0": {
+                "coef": [10,20,100],
+                "multiplier": 1
+            },"1": {
+                "coef": [10,20,100],
+                "multiplier": 1
+            },"2": {
+                "coef": [10,20,100],
+                "multiplier": 1
+            },"3": {
+                "coef": [10,20,100],
+                "multiplier": 1
+            },"4": {
+                "coef": [10,20,100],
+                "multiplier": 1
+            },"5": {
+                "coef": [10,40,200],
+                "multiplier": 1
+            },"6": {
+                "coef": [10,50,200],
+                "multiplier": 1
+            },"7": {
+                "coef": [10,100,400],
+                "multiplier": 1
+            },"8": {
+                "coef": [10,100,400],
+                "multiplier": 1
+            },"9": {
+                "coef": [10,100,750],
+                "multiplier": 1
+            },"10": {
+                "coef": [10,100,1000],
+                "multiplier": 1
+            },"11": {
+                "coef": [100,1000,5000],
+                "multiplier": 1
+            },"12": {
+                "coef": [2,4,50,100],
+                "multiplier": 1
+            }},
+
+        "rtp": "96.44",
+        "bets": [0.01,0.02,0.05,0.1,0.2,0.5,1,2,5],
+        "jackpotMinBet": 1,
+        "jackpot": true,
+        "mainFakeReels": [
+[10,2,5,6,12,9,5,7,2,1,11,2,6,1,7,4,8,1,7,3]
+,[10,3,1,8,4,12,9,2,4,8,7,4,11,3,0,6,4,3,5,9]
+,[5,9,2,4,8,5,2,12,4,6,0,11,5,7,3,8,1,10,0,2]
+,[7,0,11,1,5,9,0,8,3,2,10,1,6,11,4,2,10,1,0,12]
+,[12,3,4,6,1,4,11,3,8,10,5,3,2,11,1,3,9,0,4,7]
+],
+        "jackpotMaxBet": 100000,
+        "denominations": [
+            [100, 70, 3000000]
+        ]
+    },
+    "gameIdentificationNumber": 813,
+    "gameNumber": -1,
+    "sessionKey": "dragon_reels|||egt|||tn6im12cponqehqmtceg581k05",
+    "msg": "success",
+    "messageId": "r-r_ea1aca859aa1a7ec4fdfec1902700406328caa3c",
+    "qName": "app.services.messages.response.GameResponse",
+    "command": "settings",
+    "eventTimestamp": 1484565225295
+}.{"gameIdentificationNumber":"813","gameNumber":-1,"messageId":"r-r_5b26450df089d9052193c7cda622a3b97ce119c4","qName":"jServer.DRJSlot.subscribe","sessionKey":"dragon_reels|||egt|||tn6im12cponqehqmtceg581k05","command":"subscribe"}.{
+    "complex": {
+        "currentState": {
+            "gamblesUsed": 0,
+            "freespinsUsed": 0,
+            "previousGambles": [],
+            "bet": 100,
+            "numberOfLines": 25,
+            "denomination": 100,
+            "state": "idle",
+            "winAmount": 0,
+            "firstSpin": {
+                "reels": [1,7,4,8,1,6,4,3,5,9,4,6,0,11,5,0,8,3,2,10,7,12,3,4,6],
+            "lines": [],
+            "scatters": [],
+                "expand": []
+            },
+            "reels": [1,7,4,8,1,6,4,3,5,9,4,6,0,11,5,0,8,3,2,10,7,12,3,4,6],
+            "lines": [],
+            "scatters": [],
+            "expand": [],
+            "gambles": 0,
+            "freespins": 0,
+            "jackpot": false
+        },
+            "jackpotState": {"levelI": 10000,"levelII": 20000,"levelIII": 30000,"levelIV": 40000}
+    },
+    "gameIdentificationNumber": 813,
+    "gameNumber": 1272704999439,
+    "sessionKey": "dragon_reels|||egt|||tn6im12cponqehqmtceg581k05",
+    "msg": "success",
+    "messageId": "r-r_5b26450df089d9052193c7cda622a3b97ce119c4",
+    "qName": "app.services.messages.response.GameEventResponse",
+    "command": "subscribe",
+    "eventTimestamp": 1484565225352
+}.{
+    "complex": {"levelI": 10000,"levelII": 20000,"levelIII": 30000,"levelIV": 40000},
+    "gameIdentificationNumber": 813,
+    "gameNumber": -1,
+    "msg": "success",
+    "messageId": "r-r_5b26450df089d9052193c7cda622a3b97ce119c4",
+    "qName": "app.services.messages.response.GameEventResponse",
+    "command": "event",
+    "eventTimestamp": 1484565225352
+}.{"sessionKey":"dragon_reels|||egt|||tn6im12cponqehqmtceg581k05","command":"ping","messageId":"r-r_f6d234080fcf8c0c094a4dadf9b57817810bb73b","qName":"jServer.gameManager.ping"}.{
+    "sessionKey": "dragon_reels|||egt|||tn6im12cponqehqmtceg581k05",
+    "msg": "success",
+    "messageId": "r-r_f6d234080fcf8c0c094a4dadf9b57817810bb73b",
+    "qName": "app.services.messages.response.BaseResponse",
+    "command": "ping",
+    "eventTimestamp": 1484565230106
+}.{
+    "complex": {"levelI": 10000,"levelII": 20000,"levelIII": 30000,"levelIV": 40000},
+    "gameIdentificationNumber": 813,
+    "gameNumber": -1,
+    "msg": "success",
+    "messageId": "r-r_f6d234080fcf8c0c094a4dadf9b57817810bb73b",
+    "qName": "app.services.messages.response.GameEventResponse",
+    "command": "event",
+    "eventTimestamp": 1484565230106
+}.{"sessionKey":"dragon_reels|||egt|||tn6im12cponqehqmtceg581k05","command":"ping","messageId":"r-r_52b3587fbde51c7fc3bee4feb0be5b53b2331244","qName":"jServer.gameManager.ping"}.{
+    "sessionKey": "dragon_reels|||egt|||tn6im12cponqehqmtceg581k05",
+    "msg": "success",
+    "messageId": "r-r_52b3587fbde51c7fc3bee4feb0be5b53b2331244",
+    "qName": "app.services.messages.response.BaseResponse",
+    "command": "ping",
+    "eventTimestamp": 1484565235106
+}.{
+    "complex": {"levelI": 10000,"levelII": 20000,"levelIII": 30000,"levelIV": 40000},
+    "gameIdentificationNumber": 813,
+    "gameNumber": -1,
+    "msg": "success",
+    "messageId": "r-r_52b3587fbde51c7fc3bee4feb0be5b53b2331244",
+    "qName": "app.services.messages.response.GameEventResponse",
+    "command": "event",
+    "eventTimestamp": 1484565235106
+}.{"sessionKey":"dragon_reels|||egt|||tn6im12cponqehqmtceg581k05","command":"ping","messageId":"r-r_692214dee7f8987a7d71bcbf24488ba1aa412d88","qName":"jServer.gameManager.ping"}.{
+    "sessionKey": "dragon_reels|||egt|||tn6im12cponqehqmtceg581k05",
+    "msg": "success",
+    "messageId": "r-r_692214dee7f8987a7d71bcbf24488ba1aa412d88",
+    "qName": "app.services.messages.response.BaseResponse",
+    "command": "ping",
+    "eventTimestamp": 1484565240107
+}.{
+    "complex": {"levelI": 10000,"levelII": 20000,"levelIII": 30000,"levelIV": 40000},
+    "gameIdentificationNumber": 813,
+    "gameNumber": -1,
+    "msg": "success",
+    "messageId": "r-r_692214dee7f8987a7d71bcbf24488ba1aa412d88",
+    "qName": "app.services.messages.response.GameEventResponse",
+    "command": "event",
+    "eventTimestamp": 1484565240107
+}.{"sessionKey":"dragon_reels|||egt|||tn6im12cponqehqmtceg581k05","command":"ping","messageId":"r-r_abf463b409438df2ce9a12ff04c36a58ef84b0ca","qName":"jServer.gameManager.ping"}.{
+    "sessionKey": "dragon_reels|||egt|||tn6im12cponqehqmtceg581k05",
+    "msg": "success",
+    "messageId": "r-r_abf463b409438df2ce9a12ff04c36a58ef84b0ca",
+    "qName": "app.services.messages.response.BaseResponse",
+    "command": "ping",
+    "eventTimestamp": 1484565245107
+}.{
+    "complex": {"levelI": 10000,"levelII": 20000,"levelIII": 30000,"levelIV": 40000},
+    "gameIdentificationNumber": 813,
+    "gameNumber": -1,
+    "msg": "success",
+    "messageId": "r-r_abf463b409438df2ce9a12ff04c36a58ef84b0ca",
+    "qName": "app.services.messages.response.GameEventResponse",
+    "command": "event",
+    "eventTimestamp": 1484565245107
+}.{"sessionKey":"dragon_reels|||egt|||tn6im12cponqehqmtceg581k05","command":"ping","messageId":"r-r_32751c300b3541782931bf6baf668d2215ebac24","qName":"jServer.gameManager.ping"}.{
+    "sessionKey": "dragon_reels|||egt|||tn6im12cponqehqmtceg581k05",
+    "msg": "success",
+    "messageId": "r-r_32751c300b3541782931bf6baf668d2215ebac24",
+    "qName": "app.services.messages.response.BaseResponse",
+    "command": "ping",
+    "eventTimestamp": 1484565250106
+}.{
+    "complex": {"levelI": 10000,"levelII": 20000,"levelIII": 30000,"levelIV": 40000},
+    "gameIdentificationNumber": 813,
+    "gameNumber": -1,
+    "msg": "success",
+    "messageId": "r-r_32751c300b3541782931bf6baf668d2215ebac24",
+    "qName": "app.services.messages.response.GameEventResponse",
+    "command": "event",
+    "eventTimestamp": 1484565250106
+}.{"sessionKey":"dragon_reels|||egt|||tn6im12cponqehqmtceg581k05","command":"ping","messageId":"r-r_6bb42989b5c2a6d0a9889c15dbcdde65550056a7","qName":"jServer.gameManager.ping"}.{
+    "sessionKey": "dragon_reels|||egt|||tn6im12cponqehqmtceg581k05",
+    "msg": "success",
+    "messageId": "r-r_6bb42989b5c2a6d0a9889c15dbcdde65550056a7",
+    "qName": "app.services.messages.response.BaseResponse",
+    "command": "ping",
+    "eventTimestamp": 1484565255121
+}.{
+    "complex": {"levelI": 10000,"levelII": 20000,"levelIII": 30000,"levelIV": 40000},
+    "gameIdentificationNumber": 813,
+    "gameNumber": -1,
+    "msg": "success",
+    "messageId": "r-r_6bb42989b5c2a6d0a9889c15dbcdde65550056a7",
+    "qName": "app.services.messages.response.GameEventResponse",
+    "command": "event",
+    "eventTimestamp": 1484565255121
+}.{"sessionKey":"dragon_reels|||egt|||tn6im12cponqehqmtceg581k05","command":"ping","messageId":"r-r_2bba550cc4da17b94bfbcd73503ffdde7ae55075","qName":"jServer.gameManager.ping"}.{
+    "sessionKey": "dragon_reels|||egt|||tn6im12cponqehqmtceg581k05",
+    "msg": "success",
+    "messageId": "r-r_2bba550cc4da17b94bfbcd73503ffdde7ae55075",
+    "qName": "app.services.messages.response.BaseResponse",
+    "command": "ping",
+    "eventTimestamp": 1484565260122
+}.{
+    "complex": {"levelI": 10000,"levelII": 20000,"levelIII": 30000,"levelIV": 40000},
+    "gameIdentificationNumber": 813,
+    "gameNumber": -1,
+    "msg": "success",
+    "messageId": "r-r_2bba550cc4da17b94bfbcd73503ffdde7ae55075",
+    "qName": "app.services.messages.response.GameEventResponse",
+    "command": "event",
+    "eventTimestamp": 1484565260122
+}.{"sessionKey":"dragon_reels|||egt|||tn6im12cponqehqmtceg581k05","command":"ping","messageId":"r-r_91c68f0408921e3002bfeb44c71933c2b65e514c","qName":"jServer.gameManager.ping"}.{
+    "sessionKey": "dragon_reels|||egt|||tn6im12cponqehqmtceg581k05",
+    "msg": "success",
+    "messageId": "r-r_91c68f0408921e3002bfeb44c71933c2b65e514c",
+    "qName": "app.services.messages.response.BaseResponse",
+    "command": "ping",
+    "eventTimestamp": 1484565265137
+}.{
+    "complex": {"levelI": 10000,"levelII": 20000,"levelIII": 30000,"levelIV": 40000},
+    "gameIdentificationNumber": 813,
+    "gameNumber": -1,
+    "msg": "success",
+    "messageId": "r-r_91c68f0408921e3002bfeb44c71933c2b65e514c",
+    "qName": "app.services.messages.response.GameEventResponse",
+    "command": "event",
+    "eventTimestamp": 1484565265137
+}.{"sessionKey":"dragon_reels|||egt|||tn6im12cponqehqmtceg581k05","command":"ping","messageId":"r-r_3fb179afe201b96e948c55457f075408ce88ad15","qName":"jServer.gameManager.ping"}.{
+    "sessionKey": "dragon_reels|||egt|||tn6im12cponqehqmtceg581k05",
+    "msg": "success",
+    "messageId": "r-r_3fb179afe201b96e948c55457f075408ce88ad15",
+    "qName": "app.services.messages.response.BaseResponse",
+    "command": "ping",
+    "eventTimestamp": 1484565270137
+}.{
+    "complex": {"levelI": 10000,"levelII": 20000,"levelIII": 30000,"levelIV": 40000},
+    "gameIdentificationNumber": 813,
+    "gameNumber": -1,
+    "msg": "success",
+    "messageId": "r-r_3fb179afe201b96e948c55457f075408ce88ad15",
+    "qName": "app.services.messages.response.GameEventResponse",
+    "command": "event",
+    "eventTimestamp": 1484565270137
+}.{"sessionKey":"dragon_reels|||egt|||tn6im12cponqehqmtceg581k05","command":"ping","messageId":"r-r_5a2f2e8e411ae7e0d8ea7d0519c5ccb7ce2494ca","qName":"jServer.gameManager.ping"}.{
+    "sessionKey": "dragon_reels|||egt|||tn6im12cponqehqmtceg581k05",
+    "msg": "success",
+    "messageId": "r-r_5a2f2e8e411ae7e0d8ea7d0519c5ccb7ce2494ca",
+    "qName": "app.services.messages.response.BaseResponse",
+    "command": "ping",
+    "eventTimestamp": 1484565275137
+}.{
+    "complex": {"levelI": 10000,"levelII": 20000,"levelIII": 30000,"levelIV": 40000},
+    "gameIdentificationNumber": 813,
+    "gameNumber": -1,
+    "msg": "success",
+    "messageId": "r-r_5a2f2e8e411ae7e0d8ea7d0519c5ccb7ce2494ca",
+    "qName": "app.services.messages.response.GameEventResponse",
+    "command": "event",
+    "eventTimestamp": 1484565275137
+}.{"sessionKey":"dragon_reels|||egt|||tn6im12cponqehqmtceg581k05","command":"ping","messageId":"r-r_dc5430150c4d9990910182db96b3510c9a765a87","qName":"jServer.gameManager.ping"}.{
+    "sessionKey": "dragon_reels|||egt|||tn6im12cponqehqmtceg581k05",
+    "msg": "success",
+    "messageId": "r-r_dc5430150c4d9990910182db96b3510c9a765a87",
+    "qName": "app.services.messages.response.BaseResponse",
+    "command": "ping",
+    "eventTimestamp": 1484565280137
+}.{
+    "complex": {"levelI": 10000,"levelII": 20000,"levelIII": 30000,"levelIV": 40000},
+    "gameIdentificationNumber": 813,
+    "gameNumber": -1,
+    "msg": "success",
+    "messageId": "r-r_dc5430150c4d9990910182db96b3510c9a765a87",
+    "qName": "app.services.messages.response.GameEventResponse",
+    "command": "event",
+    "eventTimestamp": 1484565280137
+}.{"sessionKey":"dragon_reels|||egt|||tn6im12cponqehqmtceg581k05","command":"ping","messageId":"r-r_5c3203b0a75ad5bacb334c2c81810a121c039777","qName":"jServer.gameManager.ping"}.{
+    "sessionKey": "dragon_reels|||egt|||tn6im12cponqehqmtceg581k05",
+    "msg": "success",
+    "messageId": "r-r_5c3203b0a75ad5bacb334c2c81810a121c039777",
+    "qName": "app.services.messages.response.BaseResponse",
+    "command": "ping",
+    "eventTimestamp": 1484565285138
+}.{
+    "complex": {"levelI": 10000,"levelII": 20000,"levelIII": 30000,"levelIV": 40000},
+    "gameIdentificationNumber": 813,
+    "gameNumber": -1,
+    "msg": "success",
+    "messageId": "r-r_5c3203b0a75ad5bacb334c2c81810a121c039777",
+    "qName": "app.services.messages.response.GameEventResponse",
+    "command": "event",
+    "eventTimestamp": 1484565285138
+}.

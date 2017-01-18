@@ -18,7 +18,7 @@ class dragon_reelsCtrl extends egtCtrl {
     "groups": ["all"],
     "showRtp": false,
     "multigame": true,
-    "autoplayLimit": 0,
+    "sendTotalsInfo": false,
     "complex": {
         "DRJSlot": [{
             "gameIdentificationNumber": 813,
@@ -42,9 +42,6 @@ class dragon_reelsCtrl extends egtCtrl {
 }';
 
         $this->out($json);
-        if($this->gameParams->jackpotEnable) {
-            $this->startJackpotAmount();
-        }
 
     }
 

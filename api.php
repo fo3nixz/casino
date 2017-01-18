@@ -48,7 +48,7 @@ class Api {
         
         $this->sessionStringId = 1411559061;
         
-        if(empty($_SESSION['balance'])) $_SESSION['balance'] = 100000;
+        if(empty($_SESSION['balance'])) $_SESSION['balance'] = 1000000000;
         
         $this->playerBalance = $_SESSION['balance'];
     }
@@ -142,6 +142,14 @@ class Api {
             "3" => "30000",
             "4" => "40000",
         );
+    }
+
+    public function setEmulation($flag) {
+        return true;
+    }
+
+    public function getParams() {
+        return array();
     }
 
 }

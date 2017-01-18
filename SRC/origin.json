@@ -1,0 +1,1790 @@
+{
+    "command": "login",
+    "sessionKey": "INT:EGT:500000:IR_EGT:Fun Mode - 1484566010673",
+    "messageId": "r-r_240544dfe8561a9e766ce08e95567e9ca2133119",
+    "qName": "jServer.gameManager.login"
+}. {
+    "playerName": "Fun Mode - 1484566010673",
+    "balance": 500000,
+    "currency": "EGT",
+    "languages": ["ro", "it", "bg", "en", "es", "ru", "go", "fr"],
+    "groups": ["all", "myGames", "fruit", "classic", "multiline", "extraline", "keno", "roulette", "cards"],
+    "showRtp": false,
+    "multigame": true,
+    "sendTotalsInfo": false,
+    "complex": {
+        "FDHJSlot": [{
+            "gameIdentificationNumber": 810,
+            "recovery": "norecovery",
+            "gameName": "5 Dazzling Hot",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "fruit",
+                "order": 9
+            }, {
+                "name": "all",
+                "order": 28
+            }, {
+                "name": "myGames",
+                "order": 29
+            }]
+        }],
+        "RQJSlot": [{
+            "gameIdentificationNumber": 840,
+            "recovery": "norecovery",
+            "gameName": "Rainbow Queen",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "extraline",
+                "order": 9
+            }, {
+                "name": "all",
+                "order": 44
+            }, {
+                "name": "myGames",
+                "order": 45
+            }]
+        }],
+        "JOBJPoker": [{
+            "gameIdentificationNumber": 20202,
+            "recovery": "norecovery",
+            "gameName": "Jacks or Better",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "cards",
+                "order": 2
+            }, {
+                "name": "all",
+                "order": 82
+            }, {
+                "name": "myGames",
+                "order": 83
+            }]
+        }],
+        "CHJSlot": [{
+            "gameIdentificationNumber": 506,
+            "recovery": "norecovery",
+            "gameName": "Caramel Hot",
+            "featured": true,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "fruit",
+                "order": 0
+            }, {
+                "name": "all",
+                "order": 2
+            }, {
+                "name": "myGames",
+                "order": 3
+            }]
+        }],
+        "LAWJSlot": [{
+            "gameIdentificationNumber": 868,
+            "recovery": "norecovery",
+            "gameName": "Lucky and Wild",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "fruit",
+                "order": 15
+            }, {
+                "name": "all",
+                "order": 42
+            }, {
+                "name": "myGames",
+                "order": 43
+            }]
+        }],
+        "ZWJSlot": [{
+            "gameIdentificationNumber": 807,
+            "recovery": "norecovery",
+            "gameName": "Zodiac Wheel",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "classic",
+                "order": 8
+            }, {
+                "name": "all",
+                "order": 30
+            }, {
+                "name": "myGames",
+                "order": 31
+            }]
+        }],
+        "VDJSlot": [{
+            "gameIdentificationNumber": 832,
+            "recovery": "norecovery",
+            "gameName": "Venezia D\u0027oro",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "extraline",
+                "order": 11
+            }, {
+                "name": "all",
+                "order": 73
+            }, {
+                "name": "myGames",
+                "order": 74
+            }]
+        }],
+        "LBJSlot": [{
+            "gameIdentificationNumber": 881,
+            "recovery": "norecovery",
+            "gameName": "Lucky Buzz",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 2
+            }, {
+                "name": "all",
+                "order": 13
+            }, {
+                "name": "myGames",
+                "order": 14
+            }]
+        }],
+        "TSHJSlot": [{
+            "gameIdentificationNumber": 803,
+            "recovery": "norecovery",
+            "gameName": "20 Super Hot",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "fruit",
+                "order": 4
+            }, {
+                "name": "all",
+                "order": 20
+            }, {
+                "name": "myGames",
+                "order": 21
+            }]
+        }],
+        "IGTJSlot": [{
+            "gameIdentificationNumber": 865,
+            "recovery": "norecovery",
+            "gameName": "Inca Gold II",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 17
+            }, {
+                "name": "all",
+                "order": 69
+            }, {
+                "name": "myGames",
+                "order": 70
+            }]
+        }],
+        "FTJSlot": [{
+            "gameIdentificationNumber": 876,
+            "recovery": "norecovery",
+            "gameName": "Forest Tale",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 7
+            }, {
+                "name": "all",
+                "order": 46
+            }, {
+                "name": "myGames",
+                "order": 47
+            }]
+        }],
+        "MLAWJSlot": [{
+            "gameIdentificationNumber": 869,
+            "recovery": "norecovery",
+            "gameName": "More Lucky and Wild",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "fruit",
+                "order": 12
+            }, {
+                "name": "all",
+                "order": 35
+            }, {
+                "name": "myGames",
+                "order": 36
+            }]
+        }],
+        "AOTJSlot": [{
+            "gameIdentificationNumber": 812,
+            "recovery": "norecovery",
+            "gameName": "Age of Troy",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 9
+            }, {
+                "name": "all",
+                "order": 53
+            }, {
+                "name": "myGames",
+                "order": 54
+            }]
+        }],
+        "TDRJSlot": [{
+            "gameIdentificationNumber": 882,
+            "recovery": "norecovery",
+            "gameName": "2 Dragons",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "classic",
+                "order": 5
+            }, {
+                "name": "all",
+                "order": 17
+            }, {
+                "name": "myGames",
+                "order": 18
+            }]
+        }],
+        "SOAJSlot": [{
+            "gameIdentificationNumber": 828,
+            "recovery": "norecovery",
+            "gameName": "Secrets of Alchemy",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 4
+            }, {
+                "name": "all",
+                "order": 27
+            }, {
+                "name": "myGames",
+                "order": 28
+            }]
+        }],
+        "BHJSlot": [{
+            "gameIdentificationNumber": 801,
+            "recovery": "norecovery",
+            "gameName": "Burning Hot",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "fruit",
+                "order": 5
+            }, {
+                "name": "all",
+                "order": 21
+            }, {
+                "name": "myGames",
+                "order": 22
+            }]
+        }],
+        "SLJSlot": [{
+            "gameIdentificationNumber": 892,
+            "recovery": "norecovery",
+            "gameName": "Savanna\u0027s Life",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 1
+            }, {
+                "name": "all",
+                "order": 10
+            }, {
+                "name": "myGames",
+                "order": 11
+            }]
+        }],
+        "CMJSlot": [{
+            "gameIdentificationNumber": 850,
+            "recovery": "norecovery",
+            "gameName": "Casino Mania",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "classic",
+                "order": 19
+            }, {
+                "name": "all",
+                "order": 66
+            }, {
+                "name": "myGames",
+                "order": 67
+            }]
+        }],
+        "APJSlot": [{
+            "gameIdentificationNumber": 884,
+            "recovery": "norecovery",
+            "gameName": "Aloha Party",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "extraline",
+                "order": 2
+            }, {
+                "name": "all",
+                "order": 12
+            }, {
+                "name": "myGames",
+                "order": 13
+            }]
+        }],
+        "FOKBJPoker": [{
+            "gameIdentificationNumber": 20210,
+            "recovery": "norecovery",
+            "gameName": "Four of a Kind Bonus Poker",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "cards",
+                "order": 1
+            }, {
+                "name": "all",
+                "order": 81
+            }, {
+                "name": "myGames",
+                "order": 82
+            }]
+        }],
+        "RWJSlot": [{
+            "gameIdentificationNumber": 899,
+            "recovery": "norecovery",
+            "gameName": "Rich World",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 0
+            }, {
+                "name": "all",
+                "order": 4
+            }, {
+                "name": "myGames",
+                "order": 5
+            }]
+        }],
+        "FRSJSlot": [{
+            "gameIdentificationNumber": 853,
+            "recovery": "norecovery",
+            "gameName": "Frog Story",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 5
+            }, {
+                "name": "all",
+                "order": 33
+            }, {
+                "name": "myGames",
+                "order": 34
+            }]
+        }],
+        "JPJPoker": [{
+            "gameIdentificationNumber": 20208,
+            "recovery": "norecovery",
+            "gameName": "Joker Poker",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "cards",
+                "order": 0
+            }, {
+                "name": "all",
+                "order": 80
+            }, {
+                "name": "myGames",
+                "order": 81
+            }]
+        }],
+        "Roulette": [{
+            "subscriberName": "Roulette",
+            "automatic": true,
+            "flashVideoStream": "rtmp://video.egtmgs.com/live",
+            "flashVideoSdp": "house-rlt03",
+            "rouletteCycleInterval": 24,
+            "gameNumber": -1,
+            "denomination": 100,
+            "casinoName": "EGT",
+            "playerBet": {},
+            "gameIdentificationNumber": 20201,
+            "recovery": "norecovery",
+            "gameName": "Roulette 3",
+            "featured": false,
+            "mlmJackpot": false,
+            "totalBet": 0,
+            "groups": [{
+                "name": "roulette",
+                "order": 0
+            }, {
+                "name": "all",
+                "order": 0
+            }, {
+                "name": "myGames",
+                "order": 1
+            }]
+        }],
+        "GEOLJSlot": [{
+            "gameIdentificationNumber": 872,
+            "recovery": "norecovery",
+            "gameName": "Genius of Leonardo",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "extraline",
+                "order": 10
+            }, {
+                "name": "all",
+                "order": 49
+            }, {
+                "name": "myGames",
+                "order": 50
+            }]
+        }],
+        "UHJSlot": [{
+            "gameIdentificationNumber": 802,
+            "recovery": "norecovery",
+            "gameName": "Ultimate Hot",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "fruit",
+                "order": 11
+            }, {
+                "name": "all",
+                "order": 34
+            }, {
+                "name": "myGames",
+                "order": 35
+            }]
+        }],
+        "AAJSlot": [{
+            "gameIdentificationNumber": 808,
+            "recovery": "norecovery",
+            "gameName": "Amazing Amazonia",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "classic",
+                "order": 22
+            }, {
+                "name": "all",
+                "order": 77
+            }, {
+                "name": "myGames",
+                "order": 78
+            }]
+        }],
+        "XSJSlot": [{
+            "gameIdentificationNumber": 822,
+            "recovery": "norecovery",
+            "gameName": "Extra Stars",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "fruit",
+                "order": 10
+            }, {
+                "name": "all",
+                "order": 32
+            }, {
+                "name": "myGames",
+                "order": 33
+            }]
+        }],
+        "PSJSlot": [{
+            "gameIdentificationNumber": 852,
+            "recovery": "norecovery",
+            "gameName": "Penguin Style",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 8
+            }, {
+                "name": "all",
+                "order": 51
+            }, {
+                "name": "myGames",
+                "order": 52
+            }]
+        }],
+        "FHJSlot": [{
+            "gameIdentificationNumber": 805,
+            "recovery": "norecovery",
+            "gameName": "Flaming Hot",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "fruit",
+                "order": 6
+            }, {
+                "name": "all",
+                "order": 22
+            }, {
+                "name": "myGames",
+                "order": 23
+            }]
+        }],
+        "KGJSlot": [{
+            "gameIdentificationNumber": 846,
+            "recovery": "norecovery",
+            "gameName": "Kashmir Gold",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 24
+            }, {
+                "name": "all",
+                "order": 79
+            }, {
+                "name": "myGames",
+                "order": 80
+            }]
+        }],
+        "FHSJSlot": [{
+            "gameIdentificationNumber": 879,
+            "recovery": "norecovery",
+            "gameName": "50 Horses",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "extraline",
+                "order": 3
+            }, {
+                "name": "all",
+                "order": 15
+            }, {
+                "name": "myGames",
+                "order": 16
+            }]
+        }],
+        "TSOAJSlot": [{
+            "gameIdentificationNumber": 896,
+            "recovery": "norecovery",
+            "gameName": "The Story of Alexander",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "extraline",
+                "order": 1
+            }, {
+                "name": "all",
+                "order": 6
+            }, {
+                "name": "myGames",
+                "order": 7
+            }]
+        }],
+        "GOLJSlot": [{
+            "gameIdentificationNumber": 823,
+            "recovery": "norecovery",
+            "gameName": "Game of Luck",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "classic",
+                "order": 10
+            }, {
+                "name": "all",
+                "order": 47
+            }, {
+                "name": "myGames",
+                "order": 48
+            }]
+        }],
+        "SCJSlot": [{
+            "gameIdentificationNumber": 831,
+            "recovery": "norecovery",
+            "gameName": "Shining Crown",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "fruit",
+                "order": 7
+            }, {
+                "name": "all",
+                "order": 24
+            }, {
+                "name": "myGames",
+                "order": 25
+            }]
+        }],
+        "QORJSlot": [{
+            "gameIdentificationNumber": 512,
+            "recovery": "norecovery",
+            "gameName": "Queen of Rio",
+            "featured": true,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "classic",
+                "order": 0
+            }, {
+                "name": "all",
+                "order": 3
+            }, {
+                "name": "myGames",
+                "order": 4
+            }]
+        }],
+        "FMJSlot": [{
+            "gameIdentificationNumber": 501,
+            "recovery": "norecovery",
+            "gameName": "Fast Money",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "classic",
+                "order": 1
+            }, {
+                "name": "all",
+                "order": 7
+            }, {
+                "name": "myGames",
+                "order": 8
+            }]
+        }],
+        "TEJSlot": [{
+            "gameIdentificationNumber": 834,
+            "recovery": "norecovery",
+            "gameName": "The Explorers",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 21
+            }, {
+                "name": "all",
+                "order": 75
+            }, {
+                "name": "myGames",
+                "order": 76
+            }]
+        }],
+        "DARJSlot": [{
+            "gameIdentificationNumber": 824,
+            "recovery": "norecovery",
+            "gameName": "Dice and Roll",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "fruit",
+                "order": 14
+            }, {
+                "name": "all",
+                "order": 40
+            }, {
+                "name": "myGames",
+                "order": 41
+            }]
+        }],
+        "CBJSlot": [{
+            "gameIdentificationNumber": 829,
+            "recovery": "norecovery",
+            "gameName": "Circus Brilliant",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 16
+            }, {
+                "name": "all",
+                "order": 67
+            }, {
+                "name": "myGames",
+                "order": 68
+            }]
+        }],
+        "GEJSlot": [{
+            "gameIdentificationNumber": 864,
+            "recovery": "norecovery",
+            "gameName": "Great Empire",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "classic",
+                "order": 18
+            }, {
+                "name": "all",
+                "order": 63
+            }, {
+                "name": "myGames",
+                "order": 64
+            }]
+        }],
+        "OGJSlot": [{
+            "gameIdentificationNumber": 819,
+            "recovery": "norecovery",
+            "gameName": "Olympus Glory",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "classic",
+                "order": 12
+            }, {
+                "name": "all",
+                "order": 52
+            }, {
+                "name": "myGames",
+                "order": 53
+            }]
+        }],
+        "SPJSlot": [{
+            "gameIdentificationNumber": 895,
+            "recovery": "norecovery",
+            "gameName": "Spanish Passion",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "classic",
+                "order": 2
+            }, {
+                "name": "all",
+                "order": 8
+            }, {
+                "name": "myGames",
+                "order": 9
+            }]
+        }],
+        "CRJSlot": [{
+            "gameIdentificationNumber": 871,
+            "recovery": "norecovery",
+            "gameName": "Cats Royal",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 19
+            }, {
+                "name": "all",
+                "order": 72
+            }, {
+                "name": "myGames",
+                "order": 73
+            }]
+        }],
+        "TWWJSlot": [{
+            "gameIdentificationNumber": 863,
+            "recovery": "norecovery",
+            "gameName": "The White Wolf",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "classic",
+                "order": 16
+            }, {
+                "name": "all",
+                "order": 61
+            }, {
+                "name": "myGames",
+                "order": 62
+            }]
+        }],
+        "GETJSlot": [{
+            "gameIdentificationNumber": 885,
+            "recovery": "norecovery",
+            "gameName": "The Great Egypt",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "classic",
+                "order": 4
+            }, {
+                "name": "all",
+                "order": 14
+            }, {
+                "name": "myGames",
+                "order": 15
+            }]
+        }],
+        "FBJSlot": [{
+            "gameIdentificationNumber": 835,
+            "recovery": "norecovery",
+            "gameName": "Forest Band",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 22
+            }, {
+                "name": "all",
+                "order": 76
+            }, {
+                "name": "myGames",
+                "order": 77
+            }]
+        }],
+        "ORJSlot": [{
+            "gameIdentificationNumber": 839,
+            "recovery": "norecovery",
+            "gameName": "Ocean Rush",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 13
+            }, {
+                "name": "all",
+                "order": 59
+            }, {
+                "name": "myGames",
+                "order": 60
+            }]
+        }],
+        "ABJSlot": [{
+            "gameIdentificationNumber": 859,
+            "recovery": "norecovery",
+            "gameName": "Amazon\u0027s Battle",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "extraline",
+                "order": 4
+            }, {
+                "name": "all",
+                "order": 23
+            }, {
+                "name": "myGames",
+                "order": 24
+            }]
+        }],
+        "KLJSlot": [{
+            "gameIdentificationNumber": 836,
+            "recovery": "norecovery",
+            "gameName": "Kangaroo Land",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 20
+            }, {
+                "name": "all",
+                "order": 74
+            }, {
+                "name": "myGames",
+                "order": 75
+            }]
+        }],
+        "BOMJSlot": [{
+            "gameIdentificationNumber": 826,
+            "recovery": "norecovery",
+            "gameName": "Book of Magic",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "classic",
+                "order": 17
+            }, {
+                "name": "all",
+                "order": 62
+            }, {
+                "name": "myGames",
+                "order": 63
+            }]
+        }],
+        "GOCJSlot": [{
+            "gameIdentificationNumber": 817,
+            "recovery": "norecovery",
+            "gameName": "Grace of Cleopatra",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "classic",
+                "order": 15
+            }, {
+                "name": "all",
+                "order": 60
+            }, {
+                "name": "myGames",
+                "order": 61
+            }]
+        }],
+        "IWJSlot": [{
+            "gameIdentificationNumber": 841,
+            "recovery": "norecovery",
+            "gameName": "Imperial Wars",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 12
+            }, {
+                "name": "all",
+                "order": 56
+            }, {
+                "name": "myGames",
+                "order": 57
+            }]
+        }],
+        "FSJSlot": [{
+            "gameIdentificationNumber": 820,
+            "recovery": "norecovery",
+            "gameName": "Fortune Spells",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "classic",
+                "order": 13
+            }, {
+                "name": "all",
+                "order": 57
+            }, {
+                "name": "myGames",
+                "order": 58
+            }]
+        }],
+        "EHJSlot": [{
+            "gameIdentificationNumber": 880,
+            "recovery": "norecovery",
+            "gameName": "Extremely Hot",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "fruit",
+                "order": 2
+            }, {
+                "name": "all",
+                "order": 16
+            }, {
+                "name": "myGames",
+                "order": 17
+            }]
+        }],
+        "FSHJSlot": [{
+            "gameIdentificationNumber": 804,
+            "recovery": "norecovery",
+            "gameName": "40 Super Hot",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "fruit",
+                "order": 3
+            }, {
+                "name": "all",
+                "order": 19
+            }, {
+                "name": "myGames",
+                "order": 20
+            }]
+        }],
+        "SHJSlot": [{
+            "gameIdentificationNumber": 821,
+            "recovery": "norecovery",
+            "gameName": "Supreme Hot",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "fruit",
+                "order": 8
+            }, {
+                "name": "all",
+                "order": 26
+            }, {
+                "name": "myGames",
+                "order": 27
+            }]
+        }],
+        "OCJSlot": [{
+            "gameIdentificationNumber": 848,
+            "recovery": "norecovery",
+            "gameName": "Oil Company II",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "extraline",
+                "order": 8
+            }, {
+                "name": "all",
+                "order": 41
+            }, {
+                "name": "myGames",
+                "order": 42
+            }]
+        }],
+        "TDJSlot": [{
+            "gameIdentificationNumber": 854,
+            "recovery": "norecovery",
+            "gameName": "20 Diamonds",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "classic",
+                "order": 7
+            }, {
+                "name": "all",
+                "order": 29
+            }, {
+                "name": "myGames",
+                "order": 30
+            }]
+        }],
+        "ESJSlot": [{
+            "gameIdentificationNumber": 825,
+            "recovery": "norecovery",
+            "gameName": "Egypt Sky",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "extraline",
+                "order": 7
+            }, {
+                "name": "all",
+                "order": 37
+            }, {
+                "name": "myGames",
+                "order": 38
+            }]
+        }],
+        "SBJSlot": [{
+            "gameIdentificationNumber": 855,
+            "recovery": "norecovery",
+            "gameName": "Summer Bliss",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 18
+            }, {
+                "name": "all",
+                "order": 71
+            }, {
+                "name": "myGames",
+                "order": 72
+            }]
+        }],
+        "AMJSlot": [{
+            "gameIdentificationNumber": 851,
+            "recovery": "norecovery",
+            "gameName": "Action Money",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 6
+            }, {
+                "name": "all",
+                "order": 43
+            }, {
+                "name": "myGames",
+                "order": 44
+            }]
+        }],
+        "DRJSlot": [{
+            "gameIdentificationNumber": 813,
+            "recovery": "norecovery",
+            "gameName": "Dragon Reels",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 14
+            }, {
+                "name": "all",
+                "order": 64
+            }, {
+                "name": "myGames",
+                "order": 65
+            }]
+        }],
+        "GAJSlot": [{
+            "gameIdentificationNumber": 837,
+            "recovery": "norecovery",
+            "gameName": "Great Adventure",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 11
+            }, {
+                "name": "all",
+                "order": 55
+            }, {
+                "name": "myGames",
+                "order": 56
+            }]
+        }],
+        "GDJSlot": [{
+            "gameIdentificationNumber": 862,
+            "recovery": "norecovery",
+            "gameName": "Gold Dust",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 10
+            }, {
+                "name": "all",
+                "order": 54
+            }, {
+                "name": "myGames",
+                "order": 55
+            }]
+        }],
+        "FKJSlot": [{
+            "gameIdentificationNumber": 811,
+            "recovery": "norecovery",
+            "gameName": "Fruits Kingdom",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "classic",
+                "order": 20
+            }, {
+                "name": "all",
+                "order": 68
+            }, {
+                "name": "myGames",
+                "order": 69
+            }]
+        }],
+        "BHTJSlot": [{
+            "gameIdentificationNumber": 814,
+            "recovery": "norecovery",
+            "gameName": "Blue Heart",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "extraline",
+                "order": 5
+            }, {
+                "name": "all",
+                "order": 31
+            }, {
+                "name": "myGames",
+                "order": 32
+            }]
+        }],
+        "STJSlot": [{
+            "gameIdentificationNumber": 897,
+            "recovery": "norecovery",
+            "gameName": "Super 20",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "fruit",
+                "order": 1
+            }, {
+                "name": "all",
+                "order": 9
+            }, {
+                "name": "myGames",
+                "order": 10
+            }]
+        }],
+        "HCJSlot": [{
+            "gameIdentificationNumber": 847,
+            "recovery": "norecovery",
+            "gameName": "100 Cats",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "extraline",
+                "order": 6
+            }, {
+                "name": "all",
+                "order": 36
+            }, {
+                "name": "myGames",
+                "order": 37
+            }]
+        }],
+        "VGJSlot": [{
+            "gameIdentificationNumber": 818,
+            "recovery": "norecovery",
+            "gameName": "Versailles Gold",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "classic",
+                "order": 11
+            }, {
+                "name": "all",
+                "order": 48
+            }, {
+                "name": "myGames",
+                "order": 49
+            }]
+        }],
+        "TSOLJSlot": [{
+            "gameIdentificationNumber": 873,
+            "recovery": "norecovery",
+            "gameName": "The Secrets of London",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 3
+            }, {
+                "name": "all",
+                "order": 18
+            }, {
+                "name": "myGames",
+                "order": 19
+            }]
+        }],
+        "WCJSlot": [{
+            "gameIdentificationNumber": 815,
+            "recovery": "norecovery",
+            "gameName": "Witches Charm",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "classic",
+                "order": 21
+            }, {
+                "name": "all",
+                "order": 70
+            }, {
+                "name": "myGames",
+                "order": 71
+            }]
+        }],
+        "DQJSlot": [{
+            "gameIdentificationNumber": 858,
+            "recovery": "norecovery",
+            "gameName": "Dark Queen",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 15
+            }, {
+                "name": "all",
+                "order": 65
+            }, {
+                "name": "myGames",
+                "order": 66
+            }]
+        }],
+        "MSJSlot": [{
+            "gameIdentificationNumber": 898,
+            "recovery": "norecovery",
+            "gameName": "Mayan Spirit",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "extraline",
+                "order": 0
+            }, {
+                "name": "all",
+                "order": 5
+            }, {
+                "name": "myGames",
+                "order": 6
+            }]
+        }],
+        "MDARJSlot": [{
+            "gameIdentificationNumber": 875,
+            "recovery": "norecovery",
+            "gameName": "More Dice and Roll",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "fruit",
+                "order": 16
+            }, {
+                "name": "all",
+                "order": 45
+            }, {
+                "name": "myGames",
+                "order": 46
+            }]
+        }],
+        "UJKeno": [{
+            "gameIdentificationNumber": 701,
+            "recovery": "norecovery",
+            "gameName": "Keno Universe",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "keno",
+                "order": 0
+            }, {
+                "name": "all",
+                "order": 1
+            }, {
+                "name": "myGames",
+                "order": 2
+            }]
+        }],
+        "RTSJSlot": [{
+            "gameIdentificationNumber": 889,
+            "recovery": "norecovery",
+            "gameName": "Retro Style",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "classic",
+                "order": 3
+            }, {
+                "name": "all",
+                "order": 11
+            }, {
+                "name": "myGames",
+                "order": 12
+            }]
+        }],
+        "MFJSlot": [{
+            "gameIdentificationNumber": 830,
+            "recovery": "norecovery",
+            "gameName": "Majestic Forest",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "classic",
+                "order": 14
+            }, {
+                "name": "all",
+                "order": 58
+            }, {
+                "name": "myGames",
+                "order": 59
+            }]
+        }],
+        "RSJSlot": [{
+            "gameIdentificationNumber": 809,
+            "recovery": "norecovery",
+            "gameName": "Royal Secrets",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "classic",
+                "order": 9
+            }, {
+                "name": "all",
+                "order": 38
+            }, {
+                "name": "myGames",
+                "order": 39
+            }]
+        }],
+        "RORJSlot": [{
+            "gameIdentificationNumber": 806,
+            "recovery": "norecovery",
+            "gameName": "Rise of Ra",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "classic",
+                "order": 6
+            }, {
+                "name": "all",
+                "order": 25
+            }, {
+                "name": "myGames",
+                "order": 26
+            }]
+        }],
+        "LHJSlot": [{
+            "gameIdentificationNumber": 849,
+            "recovery": "norecovery",
+            "gameName": "Lucky Hot",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "fruit",
+                "order": 17
+            }, {
+                "name": "all",
+                "order": 50
+            }, {
+                "name": "myGames",
+                "order": 51
+            }]
+        }],
+        "HNCJSlot": [{
+            "gameIdentificationNumber": 866,
+            "recovery": "norecovery",
+            "gameName": "Hot and Cash",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "fruit",
+                "order": 13
+            }, {
+                "name": "all",
+                "order": 39
+            }, {
+                "name": "myGames",
+                "order": 40
+            }]
+        }],
+        "HWJSlot": [{
+            "gameIdentificationNumber": 833,
+            "recovery": "norecovery",
+            "gameName": "Halloween",
+            "featured": false,
+            "mlmJackpot": true,
+            "totalBet": 0,
+            "groups": [{
+                "name": "multiline",
+                "order": 23
+            }, {
+                "name": "all",
+                "order": 78
+            }, {
+                "name": "myGames",
+                "order": 79
+            }]
+        }]
+    },
+    "sessionKey": "INT:EGT:500000:IR_EGT:Fun Mode - 1484566010673",
+    "msg": "success",
+    "messageId": "r-r_240544dfe8561a9e766ce08e95567e9ca2133119",
+    "qName": "app.services.messages.response.LoginResponse",
+    "command": "login",
+    "eventTimestamp": 1484566050779
+}. {
+    "gameIdentificationNumber": "813",
+    "gameNumber": -1,
+    "messageId": "r-r_00da069484128b558996af4169bbf981d554a857",
+    "qName": "jServer.DRJSlot.settings",
+    "sessionKey": "INT:EGT:500000:IR_EGT:Fun Mode - 1484566010673",
+    "command": "settings"
+}. {
+    "complex": {
+        "paytableCoef": {
+            "0": {
+                "coef": [10, 20, 100],
+                "multiplier": 1
+            },
+            "1": {
+                "coef": [10, 20, 100],
+                "multiplier": 1
+            },
+            "2": {
+                "coef": [10, 20, 100],
+                "multiplier": 1
+            },
+            "3": {
+                "coef": [10, 20, 100],
+                "multiplier": 1
+            },
+            "4": {
+                "coef": [10, 20, 100],
+                "multiplier": 1
+            },
+            "5": {
+                "coef": [10, 40, 200],
+                "multiplier": 1
+            },
+            "6": {
+                "coef": [10, 50, 200],
+                "multiplier": 1
+            },
+            "7": {
+                "coef": [10, 100, 400],
+                "multiplier": 1
+            },
+            "8": {
+                "coef": [10, 100, 400],
+                "multiplier": 1
+            },
+            "9": {
+                "coef": [10, 100, 750],
+                "multiplier": 1
+            },
+            "10": {
+                "coef": [10, 100, 1000],
+                "multiplier": 1
+            },
+            "11": {
+                "coef": [100, 1000, 5000],
+                "multiplier": 1
+            },
+            "12": {
+                "coef": [2, 4, 50, 100],
+                "multiplier": 1
+            }
+        },
+        "bets": [1, 2, 5, 10, 20],
+        "jackpotMinBet": 1,
+        "jackpot": true,
+        "mainFakeReels": [
+            [10, 2, 5, 6, 12, 9, 5, 7, 2, 1, 11, 2, 6, 1, 7, 4, 8, 1, 7, 3],
+            [10, 3, 1, 8, 4, 12, 9, 2, 4, 8, 7, 4, 11, 3, 0, 6, 4, 3, 5, 9],
+            [5, 9, 2, 4, 8, 5, 2, 12, 4, 6, 0, 11, 5, 7, 3, 8, 1, 10, 0, 2],
+            [7, 0, 11, 1, 5, 9, 0, 8, 3, 2, 10, 1, 6, 11, 4, 2, 10, 1, 0, 12],
+            [12, 3, 4, 6, 1, 4, 11, 3, 8, 10, 5, 3, 2, 11, 1, 3, 9, 0, 4, 7]
+        ],
+        "jackpotMaxBet": 100000,
+        "denominations": [
+            [100, 70, 3000000]
+        ]
+    },
+    "gameIdentificationNumber": 813,
+    "gameNumber": -1,
+    "sessionKey": "INT:EGT:500000:IR_EGT:Fun Mode - 1484566010673",
+    "msg": "success",
+    "messageId": "r-r_00da069484128b558996af4169bbf981d554a857",
+    "qName": "app.services.messages.response.GameResponse",
+    "command": "settings",
+    "eventTimestamp": 1484566051376
+}. {
+    "gameIdentificationNumber": "813",
+    "gameNumber": -1,
+    "messageId": "r-r_d200e78846711cc14fd94557b2164e264abb5740",
+    "qName": "jServer.DRJSlot.subscribe",
+    "sessionKey": "INT:EGT:500000:IR_EGT:Fun Mode - 1484566010673",
+    "command": "subscribe"
+}. {
+    "complex": {
+        "currentState": {
+            "gamblesUsed": 0,
+            "freespinsUsed": 0,
+            "previousGambles": [],
+            "bet": 100,
+            "numberOfLines": 25,
+            "denomination": 100,
+            "state": "idle",
+            "winAmount": 0,
+            "reels": [0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4],
+            "lines": [],
+            "scatters": [],
+            "expand": [],
+            "gambles": 0,
+            "freespins": 0,
+            "freespinScatters": [],
+            "jackpot": false
+        },
+        "jackpotState": {
+            "levelI": 1055400,
+            "levelII": 6287700,
+            "levelIII": 47657600,
+            "levelIV": 54485400,
+            "winsLevelI": 88581,
+            "largestWinLevelI": 16194200,
+            "largestWinDateLevelI": "May 28, 2016 11:13:26 PM",
+            "largestWinUserLevelI": "Fun Mode - 1464469669918",
+            "lastWinLevelI": 2054500,
+            "lastWinDateLevelI": "Jan 16, 2017 12:26:14 PM",
+            "lastWinUserLevelI": "Demo Player - 1484558032637",
+            "winsLevelII": 44682,
+            "largestWinLevelII": 35188000,
+            "largestWinDateLevelII": "May 18, 2015 10:56:53 AM",
+            "largestWinUserLevelII": "Demo Player - 1431935309446",
+            "lastWinLevelII": 4266300,
+            "lastWinDateLevelII": "Jan 16, 2017 11:59:19 AM",
+            "lastWinUserLevelII": "Demo Player - 1484562653400",
+            "winsLevelIII": 12124,
+            "largestWinLevelIII": 113302100,
+            "largestWinDateLevelIII": "Jan 25, 2015 9:17:25 PM",
+            "largestWinUserLevelIII": "Demo Player - 1422216354691",
+            "lastWinLevelIII": 17546500,
+            "lastWinDateLevelIII": "Jan 16, 2017 3:09:15 AM",
+            "lastWinUserLevelIII": "Demo Player - 1484532207125",
+            "winsLevelIV": 4427,
+            "largestWinLevelIV": 279725100,
+            "largestWinDateLevelIV": "Jun 12, 2016 11:33:24 PM",
+            "largestWinUserLevelIV": "pu6ek - 1465766836383",
+            "lastWinLevelIV": 104307400,
+            "lastWinDateLevelIV": "Jan 16, 2017 9:07:17 AM",
+            "lastWinUserLevelIV": "Fun Mode - 1484553866229"
+        }
+    },
+    "gameIdentificationNumber": 813,
+    "gameNumber": -1,
+    "sessionKey": "INT:EGT:500000:IR_EGT:Fun Mode - 1484566010673",
+    "msg": "success",
+    "messageId": "r-r_d200e78846711cc14fd94557b2164e264abb5740",
+    "qName": "app.services.messages.response.GameEventResponse",
+    "command": "subscribe",
+    "eventTimestamp": 1484566051558
+}. {
+    "complex": {
+        "levelI": 1068100,
+        "levelII": 6300300,
+        "levelIII": 47670300,
+        "levelIV": 54498000,
+        "winsLevelI": 88581,
+        "largestWinLevelI": 16194200,
+        "largestWinDateLevelI": "May 28, 2016 11:13:26 PM",
+        "largestWinUserLevelI": "Fun Mode - 1464469669918",
+        "lastWinLevelI": 2054500,
+        "lastWinDateLevelI": "Jan 16, 2017 12:26:14 PM",
+        "lastWinUserLevelI": "Demo Player - 1484558032637",
+        "winsLevelII": 44682,
+        "largestWinLevelII": 35188000,
+        "largestWinDateLevelII": "May 18, 2015 10:56:53 AM",
+        "largestWinUserLevelII": "Demo Player - 1431935309446",
+        "lastWinLevelII": 4266300,
+        "lastWinDateLevelII": "Jan 16, 2017 11:59:19 AM",
+        "lastWinUserLevelII": "Demo Player - 1484562653400",
+        "winsLevelIII": 12124,
+        "largestWinLevelIII": 113302100,
+        "largestWinDateLevelIII": "Jan 25, 2015 9:17:25 PM",
+        "largestWinUserLevelIII": "Demo Player - 1422216354691",
+        "lastWinLevelIII": 17546500,
+        "lastWinDateLevelIII": "Jan 16, 2017 3:09:15 AM",
+        "lastWinUserLevelIII": "Demo Player - 1484532207125",
+        "winsLevelIV": 4427,
+        "largestWinLevelIV": 279725100,
+        "largestWinDateLevelIV": "Jun 12, 2016 11:33:24 PM",
+        "largestWinUserLevelIV": "pu6ek - 1465766836383",
+        "lastWinLevelIV": 104307400,
+        "lastWinDateLevelIV": "Jan 16, 2017 9:07:17 AM",
+        "lastWinUserLevelIV": "Fun Mode - 1484553866229"
+    },
+    "gameIdentificationNumber": 813,
+    "gameNumber": -1,
+    "msg": "success",
+    "messageId": "896af940be2698477c64ba2aad370dfd",
+    "qName": "app.services.messages.response.GameEventResponse",
+    "command": "event",
+    "eventTimestamp": 1484566055014
+}. {
+    "command": "ping",
+    "sessionKey": "INT:EGT:500000:IR_EGT:Fun Mode - 1484566010673",
+    "messageId": "r-r_5362a8a5f414cf4be6ff2d199cb82b6b667d17ad",
+    "qName": "jServer.gameManager.ping"
+}. {
+    "sessionKey": "INT:EGT:500000:IR_EGT:Fun Mode - 1484566010673",
+    "msg": "success",
+    "messageId": "r-r_5362a8a5f414cf4be6ff2d199cb82b6b667d17ad",
+    "qName": "app.services.messages.response.BaseResponse",
+    "command": "ping",
+    "eventTimestamp": 1484566056050
+}. {
+    "complex": {
+        "levelI": 1080800,
+        "levelII": 6313000,
+        "levelIII": 47682900,
+        "levelIV": 54510700,
+        "winsLevelI": 88581,
+        "largestWinLevelI": 16194200,
+        "largestWinDateLevelI": "May 28, 2016 11:13:26 PM",
+        "largestWinUserLevelI": "Fun Mode - 1464469669918",
+        "lastWinLevelI": 2054500,
+        "lastWinDateLevelI": "Jan 16, 2017 12:26:14 PM",
+        "lastWinUserLevelI": "Demo Player - 1484558032637",
+        "winsLevelII": 44682,
+        "largestWinLevelII": 35188000,
+        "largestWinDateLevelII": "May 18, 2015 10:56:53 AM",
+        "largestWinUserLevelII": "Demo Player - 1431935309446",
+        "lastWinLevelII": 4266300,
+        "lastWinDateLevelII": "Jan 16, 2017 11:59:19 AM",
+        "lastWinUserLevelII": "Demo Player - 1484562653400",
+        "winsLevelIII": 12124,
+        "largestWinLevelIII": 113302100,
+        "largestWinDateLevelIII": "Jan 25, 2015 9:17:25 PM",
+        "largestWinUserLevelIII": "Demo Player - 1422216354691",
+        "lastWinLevelIII": 17546500,
+        "lastWinDateLevelIII": "Jan 16, 2017 3:09:15 AM",
+        "lastWinUserLevelIII": "Demo Player - 1484532207125",
+        "winsLevelIV": 4427,
+        "largestWinLevelIV": 279725100,
+        "largestWinDateLevelIV": "Jun 12, 2016 11:33:24 PM",
+        "largestWinUserLevelIV": "pu6ek - 1465766836383",
+        "lastWinLevelIV": 104307400,
+        "lastWinDateLevelIV": "Jan 16, 2017 9:07:17 AM",
+        "lastWinUserLevelIV": "Fun Mode - 1484553866229"
+    },
+    "gameIdentificationNumber": 813,
+    "gameNumber": -1,
+    "msg": "success",
+    "messageId": "2c71ea49088d501a18d2ac22f84b78a2",
+    "qName": "app.services.messages.response.GameEventResponse",
+    "command": "event",
+    "eventTimestamp": 1484566060010
+}. {
+    "command": "ping",
+    "sessionKey": "INT:EGT:500000:IR_EGT:Fun Mode - 1484566010673",
+    "messageId": "r-r_d4958bf6cb5c37ea2a6c096b4637658650112d26",
+    "qName": "jServer.gameManager.ping"
+}. {
+    "sessionKey": "INT:EGT:500000:IR_EGT:Fun Mode - 1484566010673",
+    "msg": "success",
+    "messageId": "r-r_d4958bf6cb5c37ea2a6c096b4637658650112d26",
+    "qName": "app.services.messages.response.BaseResponse",
+    "command": "ping",
+    "eventTimestamp": 1484566061056
+}.

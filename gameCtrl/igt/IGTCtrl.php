@@ -9,9 +9,9 @@ class IGTCtrl extends Ctrl {
 
 		$action = '';
 
-        if(strpos($uri, 'clientconfig') > 0) $action = 'config';
-        if(strpos($uri, 'initstate') > 0) $action = 'init';
-        if(strpos($uri, 'paytable') > 0) $action = 'paytable';
+        if(strpos($uri, '/clientconfig') > 0) $action = 'config';
+        if(strpos($uri, '/initstate') > 0) $action = 'init';
+        if(strpos($uri, '/paytable') > 0) $action = 'paytable';
         if(strpos($uri, '/play') > 0) $action = 'spin';
 
 

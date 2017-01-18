@@ -145,8 +145,8 @@ class cash_coasterParams extends Params {
     );
 
     // шанс 1 к 10, что один из барабанов станет wild
-    public $wildChance = 1;
+    public $wildChance = 10;
 
     // Шанс 1 к 100, что оба барабана (первый и последний) станут вайлдами
-    public $doubleWildChance = 1;
+    public $doubleWildChance = 100;
 }

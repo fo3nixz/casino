@@ -1,0 +1,8 @@
+RewriteEngine On
+
+RewriteRule (.*)/tc/play$ /core/WebEngine.php?game=$1|||igt&action=spin
+RewriteRule (.*)/tc/clientconfig$ /core/WebEngine.php?game=$1|||igt&action=config
+RewriteRule (.*)/tc/initstate$ /core/WebEngine.php?game=$1|||igt&action=init
+RewriteRule (.*)/tc/paytable$ /core/WebEngine.php?game=$1|||igt&action=paytable
+
+RewriteRule (.*)/emulation /core/WebEngineEmulation.php?game=$1
